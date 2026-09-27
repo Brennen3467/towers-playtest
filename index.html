@@ -1,0 +1,1565 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Towers</title>
+<style>
+:root{
+  --ground:#d9ddd9; --stone:#eceeea; --stone-2:#c9cec9; --ink:#1b2125; --muted:#56606a; --line:#a9b1b2;
+  --sapphire:#1f5aa6; --sapphire-soft:#d6e2f3; --ruby:#a2233c; --ruby-soft:#f1d8dd;
+  --topaz:#a8791d; --hill:#e3d6b3; --hill-edge:#b99543; --mount:#59616a; --mount-2:#474e56;
+  --good:#2f7a4a; --warn:#9b5b12; --focus:#1f5aa6; --shadow:0 1px 0 rgba(20,26,30,.12);
+  --glow-s:rgba(60,130,230,.55); --glow-r:rgba(220,60,90,.5);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#12171b; --stone:#1c2328; --stone-2:#273038; --ink:#e3e8ea; --muted:#9aa6ae; --line:#3a454d;
+    --sapphire:#6aa3ec; --sapphire-soft:#1b2d45; --ruby:#e8667d; --ruby-soft:#3d1c24;
+    --topaz:#d8ae55; --hill:#3b3423; --hill-edge:#a8863c; --mount:#0b0e10; --mount-2:#20262b;
+    --good:#6cc28b; --warn:#e0a54f; --focus:#8dbaf2; --shadow:0 1px 0 rgba(0,0,0,.4);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#12171b; --stone:#1c2328; --stone-2:#273038; --ink:#e3e8ea; --muted:#9aa6ae; --line:#3a454d;
+  --sapphire:#6aa3ec; --sapphire-soft:#1b2d45; --ruby:#e8667d; --ruby-soft:#3d1c24;
+  --topaz:#d8ae55; --hill:#3b3423; --hill-edge:#a8863c; --mount:#0b0e10; --mount-2:#20262b;
+  --good:#6cc28b; --warn:#e0a54f; --focus:#8dbaf2; --shadow:0 1px 0 rgba(0,0,0,.4);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--ground);color:var(--ink);font-family:"Alegreya Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.4;margin:0}
+.wrap{max-width:540px;margin:0 auto;padding-inline:16px;padding-block:12px 40px;display:flex;flex-direction:column;gap:14px}
+h1,h2,h3,.display{font-family:"Marcellus","Palatino Linotype",Palatino,Georgia,serif;font-weight:400;letter-spacing:.02em;margin:0;text-wrap:balance}
+h1{font-size:28px}
+h2{font-size:20px}
+h3{font-size:16px}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.muted{color:var(--muted)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.btn{min-height:44px;padding:8px 16px;border-radius:6px;border:1px solid var(--line);background:var(--stone);cursor:pointer;font-weight:600}
+.btn:hover{border-color:var(--ink)}
+.btn.primary{background:var(--sapphire);border-color:var(--sapphire);color:#fff}
+:root[data-theme="dark"] .btn.primary{color:#0c1622}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{color:#0c1622}}
+.btn.danger{border-color:var(--ruby);color:var(--ruby);background:transparent}
+.btn:disabled{opacity:.45;cursor:default}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.panel{background:var(--stone);border:1px solid var(--line);border-radius:8px;padding:12px}
+.nums,.stats,.log .n,.big{font-variant-numeric:lining-nums tabular-nums}
+
+/* header */
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.top .sub{font-size:13px;color:var(--muted)}
+.sphere{display:inline-block;width:14px;height:14px;border-radius:50%;vertical-align:-2px;flex:none}
+.sphere.s{background:radial-gradient(circle at 35% 35%,#fff 0,#9cc4ff 25%,var(--sapphire) 70%);box-shadow:0 0 10px var(--glow-s)}
+.sphere.r{background:radial-gradient(circle at 35% 35%,#fff 0,#ffb0bf 25%,var(--ruby) 70%);box-shadow:0 0 10px var(--glow-r)}
+.sphere.dun{background:radial-gradient(circle at 35% 35%,#eee 0,#aaa 40%,#666 80%);box-shadow:none}
+.turnbar{display:flex;align-items:center;gap:10px;font-weight:600;min-height:28px}
+.thinking .sphere{animation:pulse 1.2s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 2px var(--glow-r);opacity:.6}}
+
+/* dominance track */
+.dom{display:flex;flex-direction:column;gap:6px}
+.track{position:relative;height:22px;display:grid;grid-template-columns:repeat(21,1fr);align-items:center}
+.track i{height:8px;border-left:1px solid var(--line);display:block}
+.track i.z{height:18px;border-left:2px solid var(--muted)}
+.track .bar{position:absolute;left:0;right:0;top:10px;height:2px;background:linear-gradient(90deg,var(--ruby),var(--line) 45%,var(--line) 55%,var(--sapphire))}
+.track .marker{position:absolute;top:3px;width:16px;height:16px;margin-left:-8px;transition:left .35s ease}
+.domlabels{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:1fr auto auto;gap:2px 14px;font-size:14px}
+.stats .h{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.you{color:var(--sapphire)} .them{color:var(--ruby)}
+
+/* board */
+.boardwrap{display:grid;grid-template-columns:14px 1fr;gap:4px}
+.ranks{display:grid;grid-template-rows:repeat(7,1fr);font-size:11px;color:var(--muted);text-align:center;align-items:center}
+.files{display:grid;grid-template-columns:repeat(7,1fr);font-size:11px;color:var(--muted);text-align:center;grid-column:2}
+.board{display:grid;grid-template-columns:repeat(7,1fr);grid-template-rows:repeat(7,1fr);gap:3px;aspect-ratio:1;width:100%;max-width:100%;background:var(--stone-2);padding:3px;border-radius:6px}
+.cell{position:relative;border:0;padding:0;border-radius:4px;background:var(--stone);cursor:pointer;min-width:0;min-height:0;display:grid;place-items:center}
+.cell.hill{background:var(--hill);box-shadow:inset 0 0 0 2px var(--hill-edge)}
+.cell.hill::after{content:"";position:absolute;right:3px;top:3px;width:6px;height:6px;transform:rotate(45deg);background:var(--hill-edge)}
+.cell.mount{background:repeating-linear-gradient(135deg,var(--mount) 0 5px,var(--mount-2) 5px 10px);cursor:default}
+.cell.home0{box-shadow:inset 0 -3px 0 var(--sapphire-soft)}
+.cell.home1{box-shadow:inset 0 3px 0 var(--ruby-soft)}
+.cell.hill.home0,.cell.hill.home1{box-shadow:inset 0 0 0 2px var(--hill-edge)}
+.cell.dest::before{content:"";position:absolute;inset:30%;border-radius:50%;background:var(--sapphire);opacity:.45}
+.cell.tgt{box-shadow:inset 0 0 0 3px var(--ruby)}
+.cell.sel{box-shadow:inset 0 0 0 3px var(--sapphire)}
+.cell.pend{box-shadow:inset 0 0 0 3px var(--sapphire);background:var(--sapphire-soft)}
+.cell.last{outline:2px dashed var(--topaz);outline-offset:-3px}
+
+/* cards */
+.card{position:relative;width:88%;height:88%;border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;line-height:1;transition:transform .25s ease}
+.card.p0{background:var(--sapphire-soft);border:2px solid var(--sapphire);color:var(--sapphire)}
+.card.p1{background:var(--ruby-soft);border:2px solid var(--ruby);color:var(--ruby)}
+.card .rk{font-family:"Marcellus",Georgia,serif;font-size:clamp(12px,3.6vw,18px);font-weight:700}
+.card svg{width:46%;height:46%}
+.card.def{transform:rotate(90deg)}
+.card.hid::after{content:"";position:absolute;inset:0;border-radius:3px;background:repeating-linear-gradient(45deg,transparent 0 4px,rgba(31,90,166,.16) 4px 6px);pointer-events:none}
+.card .eye{position:absolute;left:2px;top:1px;font-size:9px;font-weight:700;letter-spacing:.04em}
+.card .tp{position:absolute;right:2px;bottom:1px;font-size:clamp(7px,2.1vw,10px);line-height:1;font-weight:700;opacity:.8;font-variant-numeric:lining-nums tabular-nums}
+.card.back{background:repeating-linear-gradient(45deg,var(--ruby) 0 3px,transparent 3px 9px),repeating-linear-gradient(-45deg,var(--ruby) 0 3px,var(--ruby-soft) 3px 9px)}
+.card.back .gem{width:34%;height:34%;transform:rotate(45deg);background:radial-gradient(circle at 35% 35%,#fff,#ff9bb0 35%,var(--ruby));box-shadow:0 0 8px var(--glow-r);border-radius:2px}
+
+/* barrack */
+.tray{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:6px}
+.hcard{min-height:64px;border:2px solid var(--sapphire);background:var(--sapphire-soft);color:var(--sapphire);border-radius:6px;padding:6px;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;gap:0 6px;align-items:center;text-align:left;cursor:pointer}
+.hcard svg{width:26px;height:26px;grid-row:span 2}
+.hcard .nm{font-weight:700;font-size:14px;color:var(--ink);overflow-wrap:anywhere;min-width:0}
+.hcard .ct{font-size:12px;color:var(--muted)}
+.hcard.on{background:var(--sapphire);color:#fff}
+.hcard.on .nm,.hcard.on .ct{color:#fff}
+.hcard:disabled{opacity:.5;cursor:default}
+
+.action{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:2px;width:100%}
+.opt small{font-weight:400;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{font-size:13px;padding:2px 8px;border-radius:12px;border:1px solid var(--line);background:var(--stone)}
+.log{max-height:260px;overflow-y:auto;display:flex;flex-direction:column;gap:4px;font-size:14px;margin:0;padding:0;list-style:none}
+.log li{padding:4px 0;border-bottom:1px solid var(--line)}
+.log li .n{color:var(--muted);font-variant-numeric:tabular-nums;margin-right:6px}
+.log li.p0{border-left:3px solid var(--sapphire);padding-left:8px}
+.log li.p1{border-left:3px solid var(--ruby);padding-left:8px}
+details.rules summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-family:"Marcellus",Georgia,serif;font-size:18px}
+details.rules p,details.rules li{max-width:65ch}
+details.rules ul{padding-left:20px;margin:6px 0}
+details.rules h3{margin-top:12px}
+
+/* muster */
+.mrow{display:grid;grid-template-columns:32px 1fr auto;gap:8px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line)}
+.mrow svg{width:28px;height:28px;color:var(--sapphire)}
+.mrow .desc{font-size:13px;color:var(--muted)}
+.step{display:flex;align-items:center;gap:6px}
+.step button{width:44px;height:44px;border-radius:6px;border:1px solid var(--line);background:var(--stone);font-size:20px;cursor:pointer}
+.step span{min-width:36px;text-align:center;font-variant-numeric:tabular-nums}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{min-height:44px;border:0;background:var(--stone);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4px}
+.seg button small{font-size:11px;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--sapphire);color:#fff}
+.seg button[aria-pressed="true"] small{color:#fff}
+.mini{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;width:140px;aspect-ratio:1;background:var(--stone-2);padding:2px;border-radius:4px}
+.mini i{border-radius:2px;background:var(--stone)}
+.mini i.hill{background:var(--hill-edge)} .mini i.mount{background:var(--mount)}
+.total{font-weight:700}
+.total.bad{color:var(--ruby)}
+.meter{height:8px;border-radius:4px;background:var(--stone-2);overflow:hidden}
+.meter i{display:block;height:100%;background:var(--sapphire);transition:width .2s ease}
+.step button:disabled{opacity:.35;cursor:default}
+
+/* dialog */
+.scrim{position:fixed;inset:0;background:rgba(10,14,18,.55);display:flex;align-items:flex-end;justify-content:center;z-index:10;padding:16px;padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+.sheet{background:var(--stone);color:var(--ink);border-radius:10px;padding:16px;width:100%;max-width:500px;max-height:85vh;overflow-y:auto;display:flex;flex-direction:column;gap:10px;border:1px solid var(--line)}
+.might{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.might > div{border-radius:6px;padding:8px;font-size:14px}
+.might .a{background:var(--sapphire-soft)} .might .d{background:var(--ruby-soft)}
+.might .big{font-family:"Marcellus",Georgia,serif;font-size:30px}
+.might ul{margin:4px 0 0;padding-left:16px}
+.odds{display:flex;flex-wrap:wrap;gap:6px}
+.odds span{padding:4px 8px;border-radius:4px;background:var(--stone-2);font-size:14px}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700&family=Marcellus&display=swap">
+
+<div class="wrap" id="app">
+  <div class="top">
+    <div>
+      <div class="eyebrow">Flat Face · v1.3 skirmish</div>
+      <h1>Towers</h1>
+    </div>
+    <div class="sub" id="topsub">You play sapphire</div>
+  </div>
+
+  <!-- MUSTER -->
+  <section id="muster" class="action" hidden>
+    <div class="panel action">
+      <h3>Battlefield</h3>
+      <div class="row" style="align-items:flex-start;gap:14px">
+        <div class="mini" id="mini" aria-label="Terrain preview"></div>
+        <div class="action" style="flex:1;min-width:150px">
+          <span class="muted" style="font-size:14px">5 high ground (gold) and 2 mountains (dark), mirrored across the centre.</span>
+          <button class="btn" id="newboard" type="button">New board</button>
+        </div>
+      </div>
+      <h3>Opponent</h3>
+      <div class="seg" id="level" role="group" aria-label="Bot difficulty">
+        <button type="button" data-l="easy" id="lv-easy">Easy<small>looks 1 move</small></button>
+        <button type="button" data-l="normal" id="lv-normal">Normal<small>looks 2 moves</small></button>
+        <button type="button" data-l="hard" id="lv-hard">Hard<small>looks 3 moves</small></button>
+      </div>
+      <button class="btn primary" id="start" type="button">Deploy for battle</button>
+    </div>
+    <div class="panel action">
+      <div class="row" style="justify-content:space-between">
+        <h2>Muster your army</h2>
+        <span class="total nums" id="mtotal" aria-live="polite">0 / 100 troops</span>
+      </div>
+      <div class="meter" aria-hidden="true"><i id="mbar" style="width:0"></i></div>
+      <p class="muted" style="margin:0">Choose cards from your 20 worth <b>at most 100 troops</b> in total. The King is free and always comes. The rest stay home. The bot musters from the same pool under the same limit and never sees your choice.</p>
+      <div id="mlist"></div>
+      <div class="row">
+        <button class="btn" id="mrec" type="button">Quick pick</button>
+        <button class="btn" id="mrand" type="button">Random army</button>
+        <button class="btn" id="mclear" type="button">Clear</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAME -->
+  <section id="game" class="action" hidden>
+    <div class="panel dom">
+      <div class="turnbar" id="turn" aria-live="polite"></div>
+      <div class="track" id="track" aria-hidden="true"></div>
+      <div class="domlabels"><span class="them">Bot wins at 10</span><span>Dominance <b id="domtxt" class="nums">level</b></span><span class="you">You win at 10</span></div>
+      <div class="stats nums" id="stats"></div>
+    </div>
+    <div>
+      <div class="boardwrap">
+        <div class="ranks" aria-hidden="true"><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span></div>
+        <div class="board" id="board" role="grid" aria-label="Board"></div>
+        <div class="files" aria-hidden="true"><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span></div>
+      </div>
+    </div>
+    <div class="panel action" id="actpanel" aria-live="polite"></div>
+    <div class="panel action">
+      <div class="row" style="justify-content:space-between"><h3>Your barrack</h3><span class="muted nums" id="barcount"></span></div>
+      <div class="tray" id="tray"></div>
+      <div class="muted" style="font-size:14px" id="botbar"></div>
+      <div id="piles" class="action"></div>
+    </div>
+    <div class="panel action">
+      <h3>Battle log</h3>
+      <ol class="log" id="log"></ol>
+    </div>
+    <div class="row">
+      <button class="btn" id="newgame" type="button">New battle</button>
+    </div>
+  </section>
+
+  <details class="rules panel" id="rules">
+    <summary>How to play</summary>
+    <p>You are a general. Your cards are armies. Armies fight the armies they <b>touch</b> (share an edge; diagonals never count), and an army with friends beside it beats one standing alone. Hold the high ground, keep reserves in your barrack, and know when to give up.</p>
+    <h3>What you need</h3>
+    <ul>
+      <li>A 7×7 board with 5 <b>high ground</b> tiles and 2 <b>mountains</b> (nothing may enter a mountain). This app lays the terrain for you, mirrored across the centre.</li>
+      <li>Each player: a pool of 20 cards (each shows its <b>troops</b>) and a 12-card <b>fortune deck</b>: 3 Advantage (+1), 3 Disadvantage (−1) and 6 Steady (blank, worth 0).</li>
+      <li>A <b>Dominance marker</b> on a track from 10 on your side, through 0, to 10 on your opponent's side.</li>
+    </ul>
+    <h3>Setup</h3>
+    <ul>
+      <li><b>Muster.</b> Secretly choose cards from your 20 worth <b>at most 100 troops</b> in total. The King is free and always comes. These cards are your <b>barrack</b>: your hand, hidden from your opponent. Set the rest aside.</li>
+      <li>The first player is chosen at random. The row nearest you (the bottom row) is your <b>home row</b>. The marker starts on 0.</li>
+    </ul>
+    <h3>Your turn: do exactly one thing</h3>
+    <ul>
+      <li><b>Deploy</b> a card from your barrack face-down onto your home row or onto any empty space touching one of your cards. It may then attack once.</li>
+      <li><b>Maneuver</b> one ready card one space (Lancers and Scouts as on their cards). It may then attack once, with <b>+1 Might</b> in that fight: the <i>marching strike</i>.</li>
+      <li><b>Attack</b> with a ready card that is already touching an enemy.</li>
+      <li><b>Turn</b> one card, or every card in one straight unbroken line of your cards, to <b>defensive posture</b> or back to ready. A defensive card gets +1 when attacked but cannot attack or maneuver. It still supports, holds high ground, gives bonuses and may retreat. Kings have no defensive posture.</li>
+      <li><b>Retreat</b> one card to your barrack, unless two or more enemy cards touch it. It cannot deploy on your next turn. It comes back face-down.</li>
+      <li><b>Pass</b>, or <b>give up</b> the skirmish.</li>
+    </ul>
+    <p>Before or after your action you may reveal any of your own cards. (This app never asks: your cards stay face-down until the rules turn them up.)</p>
+    <p>In this app: tap a barrack card or one of your board cards, then tap where it goes or whom it attacks. Every attack shows its Might and odds before you confirm.</p>
+    <h3>Face-down cards</h3>
+    <p>A card is turned face-up for good when it attacks, is attacked, Soulcasts, <b>gives a bonus (an Attending Squire, an Archer supporting from range, a Captainlord)</b>, is scouted, or you choose to show it. A 2-space move does not reveal the mover. Face-down cards touch, support and hold high ground like any other card. You may attack a face-down card: you find out what it is when both cards flip.</p>
+    <h3>Fighting</h3>
+    <ol>
+      <li>Declare the attack. Flip the attacker and the target face-up.</li>
+      <li>Count every bonus; turn face-up any card that gives one.</li>
+      <li><b>The pull.</b> Each of the two fighting cards that was face-down when the attack was declared pulls the top card of its owner's fortune deck: +1, 0 or −1 for this fight only. A face-up card never pulls (a card that returns to the barrack comes back face-down, so it will pull again). When your fortune deck runs out, shuffle all 12 together.</li>
+      <li>Compare <b>Might</b>.</li>
+    </ol>
+    <p><b>Attacker</b> = rank + 1 for each <i>other</i> card of yours touching the target (your supporters, including Archers in range) + 1 on high ground + bonuses ± pull.<br><b>Defender</b> = rank + 1 if a friend stands directly <b>behind</b> it (the space opposite the attacker) + 1 if defensive + 1 on high ground + bonuses ± pull.</p>
+    <ul>
+      <li>Attacker ahead by 2 or more, <b>or ahead at all with at least one supporter</b>: the defender is <b>captured</b> (out of the match for good).</li>
+      <li>Ahead by exactly 1 with no supporter: the defender is <b>routed</b> back to its owner's barrack, face-down. It cannot deploy on its owner's next turn.</li>
+      <li>Tie: both hold, except against a defensive Spearman: then the attacker counts as behind by 1.</li>
+      <li>Behind by 1: the attacker is routed, or captured if two or more enemy cards touch it. Behind by 2 or more: the attacker is captured.</li>
+      <li>If the defender's space is emptied, the attacker must advance into it.</li>
+      <li>You may not attack a face-up card if you would be behind by 2 or more before the pull. Attacking a face-down card is always allowed.</li>
+    </ul>
+    <h3>The cards</h3>
+    <p class="muted" style="margin:0">"Knight or better" means Knight, Lancer, Captainlord, Shardbearer or King.</p>
+    <ul id="cardhelp"></ul>
+    <h3>The King</h3>
+    <ul>
+      <li>He <b>wins every attack he makes</b>, always capturing, and he cannot attack another King. He attacks revealed cards only.</li>
+      <li>Might is ignored when he is attacked. He is captured only when <b>three revealed enemy cards of Knight rank or better touch him</b> and one of them attacks (an enemy King counts as one of the three). Attacking a face-down King any other way simply reveals him. The Soulcaster cannot touch him.</li>
+      <li><b>Spent:</b> after he captures, he lies on his side. Standing him up is your whole turn.</li>
+      <li><b>Pinned:</b> while two revealed enemy Knight-or-better cards touch him he cannot act or be stood up.</li>
+      <li>He never retreats, never pulls, and never counts as holding high ground (he may not be deployed or maneuvered onto it, though he advances onto it if he captures a card standing there).</li>
+      <li>Lose your King and you lose the skirmish. You may leave him in your barrack all game.</li>
+    </ul>
+    <h3>Winning a skirmish</h3>
+    <ul>
+      <li>Capture the enemy King; or your opponent ends a turn (after their first) with no cards on the board; or they give up; or by Dominance.</li>
+      <li><b>Dominance:</b> at the end of each of your turns the marker moves one step toward you if you hold more high ground than your opponent. If high ground is level, it moves if you have captured more cards this skirmish (Soulcast victims count; routs never do). Reach your 10 and you win at once.</li>
+      <li><b>Reset:</b> the moment a player captures a card while the marker is on their opponent's side, the marker returns to 0.</li>
+      <li><b>Both pass</b> in a row: the skirmish ends. More high ground wins; if level, more captured value (2 for each card of rank 2 or more, 1 for any other; a Soulcaster used up by Soulcasting counts as captured by the other player); otherwise a draw.</li>
+      <li><b>Giving up:</b> any of your cards touched by two or more enemy cards is captured; everything else goes home.</li>
+    </ul>
+    <p class="muted">This app follows the printed Towers v1.3 playtest rules (core game, one skirmish; the match, Warcamp and variants are not included).</p>
+    <p class="muted">An unofficial fan-made playtest of the in-world game from <i>The Stormlight Archive</i>. Not affiliated with or endorsed by Brandon Sanderson or Dragonsteel.</p>
+  </details>
+</div>
+
+<script id="engine-src">
+/* Towers v1.3 core rules engine + fair bot. Port of v13/sim/engine.py + bots.py (Balanced evaluation, DetBot search)
+   for the v1.3 core configuration: board b7, REC defaults (hidden, one-shot pulls, king_onestate, king_no_blind,
+   tug + reset Dominance to 10, dom_cards, squire_attends), spear_brace, ab_captain_att, dom_start 0, march_bonus 1,
+   plus v1.3: troop muster (at most 100 troops, King free; league.py / round5/pa.py 'tp') and bonus_reveal = 1
+   (a face-down Archer supporting from range or Captainlord whose bonus counts is turned face-up; engine._disclose).
+   No Warcamp, so the Dominance track stays 10.
+   Cell = r*7+c; player 0's home row is r=0, player 1's is r=6.
+   Card = [owner, type, mark, defensive, revealed].  Actions mirror the Python tuples:
+     [D,type,cell,tgt,adv] [M,from,to,tgt,adv(,revealCell)] [A,from,tgt,adv] [T,[cells],newdef] [R,cell] [P] [G]  */
+var TE = (function () {
+  "use strict";
+  var N = 7, NR = 7, NC = 49;
+  var SOUL = 0, SQ = 1, SP = 2, KN = 3, KING = 4, CH = 5, AR = 6, SC = 7, GD = 8, CP = 9, SB = 10, SG = 11, LN = 12, NT = 13;
+  var RANK = [0, 1, 2, 3, 3, 4, 1, 1, 2, 3, 2, 1, 3];
+  var TROOPS = [5, 5, 10, 10, 0, 10, 5, 5, 10, 10, 10, 5, 10];   // captured value (adjudication), not muster troops
+  // v1.3 muster troops (C S P N K H A U G T B E L); King free.  v13/rulesets.json "tpv", budget 100.
+  var MUSTER_TROOPS = [10, 2, 7, 12, 0, 22, 6, 6, 0, 16, 0, 0, 13], BUDGET = 100;
+  var BONUS_REVEAL = true;      // v1.3 V1; false only to replay v1.2 reference games
+  var KOB = [false, false, false, true, true, true, false, false, false, true, false, false, true];
+  var LET = "CSPNKHAUGTBEL";
+  var NAMES = ["Soulcaster", "Squire", "Spearman", "Knight", "King", "Shardbearer", "Archer", "Scout", "Guard", "Captainlord", "Shieldbearer", "Surgeon", "Lancer"];
+  var POOL = [1, 4, 3, 4, 1, 1, 2, 2, 0, 1, 0, 0, 1];   // 20-card pool (unchanged in v1.3)
+  var ARMY_N = 14;
+  var D = 0, M = 1, A = 2, T = 3, R = 4, P = 5, G = 7;
+  var DOM_TARGET = 10, CAP = 200, MARCH = 1, FAIL = -50;
+
+  // ---------------- geometry
+  var DIRS = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+  var NEI = [], STEP = [], BEHIND = {}, HOME = [[], []], RANGED = [], STEP2 = [], ISNEI = [];
+  (function () {
+    var c, r, d;
+    for (c = 0; c < NC; c++) { NEI.push([]); STEP.push([-1, -1, -1, -1]); RANGED.push([]); STEP2.push([]); ISNEI.push(new Array(NC).fill(false)); }
+    for (r = 0; r < NR; r++) for (c = 0; c < N; c++) for (d = 0; d < 4; d++) {
+      var rr = r + DIRS[d][0], cc = c + DIRS[d][1];
+      if (rr >= 0 && rr < NR && cc >= 0 && cc < N) { NEI[r * N + c].push(rr * N + cc); STEP[r * N + c][d] = rr * N + cc; ISNEI[r * N + c][rr * N + cc] = true; }
+    }
+    for (var a = 0; a < NC; a++) for (var i = 0; i < NEI[a].length; i++) {
+      var t = NEI[a][i], r2 = 2 * Math.floor(t / N) - Math.floor(a / N), c2 = 2 * (t % N) - a % N;
+      BEHIND[a * 64 + t] = (r2 >= 0 && r2 < NR && c2 >= 0 && c2 < N) ? r2 * N + c2 : -1;
+    }
+    for (c = 0; c < N; c++) { HOME[0].push(c); HOME[1].push(NC - N + c); }
+    for (a = 0; a < NC; a++) {
+      var via = {};
+      for (d = 0; d < 4; d++) {
+        var m = STEP[a][d]; if (m < 0) continue;
+        var f = STEP[m][d]; if (f >= 0) RANGED[f].push([a, m]);
+        for (var d2 = 0; d2 < 4; d2++) { var f2 = STEP[m][d2]; if (f2 >= 0 && f2 !== a) { (via[f2] = via[f2] || []).push(m); } }
+      }
+      var ks = Object.keys(via).map(Number).sort(function (x, y) { return x - y; });
+      STEP2[a] = ks.map(function (k) { return [k, via[k]]; });
+    }
+  })();
+  function behind(at, tg) { return BEHIND[at * 64 + tg]; }
+
+  // ---------------- terrain
+  function Terrain(hills, mounts) {
+    var Tr = { hills: hills.slice(), mounts: mounts.slice(), hill: new Array(NC).fill(false), mount: new Array(NC).fill(false), pos: [[], []] };
+    hills.forEach(function (h) { Tr.hill[h] = true; });
+    mounts.forEach(function (m) { Tr.mount[m] = true; });
+    for (var o = 0; o < 2; o++) for (var c = 0; c < NC; c++) {
+      var r = Math.floor(c / N), cc = c % N, adv = o === 0 ? r : NR - 1 - r;
+      var v = 1.0 + 0.4 * Math.min(adv, NR - 3);
+      for (var i = 0; i < hills.length; i++) { var h = hills[i]; var dist = Math.abs(Math.floor(h / N) - r) + Math.abs(h % N - cc); v += Math.max(0, 3 - dist) * 0.5; }
+      Tr.pos[o][c] = v;
+    }
+    return Tr;
+  }
+  function rngFrom(seed) {             // mulberry32
+    var a = seed >>> 0;
+    return function () { a = (a + 0x6D2B79F5) >>> 0; var t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  }
+  function sample(rng, arr, k) {       // k distinct picks, in pick order
+    var pool = arr.slice(), out = [];
+    for (var i = 0; i < k; i++) { var j = Math.floor(rng() * pool.length); out.push(pool[j]); pool.splice(j, 1); }
+    return out;
+  }
+  // gen_terrain: centre hill + 2 mirrored hill pairs + 1 mirrored mountain pair in rows 2-4, 180-degree symmetric
+  function genTerrain(seed) {
+    var rng = rngFrom(seed), centre = 3 * N + 3, cand = [];
+    for (var c = 2 * N; c < 5 * N; c++) if (c !== centre && c < NC - 1 - c) cand.push(c);
+    var picks = sample(rng, cand, 3), hills = [centre];
+    for (var i = 0; i < 2; i++) hills.push(picks[i], NC - 1 - picks[i]);
+    return Terrain(hills, [picks[2], NC - 1 - picks[2]]);
+  }
+  function troopsOf(h) { var n = 0; for (var t = 0; t < NT; t++) n += h[t] * MUSTER_TROOPS[t]; return n; }
+  function musterOk(h) {               // legal v1.3 muster: within the pool, King present, at most BUDGET troops
+    for (var t = 0; t < NT; t++) if (h[t] < 0 || h[t] > POOL[t]) return false;
+    return h[KING] === 1 && troopsOf(h) <= BUDGET;
+  }
+  function canAdd(h, t) { return t !== KING && h[t] < POOL[t] && troopsOf(h) + MUSTER_TROOPS[t] <= BUDGET; }
+  // v13 bots' troop muster (round5/pa.py rand_hand with rule "tp" = league.py muster, policy "random"): shuffle the 19
+  // non-King cards of the pool, then take each in turn while the total stays within the budget.  King always comes.
+  function randomMuster(rng) {
+    var h = new Array(NT).fill(0), cards = [], spent = 0, t, k;
+    h[KING] = 1;
+    for (t = 0; t < NT; t++) if (t !== KING) for (k = 0; k < POOL[t]; k++) cards.push(t);
+    for (var i = cards.length - 1; i > 0; i--) { var j = Math.floor(rng() * (i + 1)); var x = cards[i]; cards[i] = cards[j]; cards[j] = x; }
+    for (i = 0; i < cards.length; i++) { t = cards[i]; if (spent + MUSTER_TROOPS[t] <= BUDGET) { h[t]++; spent += MUSTER_TROOPS[t]; } }
+    return h;
+  }
+
+  // ---------------- state
+  function newState(h0, h1, first) {
+    return { b: new Array(NC).fill(null), hands: [h0.slice(), h1.slice()], locks: [[], []], decks: [[3, 6, 3], [3, 6, 3]],
+      capval: [0, 0], capn: [0, 0], lost: [new Array(NT).fill(0), new Array(NT).fill(0)], onboard: [0, 0], hold: [0, 0],
+      ply: 0, tm: first || 0, passes: 0, winner: null, reason: null, ncap: 0, nrout: 0, nsoul: 0, kingdead: -1, turnno: 0 };
+  }
+  function copy(s) {
+    return { b: s.b.slice(), hands: [s.hands[0].slice(), s.hands[1].slice()], locks: [s.locks[0].slice(), s.locks[1].slice()],
+      decks: s.decks, capval: s.capval.slice(), capn: s.capn.slice(), lost: [s.lost[0].slice(), s.lost[1].slice()],
+      onboard: s.onboard.slice(), hold: s.hold.slice(), ply: s.ply, tm: s.tm, passes: s.passes, winner: s.winner, reason: s.reason,
+      ncap: s.ncap, nrout: s.nrout, nsoul: s.nsoul, kingdead: s.kingdead, turnno: s.turnno };
+  }
+  function avail(s, o, t) {
+    var n = s.hands[o][t], L = s.locks[o];
+    if (n && L.length) for (var i = 0; i < L.length; i++) if (L[i][0] === t && L[i][1] >= s.ply) n--;
+    return n;
+  }
+  // one-shot pull: draw from o's 12-card deck (counts of -1, 0, +1); reshuffle when empty.  Mutates s.decks (by replacement).
+  function applyPull(s, o, v) {
+    var dk = s.decks[o].slice();
+    if (dk[0] + dk[1] + dk[2] === 0) dk = [3, 6, 3];
+    dk[v + 1]--;
+    s.decks = o === 0 ? [dk, s.decks[1]] : [s.decks[0], dk];
+    return v;
+  }
+  function drawPull(s, o, rng) {
+    var dk = s.decks[o], n = dk[0] + dk[1] + dk[2];
+    if (n === 0) { dk = [3, 6, 3]; n = 12; }
+    var x = Math.floor(rng() * n), i = x < dk[0] ? 0 : (x < dk[0] + dk[1] ? 1 : 2);
+    return applyPull(s, o, i - 1);
+  }
+
+  // ---------------- combat
+  var X0 = 0, SUP = 0, ATOT = 0, DTOT = 0, PARTS = null, WANTPARTS = false;
+  var GR = [];     // cells of the cards whose bonus counted in the last margin() (engine GR_): ranged Archers, Captainlords
+  function margin(b, Tr, att, at, tg, exclude, withRl, dm) {
+    var de = b[tg], o = att[0], sup = 0, i, n, x, nb = NEI[tg], parts = WANTPARTS ? {} : null;
+    GR.length = 0;
+    for (i = 0; i < nb.length; i++) { n = nb[i]; if (n !== at && n !== exclude) { x = b[n]; if (x !== null && x[0] === o) sup++; } }
+    X0 = 0;
+    if (withRl) {
+      var rg = RANGED[tg];
+      for (i = 0; i < rg.length; i++) {
+        var ac = rg[i][0], mid = rg[i][1]; x = b[ac];
+        if (x !== null && x[1] === AR && x[0] === o && ac !== exclude && ac !== at) {
+          var y = b[mid];
+          if ((y === null || y[0] === o || mid === exclude) && !Tr.mount[mid]) { sup++; X0++; GR.push(ac); }
+        }
+      }
+    }
+    var a = RANK[att[1]] + sup + att[2] + (Tr.hill[at] ? 1 : 0) + (dm || 0);
+    if (parts) { parts.rank = RANK[att[1]]; parts.sup = sup; parts.archers = X0; parts.extra = att[2]; parts.hill = Tr.hill[at] ? 1 : 0; parts.captain = 0; parts.squire = 0; }
+    var bh = behind(at, tg);
+    var dv = RANK[de[1]] + de[2] + de[3] + (Tr.hill[tg] ? 1 : 0), dcap = 0, dbh = 0;
+    if (bh >= 0 && bh !== exclude) { x = b[bh]; if (x !== null && x[0] === de[0]) { dv++; dbh = 1; } }
+    if (withRl) {
+      for (i = 0; i < nb.length; i++) { x = b[nb[i]]; if (x !== null && x[0] === de[0] && x[1] === CP) { dv++; dcap = 1; GR.push(nb[i]); break; } }
+      if (att[1] !== CP) {
+        var na = NEI[at];
+        for (i = 0; i < na.length; i++) { n = na[i]; if (n !== exclude) { x = b[n]; if (x !== null && x[0] === o && x[1] === CP) { a++; if (parts) parts.captain = 1; GR.push(n); break; } } }
+      }
+      if (de[1] === SP) dv++;
+      if (att[1] === KN || att[1] === CH) {
+        na = NEI[at];
+        for (i = 0; i < na.length; i++) { n = na[i]; if (n !== exclude) { x = b[n]; if (x !== null && x[0] === o && x[1] === SQ) { a++; if (parts) { parts.squire = 1; parts.squireCell = n; } break; } } }
+      }
+    }
+    if (parts) { parts.grantors = GR.slice(); parts.drank = RANK[de[1]]; parts.dbehind = dbh; parts.ddef = de[3]; parts.dhill = Tr.hill[tg] ? 1 : 0; parts.dcap = dcap; parts.dbrace = (withRl && de[1] === SP) ? 1 : 0; PARTS = parts; }
+    var m = a - dv;
+    if (m === 0 && de[1] === SP && de[3]) m = -1;     // a defensive Spearman wins ties (engine SPEAR_SPECIAL)
+    SUP = sup; ATOT = a; DTOT = dv;
+    return m;
+  }
+  function kingTakeable(b, att, at, tg, exclude) {
+    var t = att[1];
+    if (t !== KN && t !== CH && t !== CP && t !== LN) return false;
+    var k = 1, o = att[0], nb = NEI[tg];
+    for (var i = 0; i < nb.length; i++) { var n = nb[i]; if (n !== at && n !== exclude) { var x = b[n]; if (x !== null && x[0] === o && KOB[x[1]]) k++; } }
+    return k >= 3;
+  }
+  function canAttack(b, Tr, att, at, tg, exclude) {
+    var de = b[tg], t = att[1], blind = !de[4];
+    if (blind && t === KING) return null;
+    if (de[1] === KING) {
+      if (kingTakeable(b, att, at, tg, exclude)) return 99;
+      if (!blind) return null;
+      if (t === SQ) { margin(b, Tr, att, at, tg, exclude, false, 0); if (SUP === 0) return null; }
+      return FAIL;
+    }
+    if (t === KING || t === SOUL) return 99;
+    var m = margin(b, Tr, att, at, tg, exclude, true, 0);
+    if (t === SQ && SUP === 0) return null;
+    return m;
+  }
+  function attackOpts(b, Tr, att, at, exclude, fn) {
+    var o = att[0], nb = NEI[at];
+    for (var i = 0; i < nb.length; i++) {
+      var tg = nb[i], x = b[tg];
+      if (x !== null && x[0] !== o) {
+        var m = canAttack(b, Tr, att, at, tg, exclude);
+        if (m === null || (m <= -2 && x[4])) continue;     // certain self-capture on a revealed card is never offered
+        fn(tg, 1, m);
+      }
+    }
+  }
+  function enemiesTouching(b, cell, enemy) {
+    var k = 0, nb = NEI[cell];
+    for (var i = 0; i < nb.length; i++) { var x = b[nb[i]]; if (x !== null && x[0] === enemy) k++; }
+    return k;
+  }
+  function toHand(s, card, mover) {
+    var o = card[0];
+    s.hands[o][card[1]]++;
+    s.locks[o].push([card[1], s.ply + (o === mover ? 2 : 1), card[4] ? 1 : 0]);   // [type, expiry ply, public?]
+    s.onboard[o]--;
+  }
+  function capture(s, card, by) {
+    s.capval[by] += TROOPS[card[1]]; s.capn[by]++; s.lost[card[0]][card[1]]++; s.onboard[card[0]]--; s.ncap++;
+    if (card[1] === KING) { s.kingdead = card[0]; s.winner = by; s.reason = "king"; }
+    if (s.hold[1 - by] > 0) s.hold[1 - by] = 0;           // Reset
+  }
+  function rev(x) { return x[4] ? x : [x[0], x[1], x[2], x[3], 1]; }
+
+  var LAST = null;     // details of the last fight resolved (for the UI log); set by resolve()
+  function resolve(s, Tr, at, tg, dm, extra) {
+    var b = s.b, att = b[at], de = b[tg], me = att[0], ev = { at: at, tg: tg, att: att[1], def: de[1], defWasFd: !de[4], attWasFd: !att[4], owner: me, extra: extra || 0 };
+    LAST = ev;
+    if (!att[4]) att = b[at] = rev(att);
+    if (!de[4]) de = b[tg] = rev(de);
+    if (de[1] === KING) {
+      if (kingTakeable(b, att, at, tg, -1)) {
+        var nb = NEI[tg];
+        for (var i = 0; i < nb.length; i++) { var x = b[nb[i]]; if (x !== null && x[0] === me && KOB[x[1]] && !x[4]) b[nb[i]] = rev(x); }
+        b[tg] = null; capture(s, de, me); ev.res = "kingtaken";
+      } else ev.res = "kingreveal";
+      return;
+    }
+    if (att[1] === SOUL) {
+      b[at] = null; b[tg] = null;
+      s.capval[me] += TROOPS[de[1]]; s.capval[1 - me] += TROOPS[SOUL]; s.capn[me]++;
+      s.lost[1 - me][de[1]]++; s.lost[me][SOUL]++; s.onboard[0]--; s.onboard[1]--; s.nsoul++;
+      if (s.hold[1 - me] > 0) s.hold[1 - me] = 0;
+      ev.res = "soulcast"; return;
+    }
+    if (att[1] === KING) {
+      b[tg] = null; capture(s, de, me);
+      b[tg] = [me, KING, att[2], 1, 1]; b[at] = null; ev.res = "kingcapture"; return;
+    }
+    var m = margin(b, Tr, att, at, tg, -1, true, dm), sup = SUP, x0 = X0;
+    ev.m = m; ev.a = ATOT; ev.d = DTOT; ev.sup = sup; ev.revealed = [];    // revealed: [cell, owner, type, why] turned face-up by a bonus
+    if (BONUS_REVEAL) for (i = 0; i < GR.length; i++) {       // v1.3: every face-down card whose bonus counted turns face-up
+      x = b[GR[i]];
+      if (x !== null && !x[4]) { b[GR[i]] = rev(x); ev.revealed.push([GR[i], x[0], x[1], x[1] === AR ? "range" : "captain"]); }
+    }
+    if (att[1] === KN || att[1] === CH) {
+      var na = NEI[at];
+      for (i = 0; i < na.length; i++) { x = b[na[i]]; if (x !== null && x[0] === me && x[1] === SQ) { if (!x[4]) { b[na[i]] = rev(x); ev.revealed.push([na[i], me, SQ, "attend"]); } break; } }
+    }
+    var dGone = false, aGone = false, trapped;
+    if (m >= 2) { b[tg] = null; dGone = true; capture(s, de, me); ev.res = "capture"; }
+    else if (m === 1) {
+      trapped = enemiesTouching(b, tg, me) >= 2 || x0 > 0;
+      b[tg] = null; dGone = true;
+      if (trapped) { capture(s, de, me); ev.res = "capture"; } else { toHand(s, de, me); s.nrout++; ev.res = "rout"; }
+    } else if (m === 0) { ev.res = "hold"; }
+    else if (m === -1) {
+      trapped = enemiesTouching(b, at, 1 - me) >= 2;
+      b[at] = null; aGone = true;
+      if (trapped) { capture(s, att, 1 - me); ev.res = "attcaptured"; } else { toHand(s, att, me); s.nrout++; ev.res = "attrouted"; }
+    } else { b[at] = null; aGone = true; capture(s, att, 1 - me); ev.res = "attcaptured"; }
+    if (dGone && !aGone) { b[tg] = [me, att[1], att[2], 0, 1]; b[at] = null; }
+  }
+  function hillsOf(s, Tr, o) {
+    var k = 0;
+    for (var i = 0; i < Tr.hills.length; i++) { var x = s.b[Tr.hills[i]]; if (x !== null && x[0] === o && x[1] !== KING) k++; }
+    return k;
+  }
+  function adjudicate(s, Tr, reason) {
+    var h = [hillsOf(s, Tr, 0), hillsOf(s, Tr, 1)];
+    if (h[0] !== h[1]) { s.winner = h[0] > h[1] ? 0 : 1; s.reason = reason + "-hills"; }
+    else if (s.capval[0] !== s.capval[1]) { s.winner = s.capval[0] > s.capval[1] ? 0 : 1; s.reason = reason + "-captures"; }
+    else { s.winner = 2; s.reason = reason + "-draw"; }
+  }
+  function kingUpkeep(s, me) {
+    var b = s.b;
+    for (var c = 0; c < NC; c++) {
+      var x = b[c];
+      if (x === null || x[1] !== KING || !x[4]) continue;
+      var o = x[0], hs = [], nb = NEI[c], i;
+      for (i = 0; i < nb.length; i++) { var y = b[nb[i]]; if (y !== null && y[0] !== o && KOB[y[1]]) hs.push(nb[i]); }
+      if (hs.length < 2) continue;
+      if (o !== me) for (i = 0; i < hs.length; i++) { if (!b[hs[i]][4]) b[hs[i]] = rev(b[hs[i]]); }
+      if (!x[3]) {
+        var k = 0; for (i = 0; i < hs.length; i++) if (b[hs[i]][4]) k++;
+        if (k >= 2) b[c] = [x[0], x[1], x[2], 1, 1];
+      }
+    }
+  }
+  function kingPinnedNow(b, c, me) {
+    var k = 0, nb = NEI[c];
+    for (var i = 0; i < nb.length; i++) { var y = b[nb[i]]; if (y !== null && y[0] !== me && KOB[y[1]] && y[4]) k++; }
+    return k >= 2;
+  }
+
+  // play: mark = null or [attackerPull, defenderPull]
+  function play(s0, Tr, a, mark) {
+    var s = copy(s0), b = s.b, me = s.tm, k = a[0], dm = mark ? mark[0] - mark[1] : 0, x, i;
+    LAST = null;
+    if (k === D) {
+      s.hands[me][a[1]]--;
+      b[a[2]] = [me, a[1], 0, 0, 0]; s.onboard[me]++;
+      if (a[3] >= 0) resolve(s, Tr, a[2], a[3], dm, 0);
+    } else if (k === M) {
+      var fr = a[1], to = a[2], tg = a[3];
+      x = b[fr]; b[fr] = null; b[to] = x;
+      var lance = (!ISNEI[fr][to] && x[1] === LN) ? 1 : 0;
+      if (a.length > 5 && a[5] >= 0) { var y = b[a[5]]; if (y !== null && !y[4]) b[a[5]] = rev(y); }
+      if (tg >= 0) resolve(s, Tr, to, tg, dm + lance + MARCH, lance + MARCH);
+    } else if (k === A) {
+      resolve(s, Tr, a[1], a[2], dm, 0);
+    } else if (k === T) {
+      var cells = a[1];
+      for (i = 0; i < cells.length; i++) {
+        x = b[cells[i]];
+        if (x[1] === KING && cells.length > 1) continue;
+        b[cells[i]] = [x[0], x[1], x[2], a[2] < 0 ? 1 - x[3] : a[2], x[4]];
+      }
+    } else if (k === R) {
+      x = b[a[1]]; b[a[1]] = null; toHand(s, x, me);
+    } else if (k === G) {
+      for (var c = 0; c < NC; c++) { x = b[c]; if (x !== null && x[0] === me && enemiesTouching(b, c, 1 - me) >= 2) { b[c] = null; capture(s, x, 1 - me); } }
+      if (s.winner === null) for (c = 0; c < NC; c++) { x = b[c]; if (x !== null && x[0] === me) { b[c] = null; s.hands[me][x[1]]++; s.onboard[me]--; } }
+      s.winner = 1 - me; if (s.reason === null) s.reason = "giveup";
+    }
+    // ---- end of turn
+    kingUpkeep(s, me);
+    s.passes = k === P ? s.passes + 1 : 0;
+    var clk = s.ply;
+    var hm = hillsOf(s, Tr, me), ho = hillsOf(s, Tr, 1 - me);
+    if (hm > ho || (hm === ho && s.capn[me] > s.capn[1 - me])) {
+      if (s.hold[1 - me] > 0) s.hold[1 - me]--; else s.hold[me]++;
+    }
+    if (s.winner === null) {
+      if (s.onboard[me] === 0 && clk >= 2) { s.winner = 1 - me; s.reason = "wiped"; }
+      else if (s.hold[me] >= DOM_TARGET) { s.winner = me; s.reason = "dominance"; }
+      else if (s.passes >= 2) adjudicate(s, Tr, "pass");
+      else if (s.ply + 1 >= CAP) adjudicate(s, Tr, "cap");
+    }
+    if (s.locks[me].length) s.locks[me] = s.locks[me].filter(function (l) { return l[1] > clk; });
+    s.ply++; s.turnno++; s.tm = 1 - me;
+    return s;
+  }
+
+  // ---------------- move generation
+  function scoutMove(out, b, Tr, x, c, to, me, attacks) {
+    var fds = [], nb = NEI[to];
+    for (var i = 0; i < nb.length; i++) { var y = b[nb[i]]; if (y !== null && y[0] !== me && !y[4]) fds.push(nb[i]); }
+    if (fds.length) for (i = 0; i < fds.length; i++) out.push([[M, c, to, -1, 0, fds[i]], 12]);
+    else out.push([[M, c, to, -1, 0], 10]);
+    if (attacks) attackOpts(b, Tr, x, to, c, function (tg, adv, m) { out.push([[M, c, to, tg, adv], 100 + m]); });
+  }
+  function gen(s, Tr, attacks) {
+    if (attacks === undefined) attacks = true;
+    var b = s.b, me = s.tm, mount = Tr.mount, out = [], own = [], c, i, x, t;
+    for (c = 0; c < NC; c++) if (b[c] !== null && b[c][0] === me) own.push(c);
+    var types = [];
+    for (t = 0; t < NT; t++) if (avail(s, me, t) > 0) types.push(t);
+    if (types.length) {
+      var cellset = new Array(NC).fill(false);
+      for (i = 0; i < N; i++) { c = HOME[me][i]; if (b[c] === null && !mount[c]) cellset[c] = true; }
+      for (i = 0; i < own.length; i++) { var nb = NEI[own[i]]; for (var j = 0; j < nb.length; j++) if (b[nb[j]] === null && !mount[nb[j]]) cellset[nb[j]] = true; }
+      for (c = 0; c < NC; c++) {
+        if (!cellset[c]) continue;
+        var hasenemy = false;
+        if (attacks) { var nb2 = NEI[c]; for (j = 0; j < nb2.length; j++) { x = b[nb2[j]]; if (x !== null && x[0] !== me) { hasenemy = true; break; } } }
+        for (i = 0; i < types.length; i++) {
+          t = types[i];
+          if (t === KING && Tr.hill[c]) continue;
+          out.push([[D, t, c, -1, 0], 20]);
+          if (hasenemy) (function (t, cell) {
+            attackOpts(b, Tr, [me, t, 0, 0, 0], cell, -1, function (tg, adv, m) { out.push([[D, t, cell, tg, adv], 100 + m]); });
+          })(t, c);
+        }
+      }
+    }
+    for (i = 0; i < own.length; i++) (function (c) {
+      var x = b[c], d, to;
+      if (x[1] === KING) {
+        if (x[3]) { if (!kingPinnedNow(b, c, me)) out.push([[T, [c], -1], 5]); return; }
+      }
+      if (!x[3]) {
+        var xm = [x[0], x[1], x[2] + MARCH, x[3], x[4]];
+        if (attacks) attackOpts(b, Tr, x, c, -1, function (tg, adv, m) { out.push([[A, c, tg, adv], 100 + m]); });
+        for (d = 0; d < 4; d++) {
+          to = STEP[c][d];
+          if (to < 0 || b[to] !== null || mount[to]) continue;
+          if (x[1] === KING && Tr.hill[to]) continue;
+          if (x[1] === SC) { scoutMove(out, b, Tr, xm, c, to, me, attacks); continue; }
+          out.push([[M, c, to, -1, 0], 10]);
+          if (attacks) (function (to) { attackOpts(b, Tr, xm, to, c, function (tg, adv, m) { out.push([[M, c, to, tg, adv], 100 + m]); }); })(to);
+        }
+        if (x[1] === LN) {
+          for (d = 0; d < 4; d++) {
+            var v = STEP[c][d];
+            if (v < 0 || b[v] !== null || mount[v]) continue;
+            to = STEP[v][d];
+            if (to < 0 || b[to] !== null || mount[to]) continue;
+            out.push([[M, c, to, -1, 0], 10]);
+            if (attacks) (function (to) {
+              attackOpts(b, Tr, [x[0], x[1], x[2] + 1 + MARCH, x[3], x[4]], to, c, function (tg, adv, m) { out.push([[M, c, to, tg, adv], 100 + m]); });
+            })(to);
+          }
+        }
+        if (x[1] === SC) {
+          var s2 = STEP2[c];
+          for (var q = 0; q < s2.length; q++) {
+            to = s2[q][0]; var vias = s2[q][1], ok = false;
+            if (b[to] !== null || mount[to]) continue;
+            for (var w = 0; w < vias.length; w++) if (b[vias[w]] === null && !mount[vias[w]]) { ok = true; break; }
+            if (ok) scoutMove(out, b, Tr, xm, c, to, me, attacks);
+          }
+        }
+      }
+      if (x[1] !== KING) {
+        out.push([[T, [c], -1], 5]);
+        if (enemiesTouching(b, c, 1 - me) < 2) out.push([[R, c], 3]);
+      }
+    })(own[i]);
+    if (own.length >= 2) {
+      var ownset = new Array(NC).fill(false);
+      for (i = 0; i < own.length; i++) ownset[own[i]] = true;
+      for (var dd = 0; dd <= 2; dd += 2) {
+        var back = dd + 1;
+        for (i = 0; i < own.length; i++) {
+          c = own[i];
+          var pb = STEP[c][back];
+          if (pb >= 0 && ownset[pb]) continue;
+          var line = [c], n = STEP[c][dd];
+          while (n >= 0 && ownset[n]) { line.push(n); n = STEP[n][dd]; }
+          if (line.length < 2) continue;
+          var nready = 0; for (j = 0; j < line.length; j++) if (!b[line[j]][3]) nready++;
+          if (nready >= 2) out.push([[T, line, 1], 5]);
+          if (line.length - nready >= 2) out.push([[T, line, 0], 5]);
+        }
+      }
+    }
+    out.push([[P], 0]);
+    return out;
+  }
+  function isAttack(a) { return ((a[0] === D || a[0] === M) && a[3] >= 0) || a[0] === A; }
+  function attackCells(s, a) {   // [attacker cell before the move / deploy cell, target cell]
+    if (a[0] === D) return [a[2], a[3]];
+    if (a[0] === M) return [a[1], a[3]];
+    return [a[1], a[2]];
+  }
+  // pulls needed for an attack: [attackerPulls, defenderPulls] (booleans).  Only face-down cards pull; Kings and Soulcasters never fight.
+  function pullsFor(s, a) {
+    if (!isAttack(a)) return null;
+    var tgc = a[0] === A ? a[2] : a[3], attT = a[0] === D ? a[1] : s.b[a[1]][1], attRev = a[0] === D ? 0 : s.b[a[1]][4], de = s.b[tgc];
+    if (attT === SOUL || attT === KING || de[1] === KING) return null;
+    return [!attRev, !de[4]];
+  }
+  function fmt(a) {
+    if (a[0] === T) return "T," + a[1].join(".") + "," + a[2];
+    var L = { 0: "D", 1: "M", 2: "A", 4: "R", 5: "P", 7: "G" }[a[0]];
+    return [L].concat(a.slice(1)).join(",");
+  }
+  function cn(c) { return "abcdefg"[c % N] + (Math.floor(c / N) + 1); }
+
+  // combat preview from `viewer`'s knowledge: the opponent's face-down cards are replaced by a featureless stand-in,
+  // so nothing hidden leaks into the numbers.  Returns null for non-fights.
+  function preview(s, Tr, a, viewer) {
+    if (!isAttack(a)) return null;
+    var b = s.b.map(function (x) { return (x !== null && x[0] !== viewer && !x[4]) ? [x[0], GD, x[2], x[3], 0] : x; });
+    var me = s.tm, at, tg, extra = 0, att;
+    if (a[0] === D) { at = a[2]; tg = a[3]; att = [me, a[1], 0, 0, 0]; b[at] = att; }
+    else if (a[0] === M) { at = a[2]; tg = a[3]; att = b[a[1]]; b[a[1]] = null; b[at] = att; extra = MARCH + ((!ISNEI[a[1]][a[2]] && att[1] === LN) ? 1 : 0); }
+    else { at = a[1]; tg = a[2]; att = b[at]; }
+    var de = b[tg], known = de[1] !== GD;
+    var out = { att: att[1], at: at, tg: tg, defKnown: known, def: known ? de[1] : -1, march: a[0] === M ? MARCH : 0, lance: a[0] === M ? extra - MARCH : 0,
+      canTakeKing: kingTakeable(b, att, at, tg, -1) };
+    if (att[1] === SOUL) { out.kind = known ? "soulcast" : "soulblind"; return out; }
+    if (known && de[1] === KING) { out.kind = out.canTakeKing ? "kingtake" : "kingreveal"; return out; }
+    if (att[1] === KING) { out.kind = "kingattack"; return out; }
+    WANTPARTS = true;
+    margin(b, Tr, [att[0], att[1], extra, att[3], att[4]], at, tg, -1, true, 0);
+    WANTPARTS = false;
+    var p = PARTS;
+    out.kind = "fight"; out.parts = p;
+    out.a = p.rank + p.sup + p.extra + p.hill + p.captain + p.squire;
+    out.dknown = p.dbehind + p.ddef + p.dhill + p.dcap;
+    out.d = known ? out.dknown + p.drank + p.dbrace : null;
+    out.sup = p.sup;
+    out.pulls = [!att[4], !de[4]];     // only face-down cards pull (identity-free: a hidden King never fights, but that would leak)
+    out.attTrapped = enemiesTouching(b, at, 1 - att[0]) >= 2;
+    out.spearTie = known && de[1] === SP && !!de[3];
+    return out;
+  }
+  function classify(m, sup, spearTie) {   // result class from the attacker's margin
+    if (m === 0 && spearTie) m = -1;
+    if (m >= 2 || (m === 1 && sup >= 1)) return "capture";
+    if (m === 1) return "rout";
+    if (m === 0) return "hold";
+    if (m === -1) return "attrouted";
+    return "attcaptured";
+  }
+
+  // ---------------- evaluation (bots.py evaluate, Balanced weights; dfn configurable)
+  var WIN = 100000.0;
+  var VAL = [13.0, 10.0, 17.0, 22.0, 0.0, 28.0, 12.0, 11.0, 18.0, 24.0, 19.0, 12.0, 24.0];
+  var W = { hill: 6.0, mark: 2.0, dfn: 0.0, king_hunt: 1.0, sup: 0.8, reserve: 4.0, thr_stm: 0.7, thr_rest: 0.1, thr_opp: 0.25, rout: 0.35,
+    pos: 1.0, adj: 15.0, adj_clock: 60.0, hunters: 20.0, hunters3: 8.0, dom: 150.0, pin_fear: 70.0, domlead: 12.0 };
+  function evaluate(s, Tr, w) {
+    var b = s.b, hill = Tr.hill, sc = [0, 0], best = [0, 0], tot = [0, 0], nh = [0, 0], o, t, c, i;
+    for (o = 0; o < 2; o++) { var h = s.hands[o]; for (t = 0; t < NT; t++) if (h[t] && t !== KING) sc[o] += h[t] * (VAL[t] + w.reserve); }
+    var kn = [s.hands[0][KN] + s.hands[0][CH] + s.hands[0][CP] + s.hands[0][LN], s.hands[1][KN] + s.hands[1][CH] + s.hands[1][CP] + s.hands[1][LN]];
+    var kingc = [-1, -1], soft = [[], []], pos = Tr.pos;
+    for (c = 0; c < NC; c++) {
+      var x = b[c];
+      if (x === null) continue;
+      o = x[0]; t = x[1]; var df = x[3];
+      if (t === KN || t === CH || t === CP || t === LN) kn[o]++;
+      else if (t === KING) kingc[o] = c;
+      else soft[o].push(c);
+      var v = VAL[t] + w.mark * x[2] + w.pos * pos[o][c];
+      if (df) v += w.dfn;
+      if (hill[c] && t !== KING) { v += w.hill; nh[o]++; }
+      var fr = 0, knEn = 0, nb = NEI[c];
+      for (i = 0; i < nb.length; i++) {
+        var n = nb[i], y = b[n];
+        if (y === null) continue;
+        if (y[0] === o) { fr++; continue; }
+        if (KOB[y[1]]) knEn++;
+        if (df) continue;
+        var yt = y[1], g = 0.0;
+        if (yt === KING) {
+          if (t === KN || t === CH || t === CP || t === LN) {
+            var k = 0, nn = NEI[n];
+            for (var q = 0; q < nn.length; q++) { var z = b[nn[q]]; if (z !== null && z[0] === o && KOB[z[1]]) k++; }
+            if (k >= 3) g = WIN / 4;
+          }
+        } else if (t === KING) g = VAL[yt];
+        else if (t === SOUL) g = VAL[yt] - VAL[SOUL];
+        else {
+          var m = margin(b, Tr, x, c, n, -1, true, 0), sup = SUP;
+          if (t === SQ && sup === 0) m = -9;
+          if (m >= 2) g = VAL[yt];
+          else if (m === 1) g = sup >= 1 ? VAL[yt] : w.rout * VAL[yt];
+        }
+        if (g > 0) { tot[o] += g; if (g > best[o]) best[o] = g; }
+      }
+      v += w.sup * (fr < 2 ? fr : 2);
+      if (t === KING) {
+        if (knEn === 1) v -= 4; else if (knEn === 2) v -= w.pin_fear; else if (knEn >= 3) v -= 80;
+      }
+      sc[o] += v;
+    }
+    for (o = 0; o < 2; o++) {
+      var kc = kingc[o];
+      if (kc >= 0 && soft[1 - o].length) {
+        var kr = Math.floor(kc / N), kcc = kc % N, dmin = NR, so = soft[1 - o];
+        for (i = 0; i < so.length; i++) { var dq = Math.abs(Math.floor(so[i] / N) - kr) + Math.abs(so[i] % N - kcc) - 1; if (dq < dmin) dmin = dq; }
+        sc[o] -= w.king_hunt * (kn[1 - o] >= 2 ? 1.0 : 3.0) * dmin;
+      }
+      if (kn[o] >= 2) sc[o] += w.hunters + (kn[o] >= 3 ? w.hunters3 : 0);
+    }
+    var me = s.tm, op = 1 - me, val = sc[me] - sc[op], tgd = DOM_TARGET;
+    val += w.dom * (Math.pow(s.hold[me] / tgd, 1.5) - Math.pow(s.hold[op] / tgd, 1.5));
+    var dl = nh[me] - nh[op];
+    if (dl === 0) dl = s.capn[me] - s.capn[op];
+    if (dl) { var urg = 1.0 + 3.0 * Math.max(s.hold[me], s.hold[op]) / tgd; val += (dl > 0 ? w.domlead : -w.domlead) * urg; }
+    var lead = nh[me] - nh[op];
+    if (lead === 0) lead = s.capval[me] - s.capval[op];
+    if (lead) val += (lead > 0 ? w.adj : -w.adj) * (1.0 + s.ply / w.adj_clock);
+    val += w.thr_stm * best[me] + w.thr_rest * (tot[me] - best[me]);
+    val -= w.thr_opp * best[op];
+    return val;
+  }
+  function terminalValue(s, me, root) {
+    if (s.winner === 2) return (root === null || root === undefined || root === me) ? -40.0 : 40.0;
+    return s.winner === me ? (WIN - s.ply) : -(WIN - s.ply);
+  }
+  function Searcher(Tr, w, deadline) { this.Tr = Tr; this.w = w; this.nodes = 0; this.root = null; this.deadline = deadline || 0; this.aborted = false; }
+  Searcher.prototype.negamax = function (s, depth, alpha, beta) {
+    this.nodes++;
+    if (s.winner !== null) return terminalValue(s, s.tm, this.root);
+    if (depth <= 0) {
+      if (s.passes === 1) { var t2 = play(s, this.Tr, [P], null); if (t2.winner === s.tm) return WIN - s.ply - 1; }
+      return evaluate(s, this.Tr, this.w);
+    }
+    if (this.deadline && (this.nodes & 255) === 0 && Date.now() > this.deadline) this.aborted = true;
+    var moves = gen(s, this.Tr);
+    moves.sort(function (p, q) { return q[1] - p[1]; });
+    var best = -1e18;
+    for (var i = 0; i < moves.length; i++) {
+      var ch = play(s, this.Tr, moves[i][0], null);
+      var v = -this.negamax(ch, depth - 1, -beta, -alpha);
+      if (v > best) { best = v; if (v > alpha) { alpha = v; if (alpha >= beta) break; } }
+      if (this.aborted) break;
+    }
+    return best;
+  };
+
+  // ---------------- fair bot (DetBot): never reads the opponent's face-down cards or barrack.
+  // Each sample deals the opponent's unseen cards (face-down board cards + barrack) at random from what the 20-card pool
+  // could still hold after the public information (revealed cards, cards out of the match), King always included.
+  // v1.3: a sampled army must also be a legal troop muster (at most BUDGET troops in all), as the v13 sim's fair bot
+  // samples among legal musters under the rule.  Done in one feasibility-aware pass (below), never by redrawing.
+  function sampleWorld(s, rng) {
+    var me = s.tm, op = 1 - me, b = s.b, fd = [], seen = s.lost[op].slice(), c, t, x;
+    for (c = 0; c < NC; c++) { x = b[c]; if (x !== null && x[0] === op) { if (x[4]) seen[x[1]]++; else fd.push(c); } }
+    var hs = 0; for (t = 0; t < NT; t++) hs += s.hands[op][t];
+    var nun = fd.length + hs, rem = [], cand = [], k, i, j, tmp;
+    if (seen[KING] === 0) { rem.push(KING); nun--; }
+    for (t = 0; t < NT; t++) if (t !== KING) for (k = seen[t]; k < POOL[t]; k++) cand.push(t);
+    // feasibility-aware single pass: take the shuffled cards in turn, skipping any that would leave no legal way to fill
+    // the remaining slots within the budget (always completes when a legal army exists; else the cheapest set).
+    for (i = cand.length - 1; i > 0; i--) { j = Math.floor(rng() * (i + 1)); tmp = cand[i]; cand[i] = cand[j]; cand[j] = tmp; }
+    var left = new Array(NT).fill(0), byCost = [], pick = [], spent = troopsOf(seen), need = Math.min(nun, cand.length);
+    for (i = 0; i < cand.length; i++) left[cand[i]]++;
+    for (t = 0; t < NT; t++) byCost.push(t);
+    byCost.sort(function (p, q) { return MUSTER_TROOPS[p] - MUSTER_TROOPS[q]; });
+    function cheapest(k) { var c2 = 0; for (var q = 0; q < NT && k > 0; q++) { var u = byCost[q], m = Math.min(k, left[u]); c2 += m * MUSTER_TROOPS[u]; k -= m; } return c2; }
+    var feasible = spent + cheapest(need) <= BUDGET;
+    for (i = 0; i < cand.length && pick.length < need; i++) {
+      t = cand[i]; left[t]--;
+      if (!feasible || spent + MUSTER_TROOPS[t] + cheapest(need - pick.length - 1) <= BUDGET) { pick.push(t); spent += MUSTER_TROOPS[t]; }
+    }
+    if (!feasible) { pick = cand.slice().sort(function (p, q) { return MUSTER_TROOPS[p] - MUSTER_TROOPS[q]; }).slice(0, need); }
+    for (i = 0; i < pick.length; i++) rem.push(pick[i]);
+    for (i = rem.length - 1; i > 0; i--) { j = Math.floor(rng() * (i + 1)); tmp = rem[i]; rem[i] = rem[j]; rem[j] = tmp; }
+    var s2 = copy(s);
+    for (i = 0; i < fd.length; i++) { x = b[fd[i]]; s2.b[fd[i]] = [x[0], rem[i], x[2], x[3], 0]; }
+    var h = new Array(NT).fill(0);
+    for (i = fd.length; i < rem.length; i++) h[rem[i]]++;
+    s2.hands[op] = h;
+    s2.locks[op] = s.locks[op].filter(function (l) { return l[2]; });   // a face-down card's lock would leak its type
+    return s2;
+  }
+  // opts: {depth, nsamp, rootCap, noise, dfn, timeMs, seed}
+  function botChoose(s, Tr, opts) {
+    var rng = rngFrom(opts.seed || 1), w = {}, k;
+    for (k in W) w[k] = W[k];
+    if (opts.dfn !== undefined) w.dfn = opts.dfn;
+    var legal = gen(s, Tr), actions = legal.map(function (mh) { return mh[0]; });
+    if (actions.length === 1) return { a: actions[0], nodes: 0, depth: 0 };
+    var t0 = Date.now(), deadline = opts.timeMs ? t0 + opts.timeMs : 0;
+    var nsamp = opts.nsamp || 4, clamp = 150.0, rootCap = opts.rootCap || 0, noise = opts.noise === undefined ? 0.6 : opts.noise;
+    var depths = opts.iterative ? [] : [opts.depth];
+    if (opts.iterative) for (var dd = 1; dd <= opts.depth; dd++) depths.push(dd);
+    var bestA = null, nodes = 0, reached = 0;
+    for (var di = 0; di < depths.length; di++) {
+      var d = depths[di], se = new Searcher(Tr, w, di > 0 ? deadline : 0);
+      se.root = s.tm;
+      var tot = new Array(actions.length).fill(0), done = 0;
+      for (var ks = 0; ks < nsamp; ks++) {
+        var ws = sampleWorld(s, rng), kids = [];
+        for (var i = 0; i < actions.length; i++) {
+          var ch = play(ws, Tr, actions[i], null);
+          var v0 = ch.winner !== null ? terminalValue(ch, s.tm) : -evaluate(ch, Tr, w);
+          kids.push([v0, i, ch]);
+        }
+        kids.sort(function (p, q) { return q[0] - p[0]; });
+        if (rootCap && kids.length > rootCap) { for (i = rootCap; i < kids.length; i++) tot[kids[i][1]] += kids[i][0] - 1000.0; kids = kids.slice(0, rootCap); }
+        var best = -1e18, vals = [];
+        for (i = 0; i < kids.length; i++) {
+          var v;
+          if (d <= 1) v = kids[i][0];
+          else { var lo = best - clamp; v = -se.negamax(kids[i][2], d - 1, -1e18, -lo); if (v < lo) v = lo; }
+          if (se.aborted) break;
+          if (v > best) best = v;
+          vals.push([kids[i][1], v]);
+        }
+        if (se.aborted) break;
+        for (i = 0; i < vals.length; i++) tot[vals[i][0]] += Math.max(vals[i][1], best - clamp);
+        done++;
+      }
+      nodes += se.nodes;
+      if (se.aborted || done === 0) break;
+      var bi = 0, bv = -1e18;
+      for (i = 0; i < actions.length; i++) { var vv = tot[i] / done + rng() * noise; if (vv > bv) { bi = i; bv = vv; } }
+      bestA = actions[bi]; reached = d;
+      if (deadline && Date.now() > deadline) break;
+    }
+    return { a: bestA, nodes: nodes, depth: reached, ms: Date.now() - t0 };
+  }
+
+  return {
+    N: N, NC: NC, NT: NT, SOUL: SOUL, SQ: SQ, SP: SP, KN: KN, KING: KING, CH: CH, AR: AR, SC: SC, CP: CP, LN: LN,
+    RANK: RANK, KOB: KOB, LET: LET, NAMES: NAMES, POOL: POOL, ARMY_N: ARMY_N, D: D, M: M, A: A, T: T, R: R, P: P, G: G, NEI: NEI, ISNEI: ISNEI, HOME: HOME,
+    DOM_TARGET: DOM_TARGET, Terrain: Terrain, genTerrain: genTerrain, rngFrom: rngFrom, randomMuster: randomMuster,
+    MUSTER_TROOPS: MUSTER_TROOPS, BUDGET: BUDGET, troopsOf: troopsOf, musterOk: musterOk, canAdd: canAdd,
+    setBonusReveal: function (v) { BONUS_REVEAL = !!v; }, bonusReveal: function () { return BONUS_REVEAL; },
+    newState: newState, copy: copy, avail: avail, applyPull: applyPull, drawPull: drawPull, gen: gen, play: play, isAttack: isAttack,
+    attackCells: attackCells, pullsFor: pullsFor, fmt: fmt, cn: cn, preview: preview, classify: classify, margin: margin,
+    evaluate: evaluate, negamaxValue: function (s, Tr, w, d) { var se = new Searcher(Tr, w, 0); se.root = s.tm; return se.negamax(s, d, -1e18, 1e18); }, botChoose: botChoose, sampleWorld: sampleWorld, hillsOf: hillsOf, last: function () { return LAST; }
+  };
+})();
+if (typeof globalThis !== "undefined") globalThis.TE = TE;
+
+</script>
+<script>
+(function () {
+  "use strict";
+  var E = TE, HUMAN = 0, BOT = 1;
+  var $ = function (id) { return document.getElementById(id); };
+  var GLYPH = {
+    0: '<path d="M12 3 19 10 12 21 5 10Z"/><path d="M5 10h14M9 10l3 11 3-11"/>',
+    1: '<path d="M12 4l6 2v5c0 4-3 7-6 9-3-2-6-5-6-9V6z"/>',
+    2: '<path d="M12 22V8"/><path d="M12 2l3 6H9z"/><path d="M9 17h6"/>',
+    3: '<path d="M12 2l2 3v11h-4V5z"/><path d="M7 16h10M12 16v5"/>',
+    4: '<path d="M4 19h16"/><path d="M4 16 3 7l5 4 4-7 4 7 5-4-1 9z"/>',
+    5: '<path d="M12 2c3.5 4 3.5 10 0 15-3.5-5-3.5-11 0-15z"/><path d="M7 17h10M12 17v5"/><path d="M12 6v7"/>',
+    6: '<path d="M7 3c8 4 8 14 0 18"/><path d="M7 3v18"/><path d="M4 12h15M16 9l3 3-3 3"/>',
+    7: '<path d="M2 12s4-6.5 10-6.5S22 12 22 12s-4 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+    8: '<circle cx="12" cy="12" r="6"/>',
+    9: '<path d="M6 21V3"/><path d="M6 4h12l-3 4 3 4H6"/>',
+    12: '<path d="M3 21 18 6"/><path d="M18 6l3-3M13 5l5 1 1 5"/>'
+  };
+  function glyph(t) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (GLYPH[t] || GLYPH[8]) + '</svg>'; }
+  var HELP = {     // the v1.3 card table ("What its glyph says")
+    1: "May only attack a card that another of your cards also touches. Attends: gives +1 to a friendly Knight or Shardbearer it touches when that card attacks (and turns face-up).",
+    2: "Braced: +1 whenever it is attacked. A defensive Spearman also wins ties.",
+    3: "No special rule.",
+    12: "May move exactly 2 spaces in a straight line (the space between must be empty); if it attacks after doing so, +1.",
+    9: "Your cards touching him get +1 when they attack or are attacked. (Not himself. One Captainlord bonus per side per fight.) Turns face-up when his bonus counts.",
+    5: "No special rule. Rank 4, the heaviest blade on the field.",
+    6: "Counts as a supporter for your attacks on an enemy exactly 2 spaces from the Archer in a straight line, if the space between is empty or yours (turns face-up when it does). It never attacks at range itself.",
+    7: "May move up to 2 spaces (it may turn a corner; not back where it started). When it stops without attacking, reveal one face-down enemy card it touches.",
+    0: "Cannot attack. Instead it may Soulcast a card it touches: that card and the Soulcaster both leave the match. No fight, no pull. It counts as a capture for you. It does nothing to a King.",
+    4: "Free: always comes. Wins every attack he makes. See The King."
+  };
+  var ORDER = [3, 5, 12, 9, 2, 1, 6, 7, 0, 4];
+  var NM = E.NAMES, RANK = E.RANK, TP = E.MUSTER_TROOPS, BUDGET = E.BUDGET;
+  function troopWord(t) { return t === E.KING ? "free" : TP[t] + " troops"; }
+  // Quick pick (C S P N K H A U G T B E L): 3 Knights, 3 Spearmen, 4 Squires, 2 Archers, a Scout and the Captainlord = 99 troops
+  var REC = [0, 4, 3, 3, 1, 0, 2, 1, 0, 1, 0, 0, 0];
+  var LEVELS = {
+    easy: { depth: 1, nsamp: 4, dfn: 0, noise: 0.6 },
+    normal: { depth: 2, nsamp: 4, dfn: 0, noise: 0.6 },
+    hard: { depth: 3, nsamp: 3, rootCap: 24, timeMs: 2000, iterative: true, dfn: 0, noise: 0.6 }
+  };
+  var SAVE = "towers13.save", PREF = "towers13.pref";
+  function store(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  function load(k) { try { var x = localStorage.getItem(k); return x ? JSON.parse(x) : null; } catch (e) { return null; } }
+  function drop(k) { try { localStorage.removeItem(k); } catch (e) {} }
+  function esc(x) { return String(x).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function newSeed() { return (Math.random() * 4294967296) >>> 0; }
+  var rnd = function () { return Math.random(); };
+
+  // ------------------------------------------------ muster
+  var pref = load(PREF) || {};
+  var M = { hand: (pref.hand && pref.hand.length === 13 && E.musterOk(pref.hand)) ? pref.hand : REC.slice(), tseed: newSeed(), level: pref.level || "normal" };
+  function msum() { var n = 0; for (var t = 0; t < 13; t++) n += M.hand[t]; return n; }
+  function renderMuster() {
+    var h = "", tr = E.troopsOf(M.hand), left = BUDGET - tr;
+    ORDER.forEach(function (t) {
+      var isK = t === E.KING, canUp = E.canAdd(M.hand, t);
+      h += '<div class="mrow">' + glyph(t) + '<div><div><b>' + NM[t] + '</b> <span class="muted nums">rank ' + (isK ? "—" : RANK[t]) + ' · ' + troopWord(t) + '</span></div><div class="desc">' + HELP[t] + '</div></div>' +
+        (isK ? '<span class="muted">always</span>' :
+          '<div class="step"><button type="button" data-t="' + t + '" data-d="-1" aria-label="One fewer ' + NM[t] + '"' + (M.hand[t] > 0 ? "" : " disabled") + '>−</button><span class="nums">' + M.hand[t] + ' / ' + E.POOL[t] + '</span><button type="button" data-t="' + t + '" data-d="1" aria-label="One more ' + NM[t] + ' (' + TP[t] + ' troops)"' +
+          (canUp ? "" : ' disabled title="' + (M.hand[t] >= E.POOL[t] ? "All in your pool" : "Would go over 100 troops") + '"') + '>+</button></div>') + '</div>';
+    });
+    $("mlist").innerHTML = h;
+    var n = msum(), ok = E.musterOk(M.hand);
+    $("mtotal").textContent = tr + " / " + BUDGET + " troops · " + n + " card" + (n === 1 ? "" : "s");
+    $("mtotal").className = "total nums" + (ok ? "" : " bad");
+    $("mbar").style.width = Math.min(100, tr / BUDGET * 100) + "%";
+    $("start").disabled = !ok;
+    $("start").textContent = ok ? "Deploy for battle" + (left > 0 ? " (" + left + " troop" + (left === 1 ? "" : "s") + " unspent)" : "") : "Over 100 troops: leave some out";
+    var T = E.genTerrain(M.tseed), mh = "";
+    for (var r = 6; r >= 0; r--) for (var c = 0; c < 7; c++) { var q = r * 7 + c; mh += '<i class="' + (T.hill[q] ? "hill" : T.mount[q] ? "mount" : "") + '"></i>'; }
+    $("mini").innerHTML = mh;
+    ["easy", "normal", "hard"].forEach(function (l) { $("lv-" + l).setAttribute("aria-pressed", M.level === l ? "true" : "false"); });
+  }
+  $("mlist").addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-t]"); if (!b) return;
+    var t = +b.dataset.t, d = +b.dataset.d;
+    if (d > 0 && !E.canAdd(M.hand, t)) return;          // never over the 100-troop limit
+    M.hand[t] = Math.max(0, Math.min(E.POOL[t], M.hand[t] + d));
+    store(PREF, { hand: M.hand, level: M.level }); renderMuster();
+  });
+  $("mrec").onclick = function () { M.hand = REC.slice(); store(PREF, { hand: M.hand, level: M.level }); renderMuster(); };
+  $("mrand").onclick = function () { M.hand = E.randomMuster(rnd); store(PREF, { hand: M.hand, level: M.level }); renderMuster(); };
+  $("mclear").onclick = function () { M.hand = new Array(13).fill(0); M.hand[E.KING] = 1; store(PREF, { hand: M.hand, level: M.level }); renderMuster(); };
+  $("newboard").onclick = function () { M.tseed = newSeed(); renderMuster(); };
+  $("level").addEventListener("click", function (e) { var b = e.target.closest("button[data-l]"); if (!b) return; M.level = b.dataset.l; store(PREF, { hand: M.hand, level: M.level }); renderMuster(); });
+  $("start").onclick = function () { if (E.musterOk(M.hand)) startGame(); };
+  $("newgame").onclick = function () {
+    if (G && G.s.winner === null) confirmSheet("Abandon this battle?", "The current skirmish will be lost for good.", "Abandon", function () { drop(SAVE); G = null; showMuster(); });
+    else { drop(SAVE); G = null; showMuster(); }
+  };
+  function showMuster() { $("muster").hidden = false; $("game").hidden = true; $("topsub").textContent = "You play sapphire"; renderMuster(); }
+
+  // ------------------------------------------------ game
+  var G = null, T = null, sel = null, pend = -1, busy = false;
+  function startGame() {
+    var botHand = E.randomMuster(rnd);     // the v13 sim bots' troop muster
+    var first = Math.random() < 0.5 ? 0 : 1;
+    T = E.genTerrain(M.tseed);
+    G = { s: E.newState(M.hand, botHand, first), hills: T.hills, mounts: T.mounts, level: M.level, log: [], lastCells: [] };
+    addLog(-1, "Battle joined on a fresh plateau. You mustered " + msum() + " cards (" + E.troopsOf(M.hand) + " troops). " + (first === HUMAN ? "You move first." : "The bot moves first."));
+    M.tseed = newSeed();
+    sel = null; pend = -1;
+    $("muster").hidden = true; $("game").hidden = false;
+    save(); render();
+    if (G.s.tm === BOT) botTurn();
+  }
+  function save() { if (G) store(SAVE, { v: 1, s: G.s, hills: G.hills, mounts: G.mounts, level: G.level, log: G.log.slice(-200), lastCells: G.lastCells }); }
+  function addLog(o, text) { G.log.push({ o: o, t: text, n: G.s.ply }); }
+
+  function cellName(c) { return E.cn(c); }
+  function cardOf(o, t, known) { return o === HUMAN ? "your " + NM[t] : (known ? "their " + NM[t] : "a face-down card"); }
+  function cap(x) { return x.charAt(0).toUpperCase() + x.slice(1); }
+
+  function describe(s0, a, mark, s1, ev) {
+    var me = s0.tm, who = me === HUMAN ? "You" : "They", k = a[0], x, txt = "";
+    function nm(o, t) { return cardOf(o, t, true); }
+    if (E.isAttack(a) && ev) {
+      var att = nm(me, ev.att), def = nm(1 - me, ev.def), where = cellName(ev.tg);
+      var pre = a[0] === E.D ? who + " deployed " + att + " on " + cellName(a[2]) + " and " : (a[0] === E.M ? who + " marched " + att + " " + cellName(a[1]) + "→" + cellName(a[2]) + " and " : cap(att) + " ");
+      var subj = a[0] === E.A ? "" : "it ";
+      var mp = "";
+      if (ev.a !== undefined) {
+        var pd = mark ? mark[0] - mark[1] : 0, aa = ev.a - pd + (mark ? mark[0] : 0), dd = ev.d + (mark ? mark[1] : 0);
+        var bits = [aa + " vs " + dd];
+        if (a[0] === E.M) bits.push("marching strike +1" + (ev.extra > 1 ? ", charge +1" : ""));
+        if (mark) {
+          var pl = [];
+          if (E.pullsFor(s0, a)[0]) pl.push((me === HUMAN ? "you pulled " : "they pulled ") + fortune(mark[0]));
+          if (E.pullsFor(s0, a)[1]) pl.push((me === HUMAN ? "they pulled " : "you pulled ") + fortune(mark[1]));
+          if (pl.length) bits.push(pl.join(", "));
+        }
+        mp = " (" + bits.join("; ") + ")";
+      }
+      var r = ev.res;
+      if (r === "capture") txt = pre + subj + "captured " + def + " on " + where + mp + ".";
+      else if (r === "rout") txt = pre + subj + "routed " + def + " from " + where + " back to the barrack" + mp + ".";
+      else if (r === "hold") txt = pre + subj + "attacked " + def + " on " + where + ": both hold" + mp + ".";
+      else if (r === "attrouted") txt = pre + subj + "attacked " + def + " on " + where + " and was routed" + mp + ".";
+      else if (r === "attcaptured") txt = pre + subj + "attacked " + def + " on " + where + " and was captured" + mp + ".";
+      else if (r === "soulcast") txt = pre + subj + "soulcast " + def + " on " + where + ": both leave the match.";
+      else if (r === "kingtaken") txt = pre + subj + "captured " + (me === HUMAN ? "their" : "your") + " King on " + where + "!";
+      else if (r === "kingreveal") txt = pre + subj + "struck the face-down card on " + where + ": it is " + (me === HUMAN ? "their" : "your") + " King. Nothing else happens.";
+      else if (r === "kingcapture") txt = cap(me === HUMAN ? "your King" : "their King") + (a[0] === E.D ? " deployed on " + cellName(a[2]) + " and" : a[0] === E.M ? " marched " + cellName(a[1]) + "→" + cellName(a[2]) + " and" : "") + " captured " + def + " on " + where + ". He is spent.";
+      if (pre && r !== "kingcapture" && a[0] === E.A) txt = cap(txt);
+      if (ev.revealed && ev.revealed.length) txt += " " + ev.revealed.map(function (q) {
+        return cap(cardOf(q[1], q[2], true)) + " on " + cellName(q[0]) + (q[3] === "attend" ? " attended" : q[3] === "range" ? " supported from range" : " gave his bonus") + " and turned face-up.";
+      }).join(" ");
+    } else if (k === E.D) {
+      txt = me === HUMAN ? "You deployed your " + NM[a[1]] + " face-down on " + cellName(a[2]) + "." : "They deployed a card face-down on " + cellName(a[2]) + ".";
+    } else if (k === E.M) {
+      x = s0.b[a[1]];
+      txt = (me === HUMAN ? "You moved your " + NM[x[1]] : "They moved " + (x[4] ? "their " + NM[x[1]] : "a face-down card")) + " " + cellName(a[1]) + "→" + cellName(a[2]);
+      if (a.length > 5 && a[5] >= 0) { var y = s1.b[a[5]]; txt += " and scouted " + cellName(a[5]) + ": " + (me === HUMAN ? "their " : "your ") + NM[y[1]]; }
+      txt += ".";
+    } else if (k === E.T) {
+      if (a[1].length === 1) {
+        x = s0.b[a[1][0]];
+        if (x[1] === E.KING) txt = cap(me === HUMAN ? "you" : "they") + " stood " + (me === HUMAN ? "your" : "their") + " King up on " + cellName(a[1][0]) + ".";
+        else txt = who + " turned " + cardOf(me, x[1], x[4]) + " on " + cellName(a[1][0]) + " " + (x[3] ? "ready" : "defensive") + ".";
+      } else txt = who + " turned a line of " + a[1].length + " cards (" + cellName(a[1][0]) + "–" + cellName(a[1][a[1].length - 1]) + ") " + (a[2] ? "defensive" : "ready") + ".";
+    } else if (k === E.R) {
+      x = s0.b[a[1]]; txt = who + " retreated " + cardOf(me, x[1], x[4]) + " from " + cellName(a[1]) + " to the barrack.";
+    } else if (k === E.P) txt = who + " passed.";
+    else if (k === E.G) txt = who + " gave up the skirmish.";
+    // side notes
+    var v0 = s0.hold[0] - s0.hold[1], v1 = s1.hold[0] - s1.hold[1];
+    if (s1.ncap > s0.ncap && Math.abs(v0) >= 2 && Math.abs(v1) <= 1) txt += " Reset! Dominance " + domWord(v1) + ".";
+    else if (v1 !== v0) txt += " Dominance " + domWord(v1) + ".";
+    return txt;
+  }
+  function fortune(v) { return v > 0 ? "Advantage +1" : v < 0 ? "Disadvantage −1" : "Steady 0"; }
+  function sgn(v) { return v > 0 ? "+" + v : v < 0 ? "−" + (-v) : "0"; }
+  function domWord(v) { return v === 0 ? "level" : Math.abs(v) + (v > 0 ? " toward you" : " toward them"); }
+
+  function applyMove(a, byBot) {
+    var s0 = G.s, s = E.copy(s0), pf = E.pullsFor(s, a), mark = null;
+    if (pf) mark = [pf[0] ? E.drawPull(s, s.tm, rnd) : 0, pf[1] ? E.drawPull(s, 1 - s.tm, rnd) : 0];
+    var s1 = E.play(s, T, a, mark), ev = E.last();
+    addLog(s0.tm, describe(s0, a, mark, s1, ev));
+    G.lastCells = moveCells(a);
+    G.s = s1; sel = null; pend = -1;
+    if (s1.winner !== null) addLog(-1, endText(s1));
+    save(); render();
+    if (s1.winner !== null) setTimeout(function () { showEnd(); }, 400);
+    else if (s1.tm === BOT) botTurn();
+  }
+  function moveCells(a) {
+    if (a[0] === E.D) return [a[2]].concat(a[3] >= 0 ? [a[3]] : []);
+    if (a[0] === E.M) return [a[1], a[2]].concat(a[3] >= 0 ? [a[3]] : []);
+    if (a[0] === E.A) return [a[1], a[2]];
+    if (a[0] === E.T) return a[1].slice();
+    if (a[0] === E.R) return [a[1]];
+    return [];
+  }
+  var REASON = { king: "the King fell", wiped: "an army was wiped from the board", dominance: "Dominance reached 10", giveup: "a general gave up" };
+  function endText(s) {
+    var r = s.reason, base = r.split("-")[0], how;
+    if (base === "pass" || base === "cap") {
+      var tail = r.split("-")[1];
+      how = (base === "pass" ? "both generals passed" : "the turn limit came") + (tail === "hills" ? "; decided on high ground" : tail === "captures" ? "; decided on captured value" : "; honours even");
+    } else how = REASON[r] || r;
+    if (s.winner === 2) return "Draw: " + how + ".";
+    return (s.winner === HUMAN ? "Victory" : "Defeat") + ": " + how + ".";
+  }
+
+  // ------------------------------------------------ bot (Web Worker from a blob: URL)
+  var worker = null, workerFailed = false, pending = null;
+  function getWorker() {
+    if (worker || workerFailed) return worker;
+    try {
+      var src = $("engine-src").textContent + "\nself.onmessage=function(e){var d=e.data;var Tr=TE.Terrain(d.hills,d.mounts);var r=TE.botChoose(d.s,Tr,d.opts);self.postMessage({id:d.id,r:r});};";
+      worker = new Worker(URL.createObjectURL(new Blob([src], { type: "text/javascript" })));
+      worker.onmessage = function (e) { if (pending && e.data.id === pending.id) { var p = pending; pending = null; p.cb(e.data.r); } };
+      worker.onerror = function () { workerFailed = true; worker = null; if (pending) { var p = pending; pending = null; runLocal(p); } };
+    } catch (e) { workerFailed = true; worker = null; }
+    return worker;
+  }
+  function runLocal(p) { setTimeout(function () { p.cb(E.botChoose(p.msg.s, T, p.msg.opts)); }, 30); }
+  // what the bot is allowed to know: your face-down cards and barrack are masked before they leave this page
+  function botView(s) {
+    var m = E.copy(s);
+    m.b = m.b.map(function (x) { return (x && x[0] === HUMAN && !x[4]) ? [x[0], 8, x[2], x[3], 0] : x; });
+    var tot = 0; for (var t = 0; t < 13; t++) tot += s.hands[HUMAN][t];
+    var h = new Array(13).fill(0); h[8] = tot; m.hands[HUMAN] = h;
+    m.locks[HUMAN] = s.locks[HUMAN].filter(function (l) { return l[2]; });
+    return m;
+  }
+  var reqId = 0;
+  function botTurn() {
+    busy = true; render();
+    var opts = Object.assign({}, LEVELS[G.level] || LEVELS.normal, { seed: newSeed() });
+    var msg = { id: ++reqId, s: botView(G.s), hills: G.hills, mounts: G.mounts, opts: opts };
+    var t0 = Date.now();
+    pending = { id: msg.id, msg: msg, cb: function (r) {
+      var wait = Math.max(0, 450 - (Date.now() - t0));
+      setTimeout(function () { busy = false; if (G && G.s.tm === BOT && G.s.winner === null) applyMove(r.a, true); }, wait);
+    } };
+    var w = getWorker();
+    if (w) w.postMessage(msg); else runLocal(pending);
+  }
+
+  // ------------------------------------------------ rendering
+  function legalMoves() { return (G && G.s.tm === HUMAN && G.s.winner === null && !busy) ? E.gen(G.s, T).map(function (m) { return m[0]; }) : []; }
+  function render() {
+    if (!G) return;
+    var s = G.s, legal = legalMoves();
+    $("topsub").innerHTML = '<span class="sphere s"></span> You · <span class="sphere r"></span> Bot (' + G.level + ')';
+    // turn bar
+    var tb = $("turn");
+    if (s.winner !== null) tb.innerHTML = '<span class="sphere ' + (s.winner === HUMAN ? "s" : s.winner === BOT ? "r" : "dun") + '"></span>' + esc(endText(s));
+    else if (s.tm === HUMAN) tb.innerHTML = '<span class="sphere s"></span>Your turn · move ' + (Math.floor(s.ply / 2) + 1);
+    else tb.innerHTML = '<span class="sphere r"></span>The bot is weighing its move…';
+    tb.className = "turnbar" + (s.tm === BOT && s.winner === null ? " thinking" : "");
+    // dominance
+    var v = s.hold[0] - s.hold[1], tr = "";
+    for (var i = -10; i <= 10; i++) tr += '<i class="' + (i === 0 ? "z" : "") + '"></i>';
+    tr += '<div class="bar"></div><span class="marker sphere ' + (v > 0 ? "s" : v < 0 ? "r" : "dun") + '" style="left:' + ((v + 10.5) / 21 * 100) + '%"></span>';
+    $("track").innerHTML = tr;
+    $("domtxt").textContent = domWord(v);
+    var hh = [E.hillsOf(s, T, 0), E.hillsOf(s, T, 1)];
+    var hand = [0, 0]; for (var t = 0; t < 13; t++) { hand[0] += s.hands[0][t]; hand[1] += s.hands[1][t]; }
+    $("stats").innerHTML = '<span class="h"></span><span class="h you">You</span><span class="h them">Bot</span>' +
+      '<span>High ground held</span><b>' + hh[0] + '</b><b>' + hh[1] + '</b>' +
+      '<span>Cards captured (Dominance tiebreak)</span><b>' + s.capn[0] + '</b><b>' + s.capn[1] + '</b>' +
+      '<span>In barrack · on board</span><span>' + hand[0] + ' · ' + s.onboard[0] + '</span><span>' + hand[1] + ' · ' + s.onboard[1] + '</span>' +
+      '<span>Fortune deck left (+1 · 0 · −1)</span><span>' + fdeck(s.decks[0]) + '</span><span>' + fdeck(s.decks[1]) + '</span>';
+    renderBoard(legal);
+    renderPanel(legal);
+    renderTray(legal);
+    renderLog();
+  }
+  function fdeck(dk) { if (dk[0] + dk[1] + dk[2] === 0) dk = [3, 6, 3]; return dk[2] + ' · ' + dk[1] + ' · ' + dk[0]; }
+  function highlights(legal) {
+    var dest = {}, tgt = {};
+    if (!sel) return { dest: dest, tgt: tgt };
+    legal.forEach(function (a) {
+      if (sel.kind === "hand" && a[0] === E.D && a[1] === sel.t) {
+        if (pend < 0) dest[a[2]] = 1; else if (a[2] === pend && a[3] >= 0) tgt[a[3]] = 1;
+      }
+      if (sel.kind === "board") {
+        if (a[0] === E.M && a[1] === sel.c) { if (pend < 0) dest[a[2]] = 1; else if (a[2] === pend && a[3] >= 0) tgt[a[3]] = 1; }
+        if (a[0] === E.A && a[1] === sel.c && pend < 0) tgt[a[2]] = 1;
+      }
+    });
+    return { dest: dest, tgt: tgt };
+  }
+  function cardHTML(x) {
+    if (!x) return "";
+    var o = x[0];
+    if (o === BOT && !x[4]) return '<div class="card p1 back' + (x[3] ? " def" : "") + '"><span class="gem"></span></div>';
+    return '<div class="card p' + o + (x[3] ? " def" : "") + (o === HUMAN && !x[4] ? " hid" : "") + '">' + (o === HUMAN && !x[4] ? '<span class="eye" title="Face-down: only you can see it">?</span>' : "") +
+      '<span class="rk">' + (x[1] === E.KING ? "K" : RANK[x[1]]) + '</span>' + glyph(x[1]) + (x[1] === E.KING ? "" : '<span class="tp" title="' + TP[x[1]] + ' troops">' + TP[x[1]] + '</span>') + '</div>';
+  }
+  function cellLabel(c, x) {
+    var l = cellName(c) + (T.hill[c] ? ", high ground" : "") + (T.mount[c] ? ", mountain" : "");
+    if (x) l += ", " + (x[0] === HUMAN ? "your " + NM[x[1]] + (x[4] ? "" : " (face-down)") : (x[4] ? "their " + NM[x[1]] : "their face-down card")) + (x[3] ? (x[1] === E.KING ? ", spent" : ", defensive") : "");
+    return l;
+  }
+  function renderBoard(legal) {
+    var s = G.s, hl = highlights(legal), h = "", last = {};
+    (G.lastCells || []).forEach(function (c) { last[c] = 1; });
+    for (var r = 6; r >= 0; r--) for (var c0 = 0; c0 < 7; c0++) {
+      var c = r * 7 + c0, x = s.b[c], cls = "cell";
+      if (T.hill[c]) cls += " hill";
+      if (T.mount[c]) cls += " mount";
+      if (r === 0) cls += " home0"; if (r === 6) cls += " home1";
+      if (hl.dest[c]) cls += " dest";
+      if (hl.tgt[c]) cls += " tgt";
+      if (sel && sel.kind === "board" && sel.c === c) cls += " sel";
+      if (pend === c) cls += " pend";
+      if (last[c]) cls += " last";
+      h += '<button type="button" class="' + cls + '" data-c="' + c + '" aria-label="' + esc(cellLabel(c, x)) + '"' + (T.mount[c] ? " disabled" : "") + '>' + cardHTML(x) + '</button>';
+    }
+    $("board").innerHTML = h;
+  }
+  function optsFor(legal) {
+    if (!sel || pend < 0) return [];
+    return legal.filter(function (a) {
+      if (sel.kind === "hand") return a[0] === E.D && a[1] === sel.t && a[2] === pend;
+      return a[0] === E.M && a[1] === sel.c && a[2] === pend;
+    });
+  }
+  function actLabel(a) {
+    var s = G.s;
+    if (a[0] === E.D) return a[3] < 0 ? "Deploy face-down on " + cellName(a[2]) : "Deploy on " + cellName(a[2]) + " and attack " + tgtName(a[3]);
+    if (a[0] === E.M) {
+      if (a[3] >= 0) return "March to " + cellName(a[2]) + " and attack " + tgtName(a[3]) + " (+1)";
+      if (a.length > 5 && a[5] >= 0) return "Move to " + cellName(a[2]) + " and scout " + cellName(a[5]);
+      return "Move to " + cellName(a[2]);
+    }
+    if (a[0] === E.A) return "Attack " + tgtName(a[2]);
+    return "";
+  }
+  function tgtName(c) { var x = G.s.b[c]; return (x[4] ? "their " + NM[x[1]] : "the face-down card") + " on " + cellName(c); }
+  function renderPanel(legal) {
+    var s = G.s, p = $("actpanel"), h = "";
+    if (s.winner !== null) {
+      h = '<h3>' + esc(endText(s)) + '</h3><div class="row"><button class="btn primary" type="button" data-act="again">New battle</button></div>';
+      p.innerHTML = h; return;
+    }
+    if (s.tm !== HUMAN || busy) { p.innerHTML = '<span class="muted">Waiting for the bot. Its search sees only what you have revealed.</span>'; return; }
+    if (!sel) {
+      h = '<span class="muted">Tap a card in your barrack to deploy it, or one of your cards on the board to move, attack, turn or retreat it.</span>';
+    } else if (pend >= 0) {
+      var os = optsFor(legal);
+      h = '<div class="eyebrow">' + (sel.kind === "hand" ? "Deploy your " + NM[sel.t] : "Your " + NM[G.s.b[sel.c][1]] + " from " + cellName(sel.c)) + '</div>';
+      os.forEach(function (a, i) {
+        var pv = E.isAttack(a) ? E.preview(G.s, T, a, HUMAN) : null;
+        h += '<button type="button" class="btn opt" data-opt="' + i + '">' + esc(actLabel(a)) + (pv ? '<small>' + esc(shortPreview(pv)) + '</small>' : "") + '</button>';
+      });
+      h += '<button type="button" class="btn" data-act="back">Back</button>';
+    } else {
+      var info;
+      if (sel.kind === "hand") info = '<div class="eyebrow">Deploy your ' + NM[sel.t] + '</div><span class="muted">' + HELP[sel.t] + ' Tap a marked space.</span>';
+      else {
+        var x = s.b[sel.c];
+        info = '<div class="eyebrow">Your ' + NM[x[1]] + ' on ' + cellName(sel.c) + (x[4] ? "" : " · face-down") + (x[3] ? (x[1] === E.KING ? " · spent" : " · defensive") : "") + '</div><span class="muted">' + HELP[x[1]] + '</span>';
+        var own = legal.filter(function (a) { return (a[0] === E.T && a[1].indexOf(sel.c) >= 0) || (a[0] === E.R && a[1] === sel.c); });
+        var anyMove = legal.some(function (a) { return (a[0] === E.M || a[0] === E.A) && a[1] === sel.c; });
+        if (anyMove) info += '<span class="muted">Tap a marked space to move, or a ringed enemy to attack.</span>';
+        own.forEach(function (a) {
+          var lab;
+          if (a[0] === E.R) lab = "Retreat to the barrack";
+          else if (x[1] === E.KING) lab = "Stand the King up";
+          else if (a[1].length === 1) lab = x[3] ? "Turn to ready" : "Turn to defensive";
+          else lab = "Turn line " + cellName(a[1][0]) + "–" + cellName(a[1][a[1].length - 1]) + " (" + a[1].length + ") to " + (a[2] ? "defensive" : "ready");
+          info += '<button type="button" class="btn opt" data-own="' + E.fmt(a) + '">' + esc(lab) + '</button>';
+        });
+      }
+      h = info + '<button type="button" class="btn" data-act="clear">Cancel</button>';
+    }
+    h += '<div class="row" style="margin-top:4px"><button type="button" class="btn" data-act="pass"' + (s.passes === 1 ? ' title="The bot just passed: passing now ends the skirmish"' : "") + '>Pass' + (s.passes === 1 ? " (ends the skirmish)" : "") + '</button><button type="button" class="btn danger" data-act="giveup">Give up</button></div>';
+    p.innerHTML = h;
+  }
+  function shortPreview(pv) {
+    if (pv.kind === "soulcast") return "Soulcast: both cards leave the match; counts as your capture.";
+    if (pv.kind === "soulblind") return "Soulcast a face-down card (if it is the King, both just flip).";
+    if (pv.kind === "kingtake") return "Three Knight-or-better touch him: the King falls.";
+    if (pv.kind === "kingreveal") return "Only reveals.";
+    if (pv.kind === "kingattack") return "The King always captures, then is spent.";
+    var o = odds(pv);
+    var rv = revealNote(pv);
+    return "Might " + pv.a + " vs " + (pv.defKnown ? pv.d : "? + " + pv.dknown) + (o ? " · " + o.map(function (z) { return z[0] + " " + z[1] + "%"; }).join(", ") : "") + (rv ? " · " + rv : "");
+  }
+  // v1.3 bonus reveals: which of your face-down cards will turn face-up because their bonus counts in this fight
+  function revealNote(pv) {
+    var P = pv.parts, b = G.s.b, out = [];
+    (P.grantors || []).forEach(function (c) { var x = b[c]; if (x && x[0] === HUMAN && !x[4]) out.push("your " + NM[x[1]] + " on " + cellName(c)); });
+    if (P.squire && P.squireCell !== undefined) { var y = b[P.squireCell]; if (y && y[0] === HUMAN && !y[4]) out.push("your attending Squire on " + cellName(P.squireCell)); }
+    if (!out.length) return "";
+    return "Bonus reveal: " + out.join(", ") + (out.length > 1 ? " give" : " gives") + " a bonus and will turn face-up.";
+  }
+  var RES = { capture: "Capture", rout: "Rout", hold: "Hold", attrouted: "You are routed", attcaptured: "You are captured" };
+  function deckDist(dk) { var n = dk[0] + dk[1] + dk[2]; if (!n) { dk = [3, 6, 3]; n = 12; } return [[-1, dk[0] / n], [0, dk[1] / n], [1, dk[2] / n]]; }
+  function odds(pv) {
+    if (!pv.defKnown) return null;
+    var s = G.s, pa = pv.pulls && pv.pulls[0] ? deckDist(s.decks[HUMAN]) : [[0, 1]], pd = pv.pulls && pv.pulls[1] ? deckDist(s.decks[BOT]) : [[0, 1]], acc = {};
+    pa.forEach(function (x) { pd.forEach(function (y) {
+      var m = pv.a + x[0] - (pv.d + y[0]);
+      var trapped = pv.sup >= 1; // supporters (touching or Archer) make a 1-point win a capture
+      var r = E.classify(m, trapped ? 1 : 0, pv.spearTie);
+      if (r === "attrouted" && pv.attTrapped) r = "attcaptured";
+      acc[r] = (acc[r] || 0) + x[1] * y[1];
+    }); });
+    return Object.keys(RES).filter(function (k) { return acc[k] > 0.004; }).map(function (k) { return [RES[k], Math.round(acc[k] * 100)]; });
+  }
+  function attackSheet(a) {
+    var pv = E.preview(G.s, T, a, HUMAN), h = '<h2>' + esc(actLabel(a)) + '</h2>';
+    if (pv.kind !== "fight") {
+      h += '<p>' + esc(shortPreview(pv)) + '</p>';
+    } else {
+      var P = pv.parts, al = ['rank ' + P.rank];
+      if (P.sup) al.push('supporters +' + P.sup + (P.archers ? ' (' + P.archers + ' Archer' + (P.archers > 1 ? 's' : '') + ')' : ''));
+      if (P.hill) al.push('high ground +1');
+      if (pv.march) al.push('marching strike +1');
+      if (pv.lance) al.push('Lancer charge +1');
+      if (P.captain) al.push('Captainlord +1');
+      if (P.squire) al.push('attending Squire +1');
+      var dl = [pv.defKnown ? 'rank ' + P.drank : 'rank unknown (0 to 4)'];
+      if (P.dbrace) dl.push('braced Spearman +1');
+      if (P.dbehind) dl.push('friend behind +1');
+      if (P.ddef) dl.push('defensive +1');
+      if (P.dhill) dl.push('high ground +1');
+      if (P.dcap) dl.push('Captainlord +1');
+      h += '<div class="might"><div class="a"><div class="eyebrow">Your ' + NM[pv.att] + '</div><div class="big nums">' + pv.a + '</div><ul>' + al.map(function (z) { return '<li>' + z + '</li>'; }).join("") + '</ul></div>' +
+        '<div class="d"><div class="eyebrow">' + (pv.defKnown ? 'Their ' + NM[pv.def] : 'Face-down card') + '</div><div class="big nums">' + (pv.defKnown ? pv.d : '? + ' + pv.dknown) + '</div><ul>' + dl.map(function (z) { return '<li>' + z + '</li>'; }).join("") + '</ul></div></div>';
+      var rv = revealNote(pv);
+      if (rv) h += '<p style="margin:0">' + esc(rv) + '</p>';
+      var pl = [];
+      if (pv.pulls && pv.pulls[0]) pl.push("your card is face-down, so it pulls a fortune (−1, 0 or +1)");
+      if (pv.pulls && pv.pulls[1]) pl.push("their card is face-down, so it pulls a fortune");
+      h += '<p class="muted" style="margin:0">' + (pl.length ? cap(pl.join("; ")) + "." : "No pulls: both cards are already face-up.") + (pv.sup ? " With a supporter, any win captures." : " Alone, a 1-point win only routs.") + (pv.spearTie ? " A defensive Spearman wins ties." : "") + '</p>';
+      var o = odds(pv);
+      if (o) h += '<div class="odds">' + o.map(function (z) { return '<span>' + z[0] + ' <b class="nums">' + z[1] + '%</b></span>'; }).join("") + '</div>';
+      else h += '<p style="margin:0">Unknown target: if it is their King, nothing happens but the flip' + (pv.canTakeKing ? ' (unless three of your Knight-or-better cards touch it, in which case the King falls)' : '') + '.</p>';
+    }
+    sheet(h, [["Cancel", null], ["Attack", function () { applyMove(a); }, "primary"]]);
+  }
+  function renderTray(legal) {
+    var s = G.s, h = "", n = 0, canD = {};
+    legal.forEach(function (a) { if (a[0] === E.D) canD[a[1]] = 1; });
+    ORDER.forEach(function (t) {
+      var k = s.hands[HUMAN][t]; if (!k) return; n += k;
+      var av = E.avail(s, HUMAN, t);
+      h += '<button type="button" class="hcard' + (sel && sel.kind === "hand" && sel.t === t ? " on" : "") + '" data-t="' + t + '"' + (canD[t] ? "" : " disabled") + ' aria-label="' + NM[t] + ', ' + k + ' in barrack, ' + troopWord(t) + ' each">' + glyph(t) +
+        '<span class="nm">' + NM[t] + '</span><span class="ct nums">×' + k + ' · rank ' + (t === E.KING ? "—" : RANK[t]) + ' · ' + troopWord(t) + (av < k ? " · " + (k - av) + " resting" : "") + '</span></button>';
+    });
+    $("tray").innerHTML = h || '<span class="muted">Empty. Every card you brought is on the board or gone.</span>';
+    $("barcount").textContent = n + " card" + (n === 1 ? "" : "s");
+    var bh = 0; for (var t = 0; t < 13; t++) bh += s.hands[BOT][t];
+    $("botbar").innerHTML = '<span class="sphere r"></span> The bot holds <b class="nums">' + bh + '</b> hidden card' + (bh === 1 ? "" : "s") + ' in its barrack.';
+    function pile(o) {
+      var L = s.lost[o], out = [];
+      ORDER.forEach(function (t) { if (L[t]) out.push('<span class="chip">' + NM[t] + (L[t] > 1 ? " ×" + L[t] : "") + '</span>'); });
+      return out.length ? out.join("") : '<span class="muted" style="font-size:14px">none</span>';
+    }
+    $("piles").innerHTML = '<div><div class="eyebrow">Your cards out of the match</div><div class="chips">' + pile(HUMAN) + '</div></div><div><div class="eyebrow">Their cards out of the match</div><div class="chips">' + pile(BOT) + '</div></div>';
+  }
+  function renderLog() {
+    var h = "";
+    for (var i = G.log.length - 1; i >= 0; i--) { var e = G.log[i]; h += '<li class="' + (e.o >= 0 ? "p" + e.o : "") + '"><span class="n">' + (e.o >= 0 ? (Math.floor(e.n / 2) + 1) + "." : "·") + '</span>' + esc(e.t) + '</li>'; }
+    $("log").innerHTML = h;
+  }
+
+  // ------------------------------------------------ input
+  $("board").addEventListener("click", function (e) {
+    var b = e.target.closest(".cell"); if (!b || !G) return;
+    var c = +b.dataset.c, legal = legalMoves(); if (!legal.length) return;
+    var x = G.s.b[c], hl = highlights(legal);
+    if (sel && pend >= 0) {
+      if (hl.tgt[c]) { var a = optsFor(legal).filter(function (m) { return m[3] === c; })[0]; if (a) { attackSheet(a); return; } }
+      if (c === pend) { pend = -1; render(); return; }
+    }
+    if (sel && pend < 0) {
+      if (hl.tgt[c] && sel.kind === "board") { var at = legal.filter(function (m) { return m[0] === E.A && m[1] === sel.c && m[2] === c; })[0]; if (at) { attackSheet(at); return; } }
+      if (hl.dest[c]) {
+        pend = c;
+        var os = optsFor(legal);
+        if (os.length === 1 && !E.isAttack(os[0])) { applyMove(os[0]); return; }
+        render(); return;
+      }
+    }
+    if (x && x[0] === HUMAN) {
+      if (sel && sel.kind === "board" && sel.c === c) sel = null; else sel = { kind: "board", c: c };
+      pend = -1; render(); return;
+    }
+    sel = null; pend = -1; render();
+  });
+  $("tray").addEventListener("click", function (e) {
+    var b = e.target.closest(".hcard"); if (!b || b.disabled) return;
+    var t = +b.dataset.t;
+    sel = (sel && sel.kind === "hand" && sel.t === t) ? null : { kind: "hand", t: t }; pend = -1; render();
+  });
+  $("actpanel").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b || !G) return;
+    var legal = legalMoves();
+    if (b.dataset.opt !== undefined) {
+      var a = optsFor(legal)[+b.dataset.opt]; if (!a) return;
+      if (E.isAttack(a)) attackSheet(a); else applyMove(a);
+      return;
+    }
+    if (b.dataset.own) { var m = legal.filter(function (q) { return E.fmt(q) === b.dataset.own; })[0]; if (m) applyMove(m); return; }
+    var act = b.dataset.act;
+    if (act === "clear") { sel = null; pend = -1; render(); }
+    else if (act === "back") { pend = -1; render(); }
+    else if (act === "pass") { if (legal.length) applyMove([E.P]); }
+    else if (act === "giveup") confirmSheet("Give up the skirmish?", "Any of your cards touched by two or more enemies are captured; the bot wins this skirmish.", "Give up", function () { applyMove([E.G]); });
+    else if (act === "again") { drop(SAVE); G = null; showMuster(); }
+  });
+
+  // ------------------------------------------------ dialogs
+  var lastFocus = null;
+  function sheet(html, buttons) {
+    closeSheet();
+    lastFocus = document.activeElement;
+    var sc = document.createElement("div"); sc.className = "scrim"; sc.id = "scrim";
+    var sh = document.createElement("div"); sh.className = "sheet"; sh.setAttribute("role", "dialog"); sh.setAttribute("aria-modal", "true");
+    sh.innerHTML = html + '<div class="row" style="justify-content:flex-end"></div>';
+    var row = sh.lastChild;
+    buttons.forEach(function (bt) {
+      var b = document.createElement("button"); b.type = "button"; b.className = "btn" + (bt[2] ? " " + bt[2] : ""); b.textContent = bt[0];
+      b.onclick = function () { closeSheet(); if (bt[1]) bt[1](); };
+      row.appendChild(b);
+    });
+    sc.appendChild(sh);
+    sc.addEventListener("click", function (e) { if (e.target === sc) closeSheet(); });
+    document.body.appendChild(sc);
+    (row.lastChild || sh).focus();
+  }
+  function closeSheet() { var s = $("scrim"); if (s) { s.remove(); if (lastFocus && lastFocus.focus) try { lastFocus.focus(); } catch (e) {} } }
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeSheet(); });
+  function confirmSheet(title, body, yes, fn) { sheet('<h2>' + esc(title) + '</h2><p style="margin:0">' + esc(body) + '</p>', [["Cancel", null], [yes, fn, "danger"]]); }
+  function showEnd() {
+    var s = G.s;
+    sheet('<div class="eyebrow">Skirmish over</div><h2>' + esc(endText(s)) + '</h2><p style="margin:0" class="muted">' + s.ply + ' turns played · captures: you ' + s.capn[0] + ', bot ' + s.capn[1] + '.</p>',
+      [["View board", null], ["New battle", function () { drop(SAVE); G = null; showMuster(); }, "primary"]]);
+  }
+
+  // ------------------------------------------------ boot
+  $("cardhelp").innerHTML = ORDER.map(function (t) { return '<li><b>' + NM[t] + '</b> (' + (t === E.KING ? "King" : "rank " + RANK[t]) + ', ' + (t === E.KING ? "troops: free" : TP[t] + " troops") + ', ' + E.POOL[t] + ' in the pool): ' + HELP[t] + '</li>'; }).join("");
+  var sv = load(SAVE);
+  if (sv && sv.v === 1 && sv.s && sv.s.b && sv.s.b.length === 49) {
+    try {
+      T = E.Terrain(sv.hills, sv.mounts);
+      G = { s: sv.s, hills: sv.hills, mounts: sv.mounts, level: sv.level || "normal", log: sv.log || [], lastCells: sv.lastCells || [] };
+      $("muster").hidden = true; $("game").hidden = false; render();
+      if (G.s.winner === null && G.s.tm === BOT) botTurn();
+    } catch (e) { G = null; drop(SAVE); showMuster(); }
+  } else showMuster();
+})();
+</script>
