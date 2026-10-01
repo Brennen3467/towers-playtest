@@ -25,12 +25,12 @@ On top of that, **licensing pushes most of these models into "one brother gets a
 
 The commissions are also almost all **one-off, not recurring**.
 
-**The best idea in this lane** is a narrow one. **Quota liquor-license brokerage** has both sides findable in free state data:
+**The most data-advantaged idea in this lane** is a narrow one. **Quota liquor-license brokerage** has both sides findable in free state data:
 - Florida publishes a daily-refreshed Excel of every inactive quota license.
 - California publishes surrendered licenses monthly.
 - New Jersey just loosened pocket-license transfers again (S4404, July 2026).
 
-Deal sizes ($80k–$500k) justify the commission. It is still a **5/10, not a 7**. Listing marketplaces (LiquorLicense.com, Florida Liquor License Market with 206 live 4COP listings) already exist, the volume is small (est. a few hundred Florida quota transfers a year) and the income is not recurring. The only recurring idea, an SMB technology-advisor residual book sold to the brothers' existing website customers, is a modest upsell rather than a new business.
+Deal sizes ($80k–$500k) justify the commission. After verification it scores only **3.5/10**. Since 2023 small Florida restaurants mostly don't need a quota license. Transfer volume is unmeasured. Dozens of specialist brokers, online auctions and state (PLCB) auctions already exist, and the income is not recurring. The top-ranked option after verification, at **5/10**, is the only recurring one: an SMB technology-advisor residual book sold to the brothers' existing website customers. It is a modest upsell, not a new business.
 
 **Ideas evaluated (kept as candidates):**
 1. Quota liquor-license brokerage (FL first, then PA / MI / NJ / CA)
@@ -62,7 +62,7 @@ A licensed associate signs the paperwork.
   - Inactive 4COPs are concentrated in county code 23 (79 licenses, Miami-Dade), 39 (35), 60 (28) and 16 (26).
   - Fields include licensee name, owner, series and **mailing address**, but no email or phone.
   - DBPR also publishes daily license extracts in CSV ([DBPR ABT data](https://www2.myfloridalicense.com/alcoholic-beverages-and-tobacco/daily-license-status-reporting-data/)).
-- **Florida (demand).** The Hotels & Restaurants food-service extract includes a **"Number of Seats"** field ([DBPR H&R public records](https://www2.myfloridalicense.com/hotels-restaurants/public-records/); [field listing](https://myfloridalicense.custhelp.com/app/answers/detail/a_id/1925/~/can-i-get-a-report-that-lists-the-licensed-restaurants-or-lodging-in-an-area)). That matters because restaurants with fewer than 150 seats or 2,500 sq ft cannot use Florida's SFS exemption and need a quota license for full liquor (rule as summarized by [Premium Blend](https://premiumblend.com/which-florida-liquor-license-do-you-actually-need-2cop-vs-4cop-vs-sfs/)).
+- **Florida (demand).** The Hotels & Restaurants food-service extract includes a **"Number of Seats"** field ([DBPR H&R public records](https://www2.myfloridalicense.com/hotels-restaurants/public-records/); [field listing](https://myfloridalicense.custhelp.com/app/answers/detail/a_id/1925/~/can-i-get-a-report-that-lists-the-licensed-restaurants-or-lodging-in-an-area)). That matters because restaurants below Florida's SFS exemption threshold need a quota license for full liquor. **Correction from verification:** the threshold is now **2,000 sq ft and 120 seats**, lowered by SB1262/HB639 in August 2023 ([WSR blog](https://blog.wesellrestaurants.com/changes-in-floridas-4cop-sfs-license-requirements-what-restaurant-owners-need-to-know)). Most small restaurants simply use a 2COP (beer and wine, no quota, $162–392/yr) ([permitplace](https://permitplace.com/florida-2cop-license-rules/)). So **the real buyer pool is mostly bars and package stores**, not small restaurants.
 - **California.** ABC publishes a monthly "Surrendered Licenses" report and daily raw data for all pending and active licenses ([ABC licensing reports](https://www.abc.ca.gov/licensing/licensing-reports); [surrendered](https://www.abc.ca.gov/licensing/licensing-reports/surrendered-licenses/)). In FY2020-21 there were about 15.5k Type 47 and 2.5k Type 48 licenses ([ABC state totals](https://www.abc.ca.gov/licensing/licensing-reports/annual-report-archives/license-summary-counts-for-fy-2020-21/state-totals/)).
 - **New Jersey.** About 8,900 active retail consumption licenses and about 1,400 inactive or pocket licenses ([ICSC](https://www.icsc.com/news-and-views/icsc-exchange/governor-signs-legislation-overhauling-new-jerseys-liquor-license-laws-for-the-first-time-in-nearly-a-century)). **S4404 (July 2026)** extended the inactive-license deadlines, revived expired licenses, and created inter-municipal sale, redevelopment and RFP transfer paths ([Redevelop NJ](https://www.redevelopnj.com/2026/08/newly-enacted-nj-law-significantly-expands-transferability-of-inactive-restaurant-liquor-licenses-revives-expired-licenses-and-more.html)). That is a fresh, unpriced catalyst.
 - **Michigan.** Escrowed licenses can sit for up to 2 years, and Class C licenses trade at $20k–$150k ([liquorready](https://www.liquorready.com/articles/state-guides/cost-of-a-liquor-license-in-michigan); [Plunkett Cooney](https://www.plunkettcooney.com/publications-Michigan-liquor-license-quota-system)).
@@ -167,7 +167,7 @@ What differs here: incumbents *list* licenses that owners bring them. I found no
 - The seller pays a restaurant broker **8–15%, with $15–25k minimums** ([We Sell Restaurants](https://blog.wesellrestaurants.com/what-does-it-cost-to-sell-your-restaurant); [CT Acquisitions](https://ctacquisitions.com/restaurant-broker-explained/)).
 - BizBuySell 2025 median restaurant sale price: **$220k** ([BizBuySell 2025 recap](https://www.bizbuysell.com/news/bizbuysell-2025-fourth-quarter-insight-report/)).
 
-**Market size (est.).** Assume 20k restaurant asset sales a year nationally at about $150k × 10% = $300M a year in commission. Even a 0.1% share is $300k.
+**Market size (est., revised).** The draft assumed 20k restaurant sales a year, giving about $300M in commission. The verifier showed that is unsupported: BizBuySell recorded 9,586 closed deals in *all* categories in 2025 ([BizBuySell](https://www.bizbuysell.com/news/bizbuysell-2025-third-quarter-insight-report/)), and restaurant resales fell 11.7% year on year in Q2 2026 ([FastCasual](https://www.fastcasual.com/articles/restaurant-resales-fall-in-2026-turnkey-franchise-deals-surge/)). **The realistic pool is about $60–100M a year in commission.**
 
 **Deliverable and pricing.** Free valuation and teaser page (the brothers' website skill applies directly), then 10% or a $15k minimum. Not recurring.
 
@@ -242,7 +242,7 @@ What differs here: incumbents *list* licenses that owners bring them. I found no
 
 **Validation test.** Email 500 agency owners aged 60+ (inferred from license dates) in two states with a free valuation offer. **Kill if** fewer than 10 valuations are requested, or fewer than 2 sign at 4%+ within 60 days.
 
-**Reply rate.** Insurance and financial services run 3.4–7.9% ([Instantly benchmarks via search summary](https://instantly.ai/cold-email-benchmark-report-2026)). Owners already flooded by aggregators: **2–4% (est.)**.
+**Reply rate.** Benchmarks disagree: 3.43% is the overall average ([Instantly](https://instantly.ai/cold-email-benchmark-report-2026)) and insurance is 5.5% ([Snov.io](https://snov.io/blog/cold-email-statistics/)). The 3.4–7.9% range in the earlier draft was not supported by the Instantly report and has been removed. Owners already flooded by aggregators: **plan for about 2% (est.)**.
 
 ---
 
@@ -290,7 +290,7 @@ What differs here: incumbents *list* licenses that owners bring them. I found no
 |---|---|---|
 | [IFPG](https://www.ifpg.org/self-employed-careers/self-employed-income/) | 650 consultants, 620 franchisors | Consultant pays $39.5k + $260/mo; franchisor about $1k/mo |
 | [FranNet](https://franzy.com/blog/how-do-franchise-consultants-make-money/), FranChoice, The Entrepreneur's Source | Consultant networks | 40–50% of franchise fee |
-| [Franzy](https://franzy.com/for-brands) | AI franchise matching; $3.33M seed (2025) | Flat fee from franchisors |
+| [Franzy](https://franzy.com/for-brands) | Franchise *resale* marketplace with a franchisor-paid flat success fee; **$2.2M seed (July 2025)** per verifier ([BusinessWire](https://www.businesswire.com/news/home/20250715041188/en/)) | Flat fee from franchisors |
 | FSOs ([Franchise Performance Group](https://franchiseperformancegroup.com/comparing-your-options-for-outsourced-franchise-sales/), others) | Outsourced sales | $5–20k/mo + 40–50% |
 | [Franchise Flippers resale network](https://franchiseflippers.com/selling-a-franchise/services/resale-broker-network/), [FBA Resale Ready](https://resales.franchiseba.com/), [Small Business Deal Advisors](https://www.smallbusinessdeal.com/franchise-resale-partnership-program/) | Resale brokers | 8–12%, or greater of 8%/$10k |
 | [FranchiseResales.com](https://www.franchiseresales.com/faq/) | Listing site | Listing fee |
@@ -298,7 +298,7 @@ What differs here: incumbents *list* licenses that owners bring them. I found no
 
 **Legal.**
 - **New York and Washington** require franchise-broker registration.
-- **California SB 919** requires annual broker registration with DFPI and a broker disclosure document ([Fox Rothschild](https://franchiselaw.foxrothschild.com/2024/04/articles/regulatory-compliance/california-paves-way-for-franchise-broker-registration-model/)).
+- **California SB 919** requires annual broker registration with DFPI and a broker disclosure document ([Fox Rothschild](https://franchiselaw.foxrothschild.com/2024/04/articles/regulatory-compliance/california-paves-way-for-franchise-broker-registration-model/)). It now **takes effect July 1, 2027** ([UBG Law](https://www.ubglaw.com/news-and-media/california-franchise-broker-registration-law-takes-effect-july-1-2027-what-franchisors-franchise-brokers-and-franchise-sales-organizations-need-to-know)).
 - NASAA has a model broker act pending ([NASAA](https://www.nasaa.org/76508/nasaa-public-comment-proposed-nasaa-model-franchise-broker-registration-act/)).
 - Agents must never make earnings claims outside FDD Item 19.
 - Resales count as business brokerage, so the 17-state real-estate rule applies.
@@ -319,7 +319,7 @@ What differs here: incumbents *list* licenses that owners bring them. I found no
 
 ### Idea 6: SMB technology-advisor residual book (an upsell to existing website customers)
 
-**Pitch.** Carriers and SaaS vendors pay technology advisors **10–22% of monthly recurring charges for the life of the contract** ([telecom.directory](https://www.telecom.directory/resources/agent-commissions); [Modero](https://mymodero.com/blog/how-to-start-a-telecom-agency/)). Merchant-services agents earn 50–70% of the processing markup; one example is a $30k/month merchant paying the agent about $45/month ([Unison](https://www.unisonpayment.com/blog/merchant-services-agent-program-residual-income)). Comcast and Spectrum pay one month's MRC per referral, up to $1,500 or $5,000 ([Comcast](https://business.comcast.com/partner/authorized-connector-program); [Spectrum](https://www.spectrum.com/business/referral)). The brothers already have local SMB customers. An agent audits each customer's internet, phone, POS and processing bills and switches them where it saves money. The vendor pays a residual. **This is the only recurring model in the lane.**
+**Pitch.** Carriers and SaaS vendors pay technology advisors **10–22% of monthly recurring charges for the life of the contract** ([telecom.directory](https://www.telecom.directory/resources/agent-commissions); [Modero](https://mymodero.com/blog/how-to-start-a-telecom-agency/)). Merchant-services agents earn 50–70% of the processing markup; one example is a $30k/month merchant paying the agent about $45/month ([Unison](https://www.unisonpayment.com/blog/merchant-services-agent-program-residual-income)). Comcast and Spectrum pay a **one-time** bounty of one month's MRC per referral, up to $1,500 or $5,000; these are not residuals ([Comcast](https://business.comcast.com/partner/authorized-connector-program); [Spectrum](https://www.spectrum.com/business/referral)). The brothers already have local SMB customers. An agent audits each customer's internet, phone, POS and processing bills and switches them where it saves money. The vendor pays a residual. **This is the only recurring model in the lane.**
 
 **Money moves.** The TSD channel billed **$16.6B in 2024**, and technology advisors are 86% of partner types ([Omdia](https://omdia.tech.informa.com/blogs/2026/jan/key-insights-from-the-16point6bn-dollars-technology-services-distribution-tsd-market)).
 
@@ -385,10 +385,65 @@ What differs here: incumbents *list* licenses that owners bring them. I found no
 
 ## 4. Self-verification results
 
-*(Filled in after two adversarial sub-agents attacked the ideas; see the bottom of the file.)*
+Two adversarial sub-agents ran in parallel, each doing about 33 searches and fetches.
+- Verifier A attacked ideas 1–2.
+- Verifier B attacked ideas 3–7.
+
+Their findings are folded into the text above, with corrections marked, and into the scores below. Where they were right, the score went down.
+
+### Verifier A: liquor licenses and the restaurant exit desk
+
+| Draft claim | Finding | Effect |
+|---|---|---|
+| FL restaurants under 150 seats / 2,500 sq ft need a quota license | **Wrong.** SB1262/HB639 (Aug 2023) lowered the SFS threshold to 2,000 sq ft / 120 seats, and most small restaurants use 2COP (beer and wine, no quota) ([WSR](https://blog.wesellrestaurants.com/changes-in-floridas-4cop-sfs-license-requirements-what-restaurant-owners-need-to-know), [permitplace](https://permitplace.com/florida-2cop-license-rules/)) | Buyer pool is mostly bars and package stores. Demand-side signal weakened. |
+| About 250 FL transfers a year (5% turnover) | **Unverified.** No FL, CA or NJ transfer counts were found. FLLM shows only a handful of recent sales ($425–575k) against about 200 listings, which is about 9% of 4COP stock listed. | The market is buyer-constrained. The bottleneck is demand, which outbound can't create. |
+| NJ S4404 is a broker catalyst | It mostly runs through **municipal-to-municipal** public sales and RFPs ([NJLM](https://www.njlm.org/m/newsflash/Home/Detail/3933)) | Catalyst downgraded |
+| Few competitors; none mines the state lists | Many more Florida brokers: [FL Liquor License Sales](https://www.floridaliquorlicensesales.com/) (attorney, 20+ yrs), [Restaurant Traders](https://therestauranttraders.com/liquor-licenses), [GAI](https://gai.services/listing/4cop-quota-liquor-license-2/), [Prakas](https://prakascompany.com/), [Liquor License Guy](https://theliquorlicenseguy.com/types-of-liquor-licenses-in-florida/). [Liquor License Auctioneers](https://liquorlicenseauctioneers.com/florida/types/4cop-3ps) runs online FL auctions ($209–625k). In PA: [SVN Three Rivers](https://svnthreerivers.com/pa-liquor-licenses/), [Bar Doctors](https://www.bardoctors.net/license-brokerage), [SAG](https://sofrankoadvisors.com/services/pa-liquor-license-company/), and **PLCB's own auctions** (20 licenses, $25k minimum bid; average $284k in the 15th auction) ([PLCB](https://www.pa.gov/agencies/lcb/about-us/press-room/plcb-accepting-bids-for-16th-regular-auction-of-expired-restaura)). In MI: SLD Realty, 1,900+ deals ([site](https://michigan-liquorlicense.com/)). No AI-native entrant was found, but mailing the inactive list is easy to copy. | Competition score 4 → 3 |
+| Price stability | LA Type 47 down 10–15% after about 500 new releases. Boston about $650k → $550k. FL Miami-Dade/Broward were "historically near $1M" versus $215–495k asks now ([liquorlicensecost LA](https://liquorlicensecost.com/city/los-angeles), [Shea](https://www.yourfloridabusinessbroker.com/if-youre-a-tampa-bay-area-bar-restaurant-or-package-store-owner-thinking-about-what-a-sale-might-look-like-or-a-buyer-trying-to-understand-what-youre-actually-acquiring-the-l/)) | Prices are drifting down |
+| Legal | **Holds.** CA requires a DRE license for business opportunities plus mandatory licensed escrow (B&P 24074) ([DRE ref. book ch. 24](https://www.dre.ca.gov/files/pdf/refbook/ref24.pdf)). FL inactive licenses are legally transferable ([61A-5.0106](https://flrules.org/gateway/ruleNo.asp?id=61A-5.0106)). A buyer who flips within 36 months pays a $27,300 penalty. No DBPR restriction on direct mail to listed addresses was found. | No blocker |
+| 3–8% response from idle holders | Holders have no email on file, so this is direct mail. Many are investors who already know the license's value. **1–3% is realistic.** | Lowered |
+| Restaurant exit desk: 20k sales a year, $300M pool | **Unsupported.** BizBuySell recorded 9,586 closings in all categories, restaurant resales fell 11.7% YoY in Q2 2026 (median $205k), and We Sell Restaurants is bigger than stated (1,375 listings, about $600M) ([FastCasual](https://www.fastcasual.com/articles/restaurant-resales-fall-in-2026-turnkey-franchise-deals-surge/), [franchising.com](https://www.franchising.com/news/20260813_we_sell_restaurants_named_to_2026_inc_5000_for_fifth_consecutive_year_ranki.html)). Missed: KMF (6–10%), Corbett, EC Restaurant Brokers, Anchor. | Market cut by 3–5×; score 4 → 3 |
+
+### Verifier B: ideas 3–7
+
+| Draft claim | Finding | Effect |
+|---|---|---|
+| Milly 3%; Oak Street free | **Holds.** **Missed competitor:** [Insurance Agency Trader](https://trader.theidudes.com/) ("AI-optimized") charges **2% at close** or 10% of carryback, plus listings at $299–1,499/mo | The price ceiling is now 2% |
+| Captive "economic interest" angle | **State Farm agents don't own their book.** Farmers and Allstate approve the buyer. Allstate renewal commissions are rumored to fall to 4–5% in 2027, and a 2028 agency overhaul is pending ([AgencyEquity](https://www.agencyequity.com/articles/allstate-plans-major-agency-overhaul-for-2028-with-three-new-agency-models), [First Mid](https://www.firstmid.com/agency-finance/agency-finance-helpful-resources/allstates-compensation-plan-changes-for-eas/)) | Captive angle mostly dead. Idea 3: 4 → 3 |
+| Insurance reply rate 3.4–7.9% (Instantly) | **Unsupported.** Instantly gives only a 3.43% overall figure. Snov.io puts insurance at 5.5%; another benchmark says 2.1%. | Corrected; plan for about 2% |
+| Pharmacy: free wholesaler matching | **Holds** (McKesson RxOwnership: free, no contracts, 7,400+ owners). Cardinal's page returned a 503 and could not be verified. PRS has an NCPA-endorsed brokerage. File-buy pricing of $5–15/script is unverified. Chain demand is shrinking (Walgreens/Sycamore plans fewer than 100 closures in 2026). | Idea 4: 3.5 → 2 |
+| Franchise AFDR figures | **Exact.** Average broker success fee is $34,095. **CA SB 919 effective July 1, 2027.** **Franzy raised $2.2M** and is a resale marketplace, a direct competitor. Some conversion programs **waive the fee entirely** (e.g. Fiesta waives $25k), so 40–50% of zero is nothing. No public outside conversion-referral program was found. | Idea 5: 3.5–4 → 3 |
+| Tech-advisor residuals | Comcast and Spectrum pay **one-time bounties**, not residuals. Telarus promotes 3× MRC upfront for UCaaS. Chargeback windows are about 6 months, and some ISO programs vest residuals only after 12–24 months or require quotas. **New path:** savings-share bill-audit services already exist (BillCutterz 50%, Billshark 40%, Trim 33%, Dip $15/mo) ([CNBC](https://www.cnbc.com/select/best-bill-negotiation-services/)) | Holds at 5 as an upsell. A savings-share fee is a possible second revenue line. |
+| Tenant rep | Confirmed: Truss sold only its "IP and select assets" to Avison Young ([PE Hub](https://www.pehub.com/cdpq-backed-avison-young-acquires-ip-assets-of-truss/)). TenantBase now routes each tenant to one vetted broker. | 3 → 2 |
+
+**Net lesson, the same as round 1.** For every brokerage pool, a specialist broker, a low-fee marketplace or a free sponsor already exists:
+- the wholesalers in pharmacy;
+- the lender (Oak Street) in insurance books;
+- the state auctions (PLCB) in liquor licenses.
+
+Agent-sourced outbound doesn't create a moat when the supply list is public. It works only where the binding constraint is the labor of chasing counterparties, and in several of these markets the binding constraint is **buyer demand**.
 
 ---
 
-## 5. Ranked shortlist
+## 5. Ranked shortlist (post-verification)
 
-*(Final scores after self-verification; see the bottom of the file.)*
+Scale: 1–10. Competition: 10 = blue ocean. Recurring: 10 = fully recurring.
+
+| Rank | Idea | Market | WTP | Data access | Automation | Competition | Recurring | Time to $ | **Overall** | Confidence |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | **SMB technology-advisor residual book, as an upsell to existing site customers** (optionally plus a savings-share bill audit) | 5 | 4 | 9 | 6 | 2 | 8 | 5 | **5.0** (upsell) / 3.0 (cold) | Medium |
+| 2 | **Quota liquor-license brokerage** (FL bars and package stores first, then PA/MI) | 3 | 6 | 8 | 6 | 3 | 1 | 3 | **3.5** | Medium-low (transfer volume unknown) |
+| 3 | Restaurant exit desk | 4 | 5 | 6 | 3 | 2 | 1 | 3 | **3.0** | Medium |
+| 3 | Insurance micro-book brokerage | 4 | 4 | 6 | 6 | 2 | 1 | 3 | **3.0** | Medium |
+| 3 | Franchise resale / conversion placement | 6 | 6 | 5 | 4 | 2 | 1 | 2 | **3.0** | Medium |
+| 6 | Independent pharmacy exit / files | 3 | 4 | 7 | 5 | 1 | 1 | 3 | **2.0** | Medium-high |
+| 6 | SMB tenant representation | 4 | 3 | 3 | 4 | 2 | 1 | 2 | **2.0** | Medium-high |
+
+**Calibration.** Nothing in this lane earns a 7. No idea has strong evidence on *both* willingness to pay and competition. Every commission pool is real and documented (WTP is fine), but each one already has specialist brokers plus a low-fee or free intermediary.
+
+**Recommendation.**
+1. **Do not build a standalone brokerage** from this lane. Every option needs a real-estate license (or a franchise, P&C or energy registration), pays out once, and runs a 3–6 month cycle.
+2. **Run idea 1 (tech-advisor book) as a cheap upsell** to the brothers' existing customers, because it is recurring, unlicensed and warm-channel. Kill criteria: fewer than 15 of 100 customers upload bills, or fewer than 5 switch in 60 days.
+3. **Run the $1,500 liquor-license mail test only if one brother already wants a Florida real-estate license.**
+   - First, measure actual Florida 4COP transfer volume by diffing the DBPR active list's licensee names month over month.
+   - Kill if fewer than 100 4COP ownership changes a year, or fewer than 10 of 298 inactive holders respond.
