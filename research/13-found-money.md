@@ -37,7 +37,7 @@
 
 ## 2. Candidate ideas
 
-The ideas are ordered by my pre-verification score. Section 4 revises the scores.
+The ideas are ordered by my pre-verification score. Section 4 records the adversarial verification; Section 5 gives the final ranking. Some draft claims are struck or corrected inline.
 
 ### Idea 1: "RateLift": retail-rate warranty reimbursement submissions for **non-auto** dealers (farm, outdoor-power and construction equipment; powersports and motorcycle; marine; RV; heavy truck)
 
@@ -56,13 +56,13 @@ The ideas are ordered by my pre-verification score. Section 4 revises the scores
 **Buyer.** Dealer principal or service manager at independent equipment, powersports, marine, RV and truck dealers. Dealer-principals are owner-operators and are not "guarded professionals".
 
 **Evidence that money moves today.**
-- Armatus Dealer Uplift (auto) has worked with nearly 7,000 dealers and made 16,000+ submissions. It is endorsed by 24 state dealer associations and reports an average uplift of about $101,695 per store per year, on a fully contingent fee ([Armatus about](https://www.dealeruplift.com/about-us/), [FAQ](https://www.dealeruplift.com/faq/)).
+- Armatus Dealer Uplift (auto) now lists 7,400+ dealers, 19,000+ approvals and 25 association endorsements, with average gains of $97,488 (parts) plus $73,116 (labor) per store per year, on a fully contingent fee. (The draft's earlier "$101,695" figure could not be re-verified.) ([Armatus about](https://www.dealeruplift.com/about-us/), [FAQ](https://www.dealeruplift.com/faq/)).
 - Withum charges a flat $7,500 per submission ([Withum](https://www.withum.com/industries/dealerships/warranty-reimbursement/)).
 - Bellavia Cohen charges a flat fee and also serves marine dealers ([dealerlaw.com](https://www.dealerlaw.com/retail-warranty-reimbursement/)).
 - QB Business Solutions (auto, contingent) claims $280k–$500k per year uplifts ([QB](https://qbbusinesssolutions.com/warranty-reimbursement/)).
 - Chameleon "WarrantyAi" reports average labor-rate increases of $30.98 ([Chameleon](https://www.chameleonlimited.com/solutions/warrantyai)).
-- In equipment, OEMs litigate over these statutes, which shows the dollars are material: Deere, CNH, AGCO and Kubota sued over North Dakota's warranty-rate law and won on retroactivity at the 8th Circuit ([farm-equipment.com](https://www.farm-equipment.com/articles/14391-aem-manufacturers-challenging-north-dakota-dealership-law), [Seyfarth](https://www.seyfarth.com/news-insights/challenge-to-north-dakota-farm-equipment-dealer-statute-may-give-new-life-to-contract-clause-arguments-by-manufacturers.html)).
-- One farm-equipment article cites a dealer raising its warranty labor rate by $33/hr ([farm-equipment.com via search](https://www.farm-equipment.com/articles/20728-whats-the-best-way-to-determine-your-shop-labor-rate)) **(unverified detail)**.
+- In equipment, OEMs litigate over these statutes: Deere, CNH, AGCO and Kubota sued over North Dakota's SB 2289. In **2019** the 8th Circuit affirmed an injunction barring its application to *pre-existing* dealer contracts (*AEM v. Burgum*, 932 F.3d 727) ([farm-equipment.com](https://www.farm-equipment.com/articles/14391-aem-manufacturers-challenging-north-dakota-dealership-law), [Seyfarth](https://www.seyfarth.com/news-insights/challenge-to-north-dakota-farm-equipment-dealer-statute-may-give-new-life-to-contract-clause-arguments-by-manufacturers.html)).
+- ~~A farm-equipment article cites a $33/hr warranty-rate increase~~. **Retracted:** the verifier found that article has no warranty-rate content.
 
 **Market size, bottom-up (est.).**
 
@@ -121,8 +121,8 @@ Overall about 75% automatable. The human touchpoints that remain:
 | Competitor | Price | Coverage |
 |---|---|---|
 | Armatus Dealer Uplift | Contingent, % undisclosed | Auto. Endorsed by 24 associations ([about](https://www.dealeruplift.com/about-us/)) |
-| Wooden Automotive / Warranty Part ("Warranty Uplift®") | Contingent, % undisclosed | **Explicitly markets to "auto, truck, boat, RV and motorsports dealers"** ([Medium](https://medium.com/@Alexjamess/navigating-the-world-of-retail-warranty-reimbursement-and-labor-rates-with-wooden-automotive-23e0409631b2), [warrantypart.com](https://warrantypart.com/retail-warranty-reimbursement/)) |
-| Withum | $7,500 flat per submission | Auto dealers ([Withum](https://www.withum.com/industries/dealerships/warranty-reimbursement/)) |
+| Wooden Automotive / Warranty Part ("Warranty Uplift®") | Contradictory: "low flat fee, never take a cut" on [about-us](https://warrantypart.com/about-us/) vs pay-after-approval on [warrantyuplift.co](https://warrantyuplift.co/) | The non-auto claim ("truck, boat, RV, motorsports") appears only in a Medium SEO post; its own pages are auto-focused ([Medium](https://medium.com/@Alexjamess/navigating-the-world-of-retail-warranty-reimbursement-and-labor-rates-with-wooden-automotive-23e0409631b2), [warrantypart.com](https://warrantypart.com/retail-warranty-reimbursement/)) |
+| Withum | $7,500 flat per submission ($10,500 for parts + labor) | Auto dealers ([Withum](https://www.withum.com/industries/dealerships/warranty-reimbursement/)) |
 | Bellavia Cohen (dealerlaw.com) | Flat fee | Auto plus marine ([dealerlaw](https://www.dealerlaw.com/retail-warranty-reimbursement/)) |
 | QB Business Solutions | Contingent | Auto ([QB](https://qbbusinesssolutions.com/warranty-reimbursement/)) |
 | retailwarrantyreimbursementsubmissions.com | n/a | Auto ([site](https://retailwarrantyreimbursementsubmissions.com/)) |
@@ -163,7 +163,7 @@ Net: auto is crowded; non-auto is *thinner but not empty*.
 1. read each dealer's brand programs;
 2. find spend already incurred that is still claimable inside the 30–60-day post-period window;
 3. file claims with proof of performance;
-4. then run the brothers' **websites and ads as co-op-eligible spend**. Trane reimburses website development up to $2,000 ([ACCA](https://hvac-blog.acca.org/co-op-marking-programs-overview-10-top-manufacturers/)); Lennox reimburses up to 60% and Polaris 50% ([ACCA](https://hvac-blog.acca.org/co-op-marking-programs-overview-10-top-manufacturers/)).
+4. then run the brothers' **websites and ads as co-op-eligible spend**. Carrier's 2026 policy pays 50% against a 1.5–2% accrual and needs pre-approval for websites ([Carrier Enterprise 2026](https://resource.carrierenterprise.com/is/content/Watscocom/ce_ca_carrier-program-benefits_pdf_20260304_2026_Co-Op_AdvertisingPolicy_Carrier-Janpdf)). *(Correction: the draft attributed Trane, Lennox and Polaris figures to a 2017 ACCA post that does not contain them.)*
 
 This turns "found money" into the funding source for the brothers' core product.
 
@@ -274,7 +274,7 @@ Human: tax-rule review per state, partner CPA for state claims, and vendor follo
 - CPRS (AI-powered reverse audits) ([CPRS](https://cprs-inc.com/solutions/sales-use-tax-audit/));
 - predominant-use firms for the utility slice.
 
-**Why can't they do it themselves, or buy it for $50/mo?** Exemption rules are state-specific and dull. Small manufacturers lack a tax department. No SMB self-serve tool was found that reads AP invoices and drafts vendor credit requests **(searched; none found, low confidence)**.
+**Why can't they do it themselves, or buy it for $50/mo?** Exemption rules are state-specific and dull. Small manufacturers lack a tax department. *(Correction: the verifier found **Arthiva**, an AI tool that turns AP records into refund claims ([arthiva.ai](https://arthiva.ai/)), so "none found" was wrong.)*
 
 **Trigger timing.** Statutes of limitation run about 3–4 years (e.g. 4 years in Texas for the utility slice ([ICS Tax](https://ics-tax.com/utility-sales-tax-exemption/texas-utility-sales-tax-exemption/))). There is no timing cliff.
 
@@ -290,11 +290,11 @@ Human: tax-rule review per state, partner CPA for state claims, and vendor follo
 
 ### Idea 4: FICA tip credit (§45B) for newly eligible beauty businesses (W-2 salons, spas, barbershops)
 
-**Pitch.** The One Big Beautiful Bill Act (July 2025) extended the §45B employer credit for FICA paid on tips to barbering, hair, nail, esthetics and spa services, for tax years beginning after 31 Dec 2024. There is an extra test: tips must be at least 15% of gross receipts ([ATR](https://atr.org/big-beautiful-bill-expands-tip-tax-credit-to-barbershops-and-salons/), [Accounting Freedom](https://www.accountingfreedom.com/fica-tip-credit-salons-spas-barbershops/), [Pease Bell](https://www.peasebell.com/insights/restaurant-fica-tip-credit-2026/)). 2025 is the first claimable year, so many salon CPAs will miss it on 2025 returns. The agents would find W-2-model salons, estimate the credit, and route to a partner CPA who files Form 8846 or an amended return. The brothers take a referral or marketing fee, *not* a contingency on the refund.
+**Pitch.** The One Big Beautiful Bill Act (July 2025) extended the §45B employer credit for FICA paid on tips to barbering, hair, nail, esthetics and spa services, for tax years beginning after 31 Dec 2024. *(Correction: the draft's "tips ≥15% of gross receipts" test is **not in the statute** ([26 USC 45B](https://www.law.cornell.edu/uscode/text/26/45B), [PBA FAQ](https://www.probeauty.org/fica-tip-tax-faqs/)); beauty businesses measure against the $7.25 minimum wage.)* ([ATR](https://atr.org/big-beautiful-bill-expands-tip-tax-credit-to-barbershops-and-salons/), [Accounting Freedom](https://www.accountingfreedom.com/fica-tip-credit-salons-spas-barbershops/), [Pease Bell](https://www.peasebell.com/insights/restaurant-fica-tip-credit-2026/)). 2025 is the first claimable year, so many salon CPAs will miss it on 2025 returns. The agents would find W-2-model salons, estimate the credit, and route to a partner CPA who files Form 8846 or an amended return. The brothers take a referral or marketing fee, *not* a contingency on the refund.
 
 **Data and inputs.** Salon lists (Google Maps). W-2-model salons are identifiable from job posts that advertise "hourly + commission + tips". Payroll tip reports come from the client.
 
-**Buyer.** Salon owners. There are 84,176 employer salon establishments, against about 838k non-employer booth renters ([Census via startbusinessbystate](https://startbusinessbystate.com/salon-industry-statistics/)). The PBA says 87% of the salon workforce is non-employee ([search summary](https://bluecloudcpa.com/guides/small-business-tax-planning-beauty-salon-barbershop-booth-rental-tips)) **(verify)**. Only W-2 salons qualify.
+**Buyer.** Salon owners. There are 84,176 employer salon establishments, against about 838k non-employer booth renters ([Census via startbusinessbystate](https://startbusinessbystate.com/salon-industry-statistics/)). BLS says 48% of hairstylists and 80% of barbers are self-employed ([BLS](https://www.bls.gov/ooh/personal-care-and-service/barbers-hairstylists-and-cosmetologists.htm)); the "87% non-employee" figure in the draft is unsupported. Only W-2 salons qualify.
 
 **Evidence that money moves.** For restaurants, contingency FICA-tip-credit firms exist and claim $20k–$40k+ lookback refunds per location ([Modern Restaurant Management](https://modernrestaurantmanagement.com/maximizing-working-capital-addressing-the-unclaimed-fica-tip-credit/)). Examples: ficatc.com ("fees only when filed", optional advance through Rubix), TippedRefund.com, UnclaimedTaxCredits.com ([ficatc](https://www.ficatc.com/), [tippedrefund](https://www.tippedrefund.com/), [unclaimedtaxcredits](https://unclaimedtaxcredits.com/)).
 
@@ -323,7 +323,7 @@ Human: tax-rule review per state, partner CPA for state claims, and vendor follo
 
 **Kill risks.** Few W-2 salons; underreported tips; the nonrefundable credit needs income-tax liability (owners of pass-through entities); ERC-mill stigma; payroll providers auto-surfacing the credit.
 
-**Cheapest test.** Find 500 W-2 salons; email a "2025 is the first year salons can claim the tip credit" note with an estimate. *Kill if* fewer than 1% positive replies, or fewer than 30% of repliers have tipped W-2 staff above the 15% threshold.
+**Cheapest test.** Find 500 W-2 salons; email a "2025 is the first year salons can claim the tip credit" note with an estimate. *Kill if* fewer than 1% positive replies, or fewer than 30% of repliers have tipped W-2 staff with income-tax liability to absorb a nonrefundable credit.
 
 **Cold-email reply rate.** For local service SMBs I estimate 2–4% **(est.)**. Salon owners are reachable but skeptical of "free money" pitches after ERC.
 
@@ -401,12 +401,107 @@ The agents would monitor settlements, reconstruct purchase volumes from distribu
 
 ## 4. Self-verification results
 
-*(Filled in after the adversarial sub-agent pass. See below.)*
+Two general-purpose sub-agents attacked the top ideas in parallel. The first took Idea 1 (about 30 searches). The second took Ideas 2–4 (about 27 searches). **Every idea came back WEAKENED; none was CONFIRMED.** Factual errors they found have been corrected inline above, each marked as a correction or retraction.
 
-VERIFICATION_PLACEHOLDER
+### Idea 1 (RateLift, non-auto warranty): WEAKENED, close to KILLED for equipment and marine
+
+**Equipment statutes don't create the job.** Most farm, outdoor-power and construction statutes (AL, AR, GA, KY, MN, MS, NC, TN, VA, WY and others) pay the "established customer hourly retail labor rate". The only mechanism is that **the dealer notifies the supplier of its rate**. There is no 100-RO submission. Parts are fixed at **net + 15% minimum**, not a retail markup, so the draft's "$20k parts-markup uplift" per ag store is unsupported. KY and TN even allow the dealer to accept the supplier's terms instead ([EDA/Foley chart](https://farmequip.org/media/McGrath-State%20Statutes%20Handout.pdf)). The deliverable shrinks to a one-page letter.
+
+**Marine OEMs often already pay the posted rate.** Garmin's 2026 marine policy pays the "published shop rate up to $190/hr" ([Garmin](https://www8.garmin.com/marine/PDF/marine-warranty-policy.pdf)). Marine statutes are a patchwork:
+- VA pays the *lower* of the dealer's rate or the market rate;
+- NY phases in to 100%;
+- NE and SD require only "reasonable" compensation
+
+([NMMA survey](https://www.nmma.net/assets/cabinets/Cabinet446/State%20Level%20Warranty%20Laws%20for%20Boat%20and%20Accessory%20Mfgs.pdf)).
+
+**Per-store pools are small.** 2024 warranty claims paid were Polaris $151M, Harley $64M worldwide, Malibu $27M and MasterCraft $12M ([Warranty Week](https://www.warrantyweek.com/archive/ww20250424.html)). That implies roughly $3–10k a year of uplift per powersports or boat store, so a fee of about $1–3k, which can't carry a sales call (est., verifier).
+
+**RV is the exception.** Thor paid $85.7M in claims in one quarter ([Warranty Week](https://www.warrantyweek.com/archive/ww20231207.html)). FL 320.696 ties RV warranty pay to retail charges ([FL](https://www.flsenate.gov/Laws/Statutes/2024/320.696)). Heavy truck is also live: SD's truck statute was amended in 2021 to require retail labor and parts ([NatLawReview](https://natlawreview.com/article/states-impose-new-requirements-dealer-warranty-reimbursement)). But in those segments the 100-RO mechanism exists only under the auto franchise acts, which is where Armatus, Wooden and Withum already operate.
+
+**Adjacent competitor.** MarineLab, an MRAA member benefit, handles marine warranty *claims processing* for a percentage of paid claims ([MRAA](https://mraa.com/mraa-members-get-help-with-warranty-claims-through-marinelab/)). Lightspeed DMS submits OEM claims but has no rate-submission tool ([Lightspeed](https://www.lightspeeddms.com/solutions/service/)).
+
+**Legal.**
+- No UPL authority targets rate submissions.
+- Anti-retaliation clauses were found in auto statutes but not in the equipment or marine statutes reviewed.
+- *AEM v. Burgum* (2019) limits new equipment statutes' reach to existing contracts in 8th Circuit states ([Justia](https://law.justia.com/cases/federal/appellate-courts/ca8/18-1115/18-1115-2019-08-02.html)).
+
+**Verifier scores:** market 4, WTP 3, data 3, automation 6, competition 6, recurring 4, time-to-$ 3. **Overall about 4.**
+
+**I accept this.** I narrow the surviving idea to **RV and heavy-truck dealers in states whose auto franchise act covers them** and score it 4.0.
+
+### Idea 2 (Co-op): WEAKENED, 5/10 as an upsell only
+
+**Retroactive "found money" is mostly fiction.** Pre-approval and 30–60-day windows are standard: Carrier requires claims within 60 days of the invoice with a 15 Dec hard cutoff ([Carrier Enterprise 2026](https://resource.carrierenterprise.com/is/content/Watscocom/ce_ca_carrier-program-benefits_pdf_20260304_2026_Co-Op_AdvertisingPolicy_Carrier-Janpdf)), and Lennox requires prior approval. What can be recovered is *unspent current-period accrual*.
+
+**OEM gating is worse than the draft said.** It covers Yamaha, Honda, Kawasaki, and Lennox's Preferred Vendor Program ([Rynoss](https://rynoss.com/partners/lennox-preferred-vendor/)).
+
+**Competitors added:**
+- Dealer Spike: 100+ OEM programs, about $495–$2,000+/mo per third-party estimates ([Dealer Spike](https://www.dealerspike.com/partnership/honda/)).
+- Ansira/BrandMuscle: from about $4,500/mo, sold to OEMs ([SelectHub](https://www.selecthub.com/p/marketing-automation-software/ansira/)).
+- CoopReclaim: the $99/mo is *planned*; it is in free early access.
+
+**The "$14–35B unclaimed" figure** is a 2016 estimate from a media-sellers' trade group. Treat it as marketing, not a market size.
+
+**My call:** keep it as an add-on that raises close rates and retention for the brothers' existing site and ads business. It is not a standalone found-money product.
+
+### Idea 3 (vendor-side sales-tax recovery): WEAKENED, borderline kill, 4/10
+
+**Vendor credits are voluntary.** In CA only the retailer can claim from the state, and it must first repay the customer ([Tax Adviser](https://www.thetaxadviser.com/issues/2018/nov/retailer-not-required-file-sales-tax-refund-claim-consumer/), [CDTFA 6902](https://cdtfa.ca.gov/lawguides/vol1/sutl/6902.html)). TX allows a purchaser claim via vendor assignment within 4 years ([34 TAC 3.325](https://law.cornell.edu/regulations/texas/34-Tex-Admin-Code-SS-3-325)).
+
+**SaaS overcharging is narrow** (multi-state apportionment, TX's 20% data-processing exemption) ([TXCPA](https://www.tx.cpa/news-publications/news-announcements/article/2026/02/06/data-processing-services-saas-and-software-licenses)).
+
+**Legal.**
+- In Ohio a tax firm arguing an appeal was held to have committed UPL ([Court News Ohio](https://www.courtnewsohio.gov/cases/2013/SCO/1224/131292.asp)).
+- NY Tax Appeals representatives must be an attorney, CPA or EA ([20 NYCRR 3000.2](https://www.law.cornell.edu/regulations/new-york/20-NYCRR-3000.2)).
+- Disputed claims therefore need a licensed partner.
+
+**Competitor missed in the draft:** Arthiva (AI tool turning AP records into refund claims) ([arthiva.ai](https://arthiva.ai/)).
+
+### Idea 4 (FICA tip credit, salons): WEAKENED, 4/10 → I lower it to 3.5
+
+**The draft had the statute wrong.** It said there was a 15% tips/gross-receipts test; there is none ([26 USC 45B](https://www.law.cornell.edu/uscode/text/26/45B)). The credit is nonrefundable ([PBA](https://www.probeauty.org/fica-tip-tax-faqs/)).
+
+**There are no restaurant-style lookback refunds**, because only 2025 onward is claimable. That kills the "found money" framing.
+
+**Barbershops are mostly ineligible:** 80% of barbers are self-employed ([BLS](https://www.bls.gov/ooh/personal-care-and-service/barbers-hairstylists-and-cosmetologists.htm)).
+
+**Competitors added:**
+- TippedRefund: 25% success fee; salons "coming".
+- Boyum and Citrin Cooperman: targeting salons ([Boyum](https://myboyum.com/salon/fica-tip-credit-for-salons-spas-and-barbershops-in-2025/), [Citrin](https://www.citrincooperman.com/In-Focus-Resource-Center/OBBBA-Expands-FICA-Tip-Credit-Beyond-Restaurants)).
+
+**Referral model:** California bans CPAs from paying a fee "to obtain a client" ([B&P 5061](https://codes.findlaw.com/ca/business-and-professions-code/bpc-sect-5061/)). In Texas a CPA may pay with disclosure, but is liable for the non-CPA's acts ([TSBPA](https://www.tsbpa.state.tx.us/enforcement/faq.html)).
+
+**Circular 230 date correction:** REG-116610-20 was proposed in Dec 2024 and is not finalized ([CPA Trendlines](https://cpatrendlines.com/2025/01/17/major-changes-to-circular-230-implications-for-tax-professionals-cornerstone-report/)).
+
+### What the verification taught
+
+The lane's base assumption fails twice over:
+1. **Where recovery rights are statutory and recurring, the money per SMB is small.** Non-auto warranty, salon tip credit and settlements all show this.
+2. **Where the money per client is large, incumbents and licensing already own it.** Auto warranty, reverse audits, R&D and public adjusting all show this.
+
+The one usable piece is **co-op**, as a funding source for the brothers' existing product, not as a business of its own.
+
 
 ---
 
 ## 5. Ranked shortlist
 
-SHORTLIST_PLACEHOLDER
+Scores are post-verification, 1–10. Competition: 10 = blue ocean. Ideas are ordered by legality first, then competition, then overall score.
+
+| Rank | Idea | Legal | Market | WTP | Data access | Automation | Competition | Recurring | Time to $ | **Overall** | Confidence |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Co-op claim desk + co-op-funded marketing, **as an upsell** to the brothers' existing dealer and contractor site customers | Clean (program terms only) | 5 | 5 | 4 | 5 | 3 | 8 | 5 | **4.5** (5.0 as an upsell; ~3 as standalone cold outbound) | Medium |
+| 2 | RateLift narrowed to **RV and heavy-truck dealers** in states where the auto franchise act or an RV statute gives retail-rate and 100-RO rights | Clean (no licence; protests need counsel) | 3 | 4 | 3 | 6 | 5 | 4 | 3 | **4.0** | Low–medium |
+| 3 | Vendor-side sales-tax overcharge recovery for small manufacturers | Mostly clean for vendor credits; state claims and appeals need a CPA/attorney/EA partner (NY, OH UPL) | 5 | 6 | 3 | 5 | 4 | 4 | 3 | **4.0** | Medium |
+| 4 | §45B FICA tip credit for W-2 salons and spas | Gray (Circular 230 proposal; CA ban on CPA referral fees) | 3 | 4 | 4 | 6 | 3 | 5 | 5 | **3.5** | Medium |
+| 5 | Workers' comp premium-audit recovery | Gray (insurance-advice licensing in some states) | 4 | 6 | 3 | 4 | 3 | 3 | 4 | **3.0** | Medium-low (not separately verified) |
+| 6 | Restaurant Settlement Desk | Clean if the disclosures courts require are followed | 2 | 3 | 5 | 6 | 2 | 3 | 4 | **2.5** (use only as a free retention perk) | Medium |
+| — | RateLift for equipment, OPE, marine and powersports | Clean | 3 | 3 | 3 | 6 | 6 | 4 | 3 | **3.0** | Medium |
+
+**Calibration.** Nothing reaches 7. No idea combines strong willingness-to-pay evidence with a thin competitive field. Where WTP is proven (auto warranty, reverse audits, WC recovery, parcel audit), the field is crowded. Where the field is thin (non-auto warranty, salon tip credit), the dollars per client are small or unproven.
+
+**Recommendation to the brothers.**
+1. **Don't build a standalone contingency-recovery business** from this lane.
+2. **Do bolt co-op claiming onto the existing site business** for customers that carry national brands (HVAC, powersports, marine, OPE, appliance). Price it as "your marketing is X% manufacturer-funded", and handle pre-approvals and claims as the retention hook. Validation is cheap: audit 20 existing customers' brand programs. *Kill if* fewer than 5 have at least $2k a year of unspent accrual.
+3. If they want one outbound experiment, test **RV-dealer warranty uplift** first. Do a 10-state statute check (FL 320.696 and others), then 200 personalised emails. *Kill if* fewer than 3 dealers agree to send an RO export, or the statute check finds fewer than 5 states with retail-rate plus submission mechanics for RVs.
+
