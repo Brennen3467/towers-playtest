@@ -1,0 +1,3900 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Agent Business Opportunities: Research Pitch</title><style>@page { size: Letter; margin: 0.7in 0.75in 0.8in; }
+:root{--ink:#1d2330;--muted:#5b6475;--accent:#0f5c8c;--rule:#d8dde6;--soft:#f3f6fa;}
+body{font-family:"Helvetica Neue",Arial,sans-serif;color:var(--ink);font-size:10pt;line-height:1.45;background:#fff;}
+.cover{page-break-after:always;padding-top:1.4in;}
+.kicker{color:var(--accent);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:9pt;}
+.title{font-size:34pt;line-height:1.1;margin:.25in 0 .15in;border:none;}
+.sub{font-size:13pt;color:var(--muted);max-width:6in;}
+.stats{display:flex;gap:.25in;margin:.4in 0;}
+.stats div{flex:1;border-top:3px solid var(--accent);padding-top:6px;}
+.stats b{display:block;font-size:24pt;}
+.stats span{color:var(--muted);font-size:9pt;}
+.answer{background:var(--soft);border-left:4px solid var(--accent);padding:12px 16px;font-size:10.5pt;}
+.foot{color:var(--muted);font-size:8.5pt;margin-top:.5in;}
+h1{font-size:19pt;color:var(--accent);border-bottom:2px solid var(--rule);padding-bottom:4px;margin-top:0;page-break-before:always;}
+main>h1:first-child{page-break-before:avoid;}
+h2{font-size:13.5pt;margin-top:18px;color:var(--ink);page-break-after:avoid;}
+h3{font-size:11pt;margin-top:14px;page-break-after:avoid;}
+p,li{orphans:3;widows:3;}
+table{border-collapse:collapse;width:100%;margin:8px 0 12px;font-size:8.3pt;page-break-inside:auto;}
+tr{page-break-inside:avoid;}
+th{background:var(--accent);color:#fff;text-align:left;padding:4px 5px;font-weight:600;}
+td{border-bottom:1px solid var(--rule);padding:4px 5px;vertical-align:top;}
+tr:nth-child(even) td{background:#fafbfd;}
+a{color:var(--accent);text-decoration:none;word-break:break-all;}
+code{font-size:8.5pt;background:var(--soft);padding:0 3px;}
+.appx{font-size:9pt;}
+.appx h2{page-break-before:auto;border-top:1px solid var(--rule);padding-top:10px;}
+.note{color:var(--muted);font-style:italic;}
+hr{border:none;border-top:1px solid var(--rule);}
+
+.cover h1.title{page-break-before:avoid;border:none;color:var(--ink);}
+</style></head><body>
+<section class="cover">
+<div class="kicker">Research pitch · prepared for the brothers · 1 October 2026</div>
+<h1 class="title">What we'd actually bet on</h1>
+<p class="sub">Replicating an automated, agent-run website business in new markets: 15 research lanes, 7 independent adversarial verifiers, 333 ideas considered.</p>
+<div class="stats">
+<div><b>333</b><span>ideas considered</span></div>
+<div><b>110</b><span>shortlisted</span></div>
+<div><b>~45</b><span>independently attacked</span></div>
+<div><b>0</b><span>survived at 7+/10</span></div>
+</div>
+<div class="answer"><b>The short answer.</b> No blue-ocean, 7-out-of-10 business survived verification. Three defensible bets did:
+<ol><li><b>Local Presence Plan</b>: upsell your own website customers to reviews, Google Business Profile, citations and AI-visibility reporting (5.0, confirmed by two verifiers).</li>
+<li><b>California Industrial Stormwater Pre-Notice Audit and Watch</b>: open data with a contact email for 99.7% of 20,429 facilities, and an incumbent priced out of small sites (5.5).</li>
+<li><b>Co-op-funded marketing retainer</b> for the brand dealers in your base (4.0, 5.0 inside that segment).</li></ol>
+Both seed ideas were researched in depth. Neither survives as originally specified; see Section 3.</div>
+<p class="foot">Source reports with URLs for every claim: GitHub <code>Brennen3467/towers-playtest</code>, branches <code>research/01…15</code>, <code>research/verify-1…7</code>. Prepared by Claude research agents. This is research, not legal or investment advice.</p>
+</section>
+<main><h1>Executive summary</h1>
+<p><strong>The question you asked.</strong> You already run an agent business: find local businesses with bad websites, build them a new site, send personalized outreach, handle replies. Where else can that same machine work? You wanted markets where Claude agents interpret data that used to take many people, with a big enough market, buyers who already pay, a clear go-to-market and recurring revenue. Every idea was to be independently verified, nothing was to be pitched just because you'd like it, and nothing was off the table.</p>
+<p><strong>What we did (all on 1 October 2026)</strong></p>
+<ul>
+<li><strong>Round 1:</strong> 11 parallel research sessions, one per market lane, including both of your seed ideas.</li>
+<li><strong>Round 2:</strong> 4 more lanes, designed to avoid the failure patterns that round 1 exposed.</li>
+<li><strong>Verification:</strong> 7 separate verifier sessions whose only job was to break the shortlisted ideas, plus about 20 sub-agents doing self-checks.</li>
+<li><strong>Volume:</strong> <strong>333 ideas</strong> considered, <strong>110 shortlisted</strong>, and about <strong>45 independently attacked</strong>. Each session had its own search budget, about 3,000 web searches and page fetches in total. Every claim in the underlying reports carries a source URL. The reports sit on <code>research/*</code> branches of the <code>towers-playtest</code> repo.</li>
+</ul>
+<p><strong>The honest headline: we did not find a blue-ocean, 7-out-of-10 business.</strong></p>
+<ul>
+<li>No verifier confirmed any new-market idea as originally specified.</li>
+<li>Lanes first scored their best ideas 6–7.4. After verification the same ideas landed at <strong>1.5–5.5</strong>.</li>
+<li>The reasons repeated so consistently that they are a finding in their own right (Section 6):<ul>
+<li>A $25–$300/mo vendor almost always already sells the "insight".</li>
+<li>Free public data is free for your buyers too.</li>
+<li>Public triggers usually appear after the decision has already been made.</li>
+<li>Licensing and fee-splitting rules quietly kill most contingency-fee models.</li>
+</ul>
+</li>
+<li>The pitch below is calibrated to that. We'd rather hand you three modest, defensible bets with cheap kill tests than ten exciting ones that fall apart in month two.</li>
+</ul>
+<h2>What we're pitching</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Bet</th>
+<th>Final score</th>
+<th>Status</th>
+<th>Why it survives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>Local Presence Plan.</strong> Upsell your existing and new website customers to care/hosting plus reviews, Google Business Profile, citations and a monthly "AI and Maps visibility" report, priced around $129/mo.</td>
+<td><strong>5.0</strong></td>
+<td><strong>CONFIRMED</strong> by two independent verifiers (verify-5, verify-6)</td>
+<td>Acquisition cost is near zero, the work is real done-for-you work, and multi-product customers churn about 40% less. Build it into the sale rather than adding it later.</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>California Industrial Stormwater Pre-Notice Audit and Watch.</strong> A fixed-fee self-audit ($500–1,500) plus a $50–100/mo watch for small industrial sites (auto wreckers, scrap yards) exposed to Clean Water Act citizen suits. Sold direct and white-labelled through stormwater consultants.</td>
+<td><strong>5.5</strong></td>
+<td><strong>Upgraded</strong> by the last verifier (verify-7) after live data queries</td>
+<td>The open state dataset lists 20,429 active facilities, and <strong>99.7% of them publish a contact email</strong>. The incumbent charges $11–27k per site per year, which leaves the small owner-operator tier open. The average settlement is about $79k per facility, so a $1,000 audit is easy to justify.</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>Co-op-funded marketing retainer for brand dealers</strong> (HVAC, outdoor power equipment, marine). Manufacturers' co-op funds pay up to 50% of a $500–900/mo website/SEO retainer.</td>
+<td><strong>4.0</strong> (5.0 inside the segment)</td>
+<td>WEAKENED but alive (verify-6)</td>
+<td>High revenue per customer for the slice of your base that carries national brands. A standalone co-op <em>claim-filing</em> desk was killed.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cheap options worth a test only after the bets above</strong> (each 3.5–4.5 with a defined kill test, detailed later):</p>
+<ul>
+<li>a Florida condo capital-event feed</li>
+<li>a flat-fee town grant desk</li>
+<li>contractor insurance-expiration ("X-date") meetings for commercial insurance agents in WA/OR</li>
+<li>a flat-fee unclaimed-property sweep for CPA firms</li>
+<li>a back-test-first version of your M&amp;A idea</li>
+</ul>
+<p><strong>What we recommend you do not do, with high confidence</strong></p>
+<ul>
+<li>White-label your outbound engine as "AI outbound for vertical X" (2.5): commoditizing prices, 6–8%/mo churn, and the sender carries the legal exposure.</li>
+<li>Pro-se trademark lead feeds (3.5): the USPTO now lists exactly this outreach as a scam pattern.</li>
+<li>Licensed brokerages (2.0–3.5).</li>
+<li>Your two seed ideas as originally specified (Section 3).</li>
+</ul>
+<p><strong>The single biggest strategic finding.</strong> Every upsell scenario is dominated by <strong>N, the number of website customers you have</strong>.</p>
+<ul>
+<li>At 500 customers, the full upsell bundle adds roughly <strong>$110–230K ARR</strong>.</li>
+<li>At 2,000 customers it adds <strong>$0.4–0.9M ARR</strong>.</li>
+<li>Your outbound/build-before-you-pitch engine is your most valuable asset, and it is worth most when pointed at <em>your own</em> customer acquisition plus a vertical bundle, not resold or redeployed into a market where a $39/mo tool already does the "insight".</li>
+<li>The one large counter-example, Owner.com (about $81M ARR, $1B valuation), won by owning SMB customers in one vertical with website plus marketing. It did not win by selling data or outbound.</li>
+</ul>
+<h1>1. How we did it</h1>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Sessions</th>
+<th>What happened</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Round 1: discovery</td>
+<td>11 lanes</td>
+<td>M&amp;A origination (seed a), trade/shipping intel (seed b), public-records signals, regulatory compliance, real estate/construction, healthcare data, government contracting, legal/IP, local-SMB adjacencies, B2B intent signals, wildcards/obscure data. Each produced 5–10 scored ideas plus rejects.</td>
+</tr>
+<tr>
+<td>Round 1: verification</td>
+<td>5 verifiers</td>
+<td>Each took 5–6 ideas it had <strong>not</strong> written and tried to break them. The checks covered data access (live API queries), hidden competitors, bottom-up buyer counts, licensing, cold-email economics and timing. Result: <strong>0 confirmed, 28 weakened, 5 killed.</strong></td>
+</tr>
+<tr>
+<td>Round 2: discovery</td>
+<td>4 lanes</td>
+<td>Designed around round 1's failure patterns: done-for-you back-office work, contingency "found money" recovery, proprietary data (records requests at scale, data co-ops, agent-collected data) and agent-run brokerages. Each lane ran its own 2-agent adversarial self-check.</td>
+</tr>
+<tr>
+<td>Final verification</td>
+<td>2 verifiers</td>
+<td>verify-6 stress-tested the "upsell your base" thesis and the white-label outbound alternative. verify-7 attacked the round-2 standalone ideas and re-opened the best round-1 survivors.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Scoring.</strong> Each idea was scored 1–10 on market size, willingness to pay, data access, automation, competition (10 = blue ocean), recurring revenue and time to first dollar, plus an overall judgment score and a confidence level. A 7+ required strong evidence on <strong>both</strong> willingness to pay and competition. No idea met that bar after verification.</p>
+<p><strong>Limits.</strong></p>
+<ul>
+<li>Reddit and some vendor pages were blocked for several sessions, so evidence of buyer pain leans on pricing pages, filings and job data more than on forum posts.</li>
+<li>Some partner-program terms (commission splits, for example) sit behind logins.</li>
+<li>Market sizes marked "(est.)" in the source reports are the sessions' own arithmetic.</li>
+</ul>
+<h1>2. Ranked list of every idea that went through independent verification</h1>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Idea</th>
+<th>Lane</th>
+<th>First score</th>
+<th>Final score</th>
+<th>Final verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>CA industrial stormwater pre-notice audit and watch</td>
+<td>04</td>
+<td>6.4</td>
+<td><strong>5.5</strong></td>
+<td>Upgraded (verify-7)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Local Presence Plan: reviews/GBP/AI-visibility upsell to own customers</td>
+<td>09</td>
+<td>7.0</td>
+<td><strong>5.0</strong></td>
+<td>CONFIRMED (verify-5, verify-6)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>FL condo capital-event feed (engineers and restoration firms)</td>
+<td>05</td>
+<td>7.0</td>
+<td><strong>4.5</strong></td>
+<td>WEAKENED (verify-3)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Co-op-funded marketing retainer for brand dealers</td>
+<td>13</td>
+<td>4.5</td>
+<td><strong>4.0</strong> (5.0 in segment)</td>
+<td>WEAKENED (verify-6)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Town Grant Desk (flat retainer)</td>
+<td>07</td>
+<td>6.6</td>
+<td><strong>4.0</strong></td>
+<td>WEAKENED (verify-3)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Contractor coverage X-date engine (WA/OR/CA/FL)</td>
+<td>03</td>
+<td>7.0</td>
+<td><strong>4.0</strong></td>
+<td>WEAKENED (verify-2)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>B2B unclaimed-property sweep via CPA firms (flat fee)</td>
+<td>08</td>
+<td>6.2</td>
+<td><strong>4.0</strong></td>
+<td>WEAKENED (verify-4)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Aircraft-owner outreach for avionics/MRO shops</td>
+<td>11</td>
+<td>6.4</td>
+<td><strong>4.0</strong></td>
+<td>WEAKENED (verify-5)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Seed (b): competitor sourcing-shift reports (as a free hook only)</td>
+<td>02</td>
+<td>5.0</td>
+<td><strong>4.0</strong></td>
+<td>WEAKENED (verify-5)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Seed (a): trades M&amp;A origination, per meeting, with succession score</td>
+<td>01</td>
+<td>6.0–6.4</td>
+<td><strong>3.5</strong></td>
+<td>WEAKENED (verify-1, -5, -7)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Tariff exposure brief (re-scoped as a broker white-label alert)</td>
+<td>02</td>
+<td>7.0</td>
+<td><strong>3.5</strong></td>
+<td>WEAKENED (verify-1)</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Vertical roll-up target intelligence</td>
+<td>01</td>
+<td>6.4</td>
+<td><strong>3.5</strong></td>
+<td>WEAKENED (verify-1)</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Restaurant inspection → pest/hood vendor router</td>
+<td>03/04</td>
+<td>6.7–6.8</td>
+<td><strong>3.5</strong></td>
+<td>WEAKENED (verify-2)</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Medicare enrollment guard / rate-gap report</td>
+<td>06</td>
+<td>6.3–6.4</td>
+<td><strong>3.5</strong></td>
+<td>WEAKENED (verify-4)</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Trucking insurance renewal/lapse radar</td>
+<td>04/09/10</td>
+<td>4.0–6.4</td>
+<td><strong>3.5</strong></td>
+<td>WEAKENED (verify-5)</td>
+</tr>
+<tr>
+<td>16</td>
+<td>SMB technology-advisor residual book (telecom/merchant)</td>
+<td>15</td>
+<td>5.0</td>
+<td><strong>3.5</strong></td>
+<td>WEAKENED; energy KILLED (verify-6)</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Pro-se trademark office-action feed / workbench</td>
+<td>08</td>
+<td>6.6</td>
+<td><strong>3.5</strong></td>
+<td>WORSE (verify-4, -7)</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Single-audit finding fixer</td>
+<td>07</td>
+<td>7.1</td>
+<td><strong>3.0</strong></td>
+<td>WEAKENED (verify-3)</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Water pipeline radar + agenda-to-pipeline</td>
+<td>07/11</td>
+<td>6.7–6.9</td>
+<td><strong>3.0</strong></td>
+<td>WEAKENED (verify-3)</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Property-tax appeal evidence engine</td>
+<td>11</td>
+<td>5.9</td>
+<td><strong>3.0</strong></td>
+<td>WEAKENED (verify-3)</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Flat-fee add-on origination for PE</td>
+<td>01</td>
+<td>6.0</td>
+<td><strong>3.0</strong></td>
+<td>WEAKENED (verify-1)</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Healthcare practice-acquisition screener</td>
+<td>06</td>
+<td>6.2</td>
+<td><strong>3.0</strong></td>
+<td>WEAKENED (verify-1)</td>
+</tr>
+<tr>
+<td>23</td>
+<td>New Practice Radar</td>
+<td>10</td>
+<td>6.5</td>
+<td><strong>3.0</strong></td>
+<td>WEAKENED (verify-4)</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Duty-recovery lead engine (flat retainer)</td>
+<td>02</td>
+<td>6.4</td>
+<td><strong>3.0</strong></td>
+<td>WEAKENED (verify-1)</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Contractor back-office bundle (upsell)</td>
+<td>12</td>
+<td>4.5</td>
+<td><strong>3.0</strong></td>
+<td>WEAKENED (verify-6)</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Prequal Desk (ISN/Avetta/Veriforce)</td>
+<td>12</td>
+<td>4.0</td>
+<td><strong>3.0</strong></td>
+<td>WEAKENED (verify-7)</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Overdue Feed (fire inspection records)</td>
+<td>14</td>
+<td>4.0</td>
+<td><strong>3.0</strong></td>
+<td>WEAKENED (verify-7)</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Vendor-side sales-tax overcharge recovery</td>
+<td>13</td>
+<td>4.0</td>
+<td><strong>3.0</strong></td>
+<td>WEAKENED (verify-7)</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Prop 65 "Next Defendant" alerts</td>
+<td>04</td>
+<td>7.4</td>
+<td><strong>3.0</strong></td>
+<td>KILLED as specified (verify-2)</td>
+</tr>
+<tr>
+<td>30</td>
+<td>White-label "AI outbound for vertical X"</td>
+<td>—</td>
+<td>—</td>
+<td><strong>2.5</strong></td>
+<td>KILLED as a pivot (verify-6)</td>
+</tr>
+<tr>
+<td>31</td>
+<td>OSHA site-specific targeting predictor</td>
+<td>04</td>
+<td>6.5</td>
+<td><strong>2.5</strong></td>
+<td>KILLED (verify-2)</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Quota liquor-license brokerage (FL/PA/MI)</td>
+<td>15</td>
+<td>3.5</td>
+<td><strong>2.5</strong></td>
+<td>Near KILLED (verify-7)</td>
+</tr>
+<tr>
+<td>33</td>
+<td>Restaurant commission-leak site + ordering</td>
+<td>09</td>
+<td>6.0</td>
+<td><strong>2.5</strong></td>
+<td>KILLED (verify-5)</td>
+</tr>
+<tr>
+<td>34</td>
+<td>RateLift: RV/heavy-truck warranty uplift</td>
+<td>13</td>
+<td>4.0</td>
+<td><strong>2.0</strong></td>
+<td>KILLED for RV (verify-7)</td>
+</tr>
+<tr>
+<td>35</td>
+<td>FL elevator conveyance intel</td>
+<td>05</td>
+<td>5.8</td>
+<td><strong>2.0</strong></td>
+<td>KILLED (verify-3)</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Drawback discovery with broker contingency split</td>
+<td>11/02</td>
+<td>5.3</td>
+<td><strong>1.5</strong></td>
+<td>KILLED: 19 CFR 111.36 (verify-1)</td>
+</tr>
+</tbody>
+</table>
+<p>The full idea-by-idea record, including the 223 ideas the lanes rejected outright, is in Appendix A.</p>
+<h1>3. Your two seed ideas, judged honestly</h1>
+<h2>Seed (a): sell-side deal origination for investment banks and PE</h2>
+<p><strong>Verdict: real money moves, but the generic service is commoditized and consolidating. Final score 3.5.</strong></p>
+<ul>
+<li><strong>Willingness to pay is proven.</strong><ul>
+<li>Pay-per-appointment sourcing runs <strong>$300–600 per meeting</strong>.</li>
+<li>Managed programs run <strong>$4–25k/mo</strong>.</li>
+<li>Independent sponsors are a growing buyer base: about 1,400–1,500 active, twice the 2019 level, and 27% of Axial's closed deals.</li>
+</ul>
+</li>
+<li><strong>The field is crowded and consolidating.</strong><ul>
+<li>SourceCo has merged with CAPTARGET, and Datasite owns both Grata and SourceScrub.</li>
+<li>Axia, DealSource, CT Acquisitions (home services, 2,000+ operator relationships) and Collar AI (YC F26) all sell the same thing.</li>
+<li>DealSource already markets a "succession score".</li>
+<li>A YC company with essentially your pitch (Q2Q) is inactive.</li>
+</ul>
+</li>
+<li><strong>The legal path exists but constrains the model.</strong><ul>
+<li>Flat per-meeting fees with no involvement in negotiation probably keep you a lead-gen vendor, not a broker (unverified).</li>
+<li>Success fees run into broker-dealer and state business-broker rules. California and Florida treat business sales as real estate, and only about 23 states have M&amp;A broker exemptions.</li>
+</ul>
+</li>
+<li><strong>Your one potentially unique input is website staleness from your own crawler.</strong> There is <strong>no evidence yet</strong> that it predicts a sale. Texas licence data lacks issue dates; California's licence board (CSLB) has them.</li>
+<li><strong>What would change our mind.</strong><ul>
+<li>Run a 3–4 week, under-$1K <strong>back-test</strong>: score California HVAC, plumbing and electrical licences on tenure plus website staleness, and check them against shops that later cancelled or transferred licences or were acquired.</li>
+<li>If the score shows clear lift over tenure alone (around 1.5× or better), sell it as a data add-on to existing originators and independent sponsors. Do not run another meeting-setting shop.</li>
+</ul>
+</li>
+</ul>
+<h2>Seed (b): competitor reports from shipping data</h2>
+<p><strong>Verdict: "your competitor switched suppliers" loses to ImportYeti, which is free. Final score 4.0 as a free hook, 3.5 as a tariff-alert product.</strong></p>
+<ul>
+<li>Bill-of-lading data is widely resold. ImportYeti gives it away, and up to about 35% of shipments are masked by manifest-confidentiality filings.</li>
+<li>Dollar estimates of tariff exposure built from bill-of-lading data alone are not credible, because the records carry no values or HTS codes.</li>
+<li><strong>The surviving variant:</strong> a white-label alert engine sold to customs brokers. They hold the exact entry data and the client relationship.</li>
+<li><strong>The killed variant:</strong> sharing a broker's contingency fee on duty drawback or refunds. 19 CFR 111.36 prohibits it.</li>
+<li><strong>Recommendation:</strong> shelve it unless CBP issues a binding ruling allowing a flat-fee lead structure, or the pending export-manifest rule lands.</li>
+</ul>
+<h1>4. Bet #1: the Local Presence Plan (CONFIRMED, 5.0)</h1>
+<p><strong>Pitch.</strong> Every website you build ships with a monthly plan:</p>
+<ul>
+<li>care and hosting;</li>
+<li>review generation and response;</li>
+<li>Google Business Profile management;</li>
+<li>citation clean-up;</li>
+<li>a monthly "how visible are you on Google Maps and in AI answers" report.</li>
+</ul>
+<p>It is offered at about <strong>$129/mo</strong>, or tiered at $79 for care only and $149 with reviews.</p>
+<p><strong>Why it survives when the standalone version doesn't.</strong></p>
+<ul>
+<li>As a cold-outbound product it scores 3.5. BrightLocal already includes AI-visibility tracking from <strong>$31/mo</strong>, Local Falcon from $24.99, and Merchynt wholesales at about $20 per profile.</li>
+<li>Sold to customers who already trust you, the acquisition cost is near zero, and the work is real done-for-you work that business owners won't do themselves.</li>
+<li>Vendasta's study of about 100K small-business accounts shows two-year retention of <strong>30% with one product, 48% with two, and 78% with four</strong>. That is roughly 4.9%/mo churn falling to about 3.0%.</li>
+</ul>
+<p><strong>Be honest with customers about the AI report.</strong></p>
+<ul>
+<li>Studies of thousands of repeat queries show that AI recommendation lists almost never repeat; fewer than 1 in 100 runs gives the same list.</li>
+<li>API results overlap only about 15–24% with what the consumer interface shows.</li>
+<li>Report <strong>mention frequency over many samples</strong>, never a "rank". Treat AI visibility as the hook and reviews/GBP as the product.</li>
+</ul>
+<p><strong>Economics (verify-6 model, steady state about 12 months after launch).</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>100 customers</th>
+<th>500 customers</th>
+<th>2,000 customers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Added MRR, base case (15% attach to the plan + co-op retainers for dealers + telecom referrals)</td>
+<td>~$3.9K</td>
+<td>~$19.4K</td>
+<td>~$77.7K</td>
+</tr>
+<tr>
+<td>Added ARR, base case</td>
+<td>~$47K</td>
+<td>~$233K</td>
+<td>~$932K</td>
+</tr>
+<tr>
+<td>Added ARR, downside (8% attach)</td>
+<td>~$21K</td>
+<td>~$109K</td>
+<td>~$436K</td>
+</tr>
+<tr>
+<td>Human load</td>
+<td>~15 hr/mo</td>
+<td>~75 hr/mo</td>
+<td>~2 FTE</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Agent pipeline.</strong></p>
+<ol>
+<li><strong>Find:</strong> existing customers plus every new site deal.</li>
+<li><strong>Build the deliverable:</strong> a stacked defect audit covering AI-search absence, the review gap against the Maps 3-pack, incomplete GBP, dead booking links or expired SSL, and mismatched hours.</li>
+<li><strong>Outreach:</strong> a personalized audit email.</li>
+<li><strong>Handle replies:</strong> your existing reply agent.</li>
+<li><strong>Deliver and renew:</strong> agents draft review requests and responses, GBP posts and citation fixes, with human approval for anything published. Then a monthly report.</li>
+</ol>
+<p><strong>Legal.</strong></p>
+<ul>
+<li>The Google Business Profile API prohibits using its data for lead generation, so prospect with your own crawler, not the API.</li>
+<li>Review gating and incentivised reviews violate FTC rules.</li>
+</ul>
+<p><strong>Test and kill criteria.</strong> Offer the plan to every new site customer for 90 days, and to 100 existing customers. <strong>Kill or reshape it if attach is under 8% after 90 days</strong>, or if plan churn exceeds 6%/mo.</p>
+<h1>5. Bet #2: California Industrial Stormwater Pre-Notice Audit and Watch (5.5)</h1>
+<p><strong>The problem.</strong> California's Industrial General Permit (in place since 2014 and still administratively continued) requires about 20,000 industrial facilities to sample stormwater, file annual reports and stay under action levels. Private plaintiff groups send 60-day notices of intent to sue under the Clean Water Act citizen-suit provision. They build these notices from the same public monitoring data, looking back five years. The average California consent decree since 2015 is about <strong>$79k per facility</strong>, more than half of it attorney fees; outliers reach $300–625k.</p>
+<p><strong>Why it's a data-and-agents business, not another dashboard.</strong></p>
+<ul>
+<li><strong>The data is open and unusually complete.</strong> The state's CKAN SQL API publishes facility records, monitoring results (about 2.3M rows) and violations (about 90,600 rows).</li>
+<li><strong>Live query on 1 Oct 2026:</strong> <strong>20,429 active facilities, and 20,359 of them (99.7%) publish a contact email.</strong> That removes the enrichment cost and the deliverability risk.</li>
+<li><strong>The owner-operator bottom of the market is visible.</strong> 3,436 active facilities use Gmail/Yahoo-type email addresses, including <strong>500 of 676 auto wreckers</strong> and <strong>278 of 791 scrap yards</strong>. These owners look a lot like your existing customers, and many will also need a website.</li>
+<li><strong>Agents can do the plaintiffs' analysis first.</strong> That means matching sampling gaps against NOAA rain days, late annual reports and action-level exceedances across the 5-year lookback window, which is exactly what plaintiffs use.</li>
+</ul>
+<p><strong>Competition.</strong></p>
+<ul>
+<li>Mapistry has a "Litigation Intelligence Group", but it is bundled into an enterprise platform at about <strong>$11–27k per location per year</strong>.</li>
+<li>californiastormwater.com aggregates about 19,700 registrations for consultants and lawyers, with <strong>no risk scoring</strong>.</li>
+<li>The single-site, owner-operator tier is open.</li>
+</ul>
+<p><strong>Offer.</strong></p>
+<ul>
+<li>A fixed-fee <strong>pre-notice self-audit at $500–1,500</strong> that shows exactly what a plaintiff would see.</li>
+<li>A <strong>$50–100/mo watch</strong> that alerts the owner before each sampling window and each filing deadline.</li>
+<li>Sold direct to owner-operators <strong>and white-labelled through Qualified Industrial Stormwater Practitioners (QISPs)</strong>, the consultants who already serve these sites. QISP training costs $505, so the field is fragmented.</li>
+</ul>
+<p><strong>Agent pipeline.</strong></p>
+<ol>
+<li><strong>Find:</strong> pull facilities with risk patterns, prioritising SIC 5015/5093 owner-operators.</li>
+<li><strong>Build the deliverable:</strong> a personalized "what a plaintiff sees" brief.</li>
+<li><strong>Outreach:</strong> compliant cold email to the published facility contact.</li>
+<li><strong>Handle replies:</strong> your reply agent books the audit.</li>
+<li><strong>Deliver and renew:</strong> the audit report, a QISP referral for fixes, and the watch subscription.</li>
+</ol>
+<p>About 80% of this is automatable. The human touchpoints are audit QA and QISP partnerships.</p>
+<p><strong>Risks.</strong></p>
+<ul>
+<li>Demand may be reactive: owners may ignore anything until a notice actually arrives.</li>
+<li>"You look like a lawsuit target" from a stranger can read like a shakedown. Tone, framing and the QISP channel matter.</li>
+<li>Current notice volume is unverified, because the state stopped tracking notices in 2010.</li>
+</ul>
+<p><strong>Test and kill criteria.</strong></p>
+<ol>
+<li><strong>Back-test:</strong> pull consent decrees and notices from PACER and check whether the risk score would have flagged those facilities beforehand.</li>
+<li><strong>200-site letter/email test</strong> to owner-operators, plus 10 QISP conversations.</li>
+<li><strong>Kill if</strong> the back-test shows no lift, fewer than 5 paid audits come from 200 sites, or no QISP agrees to pilot white-label.</li>
+</ol>
+<h1>6. What the failures teach: a checklist for every future idea</h1>
+<p>The failure patterns repeated across 15 lanes and 7 verifiers. Run these checks before spending a dollar on any agent business:</p>
+<ol>
+<li><strong>Search for the $39/mo version first.</strong> "No competitor found" was wrong in almost every case. Examples: Actable's "Practice Radar" at $39/mo, BrightLocal AI tracking at $31, Civic IQ at $299, Prop65Radar at about $29, AppealDesk at $49, Single Audit Intelligence, DealSource. Search "[deliverable] software / service / AI", G2, Capterra, Product Hunt and recent YC batches.</li>
+<li><strong>If buyers can download the CSV, a cleaner copy isn't a business.</strong> Free public data is free for your buyers too. Near-zero usage of cheap data resellers is a demand signal. One Apify pro-se trademark lead feed has 2 monthly active users.</li>
+<li><strong>Check timing.</strong> Many public triggers appear after the decision is made: the engineer is hired before a water project reaches the state priority list, a corrective plan is filed before an audit finding is published, a filing deadline has already passed.</li>
+<li><strong>Licensing and fee-splitting kill contingency models.</strong> Examples:<ul>
+<li>customs brokers (19 CFR 111.36);</li>
+<li>unclaimed-property finder fee caps (FL, TX, CA);</li>
+<li>insurance producer rules;</li>
+<li>attorney solicitation rules and unauthorized practice of law;</li>
+<li>AICPA contingency rules;</li>
+<li>real-estate licensing for business brokerage in CA and FL;</li>
+<li>energy broker licensing by state.</li>
+</ul>
+</li>
+<li><strong>Search "[industry] scam warning".</strong> When a regulator has publicly described your outreach as a scam template, the cold-email model breaks regardless of data quality. The USPTO now lists post-office-action solicitation letters, and fire departments warn about fake inspection notices.</li>
+<li><strong>Find the scarce side.</strong> Agents are best at the part that isn't scarce, such as finding sellers or overdue buildings. If the bottleneck is buyers (liquor licences) or technician capacity (fire inspections), automation doesn't help.</li>
+<li><strong>Model cold email at today's rates.</strong> The average cold-email reply rate fell to <strong>3.43%</strong> (Instantly 2026 benchmark). Gmail moved to permanent rejections in November 2025, and Microsoft has rejected non-compliant senders of 5K+ emails a day since May 2025. Guarded professionals (physicians, attorneys) convert worst. California's anti-spam law gives a private right of action at $1,000 per email.</li>
+<li><strong>Prefer data that includes the buyer's contact.</strong> Open datasets that publish a working contact email (like the stormwater data) are rare and valuable.</li>
+</ol>
+<h1>7. Suggested 12-month test sequence</h1>
+<table>
+<thead>
+<tr>
+<th>When</th>
+<th>Action</th>
+<th>Cost</th>
+<th>Go / kill gate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Month 0–1</td>
+<td>Launch the <strong>Local Presence Plan</strong> on every new site deal; offer it to 100 existing customers</td>
+<td>~$0 + tools at ~$25–35 per customer</td>
+<td>Go if attach ≥ 8% and plan churn ≤ 6%/mo at day 90</td>
+</tr>
+<tr>
+<td>Month 0–1</td>
+<td><strong>Stormwater back-test</strong> (PACER consent decrees vs. risk score)</td>
+<td>&lt;$500</td>
+<td>Go if flagged facilities are clearly over-represented</td>
+</tr>
+<tr>
+<td>Month 1–2</td>
+<td><strong>Co-op audit</strong>: check 20 brand-dealer customers' manufacturer programs</td>
+<td>~$0</td>
+<td>Go if ≥ 5 have at least $2k a year of unspent accrual</td>
+</tr>
+<tr>
+<td>Month 2–4</td>
+<td><strong>Stormwater 200-site test</strong> + 10 QISP conversations</td>
+<td>~$1–2k</td>
+<td>Go if ≥ 5 paid audits or ≥ 1 QISP pilot</td>
+</tr>
+<tr>
+<td>Month 3–4</td>
+<td><strong>M&amp;A succession-score back-test</strong> (CA licence tenure + website staleness)</td>
+<td>&lt;$1k</td>
+<td>Go only if lift ≥ ~1.5× over tenure alone</td>
+</tr>
+<tr>
+<td>Month 4–6</td>
+<td>One option test at a time, ranked: (1) WA/OR contractor X-date meetings for commercial agents; (2) flat-fee town grant desk; (3) FL condo capital-event feed; (4) CPA unclaimed-property sweep</td>
+<td>$0.5–2k each</td>
+<td>Each has its own kill line (Appendix B)</td>
+</tr>
+<tr>
+<td>Month 6–12</td>
+<td>Put winners into the core offer; <strong>reinvest most effort in growing N</strong> (website customers), because every upsell scales with it</td>
+<td>—</td>
+<td>Revisit the killed list only if a cited blocker changes (CBP ruling, new state law, a competitor exits)</td>
+</tr>
+</tbody>
+</table>
+<h1>8. Bottom line</h1>
+<p>You asked us not to be agreeable, so here it is plainly.</p>
+<ul>
+<li><strong>Most of the "AI interprets public data" opportunity is already priced in.</strong> Cheap vendors have productized almost every obvious data-to-insight play, and the rest are blocked by timing or licensing.</li>
+<li><strong>Your edge is execution:</strong> building the thing before you pitch it, and an outbound and reply machine that converts.</li>
+<li><strong>Point that edge at:</strong><ul>
+<li>growing and deepening your own website customer base (Bet #1), and</li>
+<li>one genuinely under-served, data-rich niche with a reachable buyer (Bet #2).</li>
+</ul>
+</li>
+<li>Keep a short list of cheap options and kill them fast.</li>
+</ul>
+<p>None of these is a 7/10 business today. A 5.0–5.5 with a near-zero acquisition cost and a $500 kill test is a better use of next month than a 7.0 that exists only on paper.</p></main>
+<section class="appx"><h1>Appendix A: Every idea considered, and why most were killed or downgraded</h1>
+<p class="note">Compiled from lanes 01–15 and verify-1 to verify-5. Later verdicts from verify-6 and verify-7 (e.g. RateLift killed, the stormwater monitor upgraded to 5.5, the tech-advisor book cut to 3.5) supersede these tables; the ranked list in Section 2 is final.</p><p><em>Compiled from lane reports 01–15 and verifier reports verify-1 to verify-5 (all dated 2026-10-01). No new research was done. Every figure in the tables comes from those files.</em></p>
+<h3>Counts</h3>
+<table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ideas considered across lanes 01–15</td>
+<td><strong>333</strong></td>
+</tr>
+<tr>
+<td>Shortlisted (scored) by a lane</td>
+<td><strong>110</strong></td>
+</tr>
+<tr>
+<td>Rejected outright by a lane (listed in its "considered and rejected" table)</td>
+<td><strong>223</strong></td>
+</tr>
+<tr>
+<td>Shortlisted ideas independently verified by verify-1 to verify-5</td>
+<td><strong>33</strong> unique lane ideas (35 verdict entries, because verify-1 and verify-5 both re-checked lane 01 #1 and #2)</td>
+</tr>
+<tr>
+<td>Verifier verdict: CONFIRMED</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>Verifier verdict: WEAKENED</td>
+<td><strong>28</strong> unique ideas (30 verdict entries)</td>
+</tr>
+<tr>
+<td>Verifier verdict: KILLED</td>
+<td><strong>5</strong> (Prop 65 Next Defendant; OSHA SST predictor; FL elevator Conveyance Intel; restaurant commission-leak site; drawback discovery with broker contingency split)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How to read the counts</strong></p>
+<ul>
+<li>Counts are per-lane entries and are not de-duplicated. Some ideas appear in more than one lane. Examples: the restaurant inspection → pest-vendor router (lanes 03 and 04), ADA website-suit plays (lanes 03, 04, 08 and 09) and trucking insurance renewal data (lanes 04, 09 and 10).</li>
+<li>One verdict sometimes covers several lane ideas. verify-3 merged 07-B with 11-#1. verify-5 bundled 09-#1 with 09-#2, and its trucking verdict covers 04, 09 and 10.</li>
+<li>The round-2 lanes (12–15, 25 shortlisted ideas) ran after verify-1 to verify-5 and were not independently verified. Each was attacked by the lane's own sub-agents, and their post-check scores are shown in those tables as "lane self-check".</li>
+<li>Lane scores are each lane's own overall score, out of 10. Some lanes used an unweighted mean and others a judgment-weighted score. For lanes 12–15 the score shown is the post-self-check score.</li>
+<li>"n.i.v." means not independently verified.</li>
+</ul>
+<h3>Cross-cutting failure patterns the verifiers identified</h3>
+<ol>
+<li><strong>"No competitor found" was wrong almost every time.</strong><ul>
+<li>verify-3: "every write-up said something like 'no direct competitor found.' In every case one existed."</li>
+<li>Example: Prop 65 catalog matching was claimed as uncrowded, but Prop65Radar is live at about $29 (verify-2).</li>
+<li>Example: Actable already sells a "Practice Radar" to billing firms for $39/mo (verify-4).</li>
+</ul>
+</li>
+<li><strong>Raw public data is commoditized, and near-zero usage of the cheap resellers signals weak demand.</strong><ul>
+<li>Restaurant-inspection lead actors sell at $5–10 per 1,000 rows and have 1 monthly active user each (verify-2).</li>
+<li>The revalidation-list, new-NPI, USPTO and CA unclaimed-property actors have about 2–57 users (verify-4).</li>
+</ul>
+</li>
+<li><strong>The data was shallower than claimed, and some load-bearing fields do not exist.</strong><ul>
+<li>TX TDLR open data has no license issue date (verify-1, verify-5).</li>
+<li>The CMS revalidation list has no addresses, so an address-mismatch check cannot be computed (verify-4).</li>
+<li>Bills of lading carry no values or HTS codes (verify-1).</li>
+<li>In the FL condo CSV, "managing entity" is the association itself (verify-3).</li>
+</ul>
+</li>
+<li><strong>Wrong buyer, or a buyer without liability or leverage.</strong><ul>
+<li>Prop 65 multi-brand retailers are mostly not the duty-holder under 27 CCR §25600.2 and can cure within 5 days (verify-2).</li>
+<li>A micro-contractor's GL commission of about $107–160 a year cannot pay for a $150–250 meeting (verify-2).</li>
+</ul>
+</li>
+<li><strong>The trigger arrives after the purchase decision.</strong><ul>
+<li>A single-audit corrective action plan is already written and filed when the finding goes public (2 CFR 200.511(c)) (verify-3).</li>
+<li>SRF-listed projects already have an engineer, because a preliminary engineering report is required to get listed (verify-3).</li>
+<li>The FMCSA Motus cutover removed future-dated cancellations from the public bulk data (verify-5).</li>
+</ul>
+</li>
+<li><strong>Licensing and fee-split rules block the contingency or revenue-share model.</strong><ul>
+<li>A drawback contingency split is barred by 19 CFR 111.36(b) and CBP ruling H276784 (verify-1).</li>
+<li>A 50/50 unclaimed-property split with CPAs is barred by FL §717.1322 and CA B&amp;P 5061 (verify-4).</li>
+<li>Texas Occ. Code 1152 reaches anyone who "assists" a property-tax consultant (verify-3).</li>
+</ul>
+</li>
+<li><strong>The outbound channel is scam-adjacent, and reply rates are far below the modeled conversion.</strong><ul>
+<li>MACs warned in Jan 2026 about fraudulent Medicare enrollment letters (verify-4).</li>
+<li>USPTO impersonation scams are ongoing (verify-4).</li>
+<li>Healthcare cold email gets about 0.56–0.6% replies against the 2% paid conversion assumed in lane 06 (verify-4). Owners and founders reply at 0.57% (verify-1).</li>
+</ul>
+</li>
+<li><strong>Platforms and agencies give the deliverable away free, and tailwinds were overstated.</strong><ul>
+<li>DoorDash's Starter tier includes a free branded site with commission-free ordering (verify-5).</li>
+<li>BrightLocal includes AI-visibility tracking from $31/mo (verify-5).</li>
+<li>BIL water money ended in FY26, and the FY27 request cuts the SRFs to $305M (verify-3).</li>
+<li>About 390 OSHA SST inspections a year against about 390K filers is a 0.1% base rate (verify-2).</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3>Lane 01: M&amp;A deal origination (16 ideas)</h3>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>Lane score</th>
+<th>Verifier verdict and revised score</th>
+<th>Reason it failed or was downgraded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1 Vertical Roll-up Target Intelligence ("SuccessionMap")</td>
+<td>6.4</td>
+<td>WEAKENED → 3.5 (verify-1); WEAKENED → 4.0 (verify-5)</td>
+<td>TX TDLR file has no issue date. Inven and TradeBridge sell retirement/age filters. DealSource sells succession-scored sourcing at $4,000/mo.</td>
+</tr>
+<tr>
+<td>#2 Flat-fee add-on origination (seed idea)</td>
+<td>6.0</td>
+<td>WEAKENED → 3.0 (verify-1); WEAKENED → 4.5 (verify-5)</td>
+<td>Priced above CAPTARGET ($2,000/mo) and Axia ($350/meeting, money-back). Owner reply rate 0.57%. YC's Q2Q, with the same pitch, is inactive.</td>
+</tr>
+<tr>
+<td>#3 Sell-side mandate generation for brokers</td>
+<td>5.5</td>
+<td>n.i.v.</td>
+<td>Brokers judge on closings that lag 6–12 months. ~$1.0B industry revenue across ~11K brokers means thin budgets. Hypergen from $4,500/mo.</td>
+</tr>
+<tr>
+<td>#6 Strategic tuck-in radar</td>
+<td>5.0</td>
+<td>n.i.v.</td>
+<td>Buyers are hard to identify (CAC $3–8K). Need is episodic. Competes with buy-side boutiques and CAPTARGET/SourceCo.</td>
+</tr>
+<tr>
+<td>#4 Search-funder Deal Desk</td>
+<td>4.8</td>
+<td>n.i.v.</td>
+<td>Searchers churn by design once they acquire. Kumo anchors at $30–149/mo. Interns cost $23–42/hr. DIY Clay/Instantly stacks.</td>
+</tr>
+<tr>
+<td>#5 Wealth-advisor liquidity signals</td>
+<td>4.5</td>
+<td>n.i.v.</td>
+<td>Aidentified starts at $49/mo with 16 wealth-event alerts. Advisors want events now, not 12–36-month predictions.</td>
+</tr>
+<tr>
+<td>#7 AI-native micro sell-side bank</td>
+<td>3.5</td>
+<td>n.i.v.</td>
+<td>Success fees need §15(b)(13) compliance plus state registration or a real-estate licence. Non-recurring. OffDeal has raised $17M.</td>
+</tr>
+<tr>
+<td>Success-fee finder for PE (unregistered)</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>§29(b) makes contracts voidable. ~27 states lack an aligned M&amp;A broker exemption, so the fee may be uncollectable.</td>
+</tr>
+<tr>
+<td>AI-voice cold-calling of owners</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>FCC Feb-2024 ruling treats AI voices as "artificial" under TCPA. Prior express consent required; class-action exposure.</td>
+</tr>
+<tr>
+<td>Owner-age scoring from voter files</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>23 states forbid commercial use. Misuse is a Class C felony in WA.</td>
+</tr>
+<tr>
+<td>LinkedIn-scraped tenure/age data</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>hiQ lost on breach of contract: permanent injunction plus $500K.</td>
+</tr>
+<tr>
+<td>Horizontal private-company database (Grata competitor)</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Datasite consolidated Grata, Sourcescrub and Blueflame with $500M from CapVest.</td>
+</tr>
+<tr>
+<td>Two-sided deal marketplace (Axial competitor)</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Network effects favor Axial, the SourceCo marketplace and BizBuySell. Success-fee legal issues; cold start on both sides.</td>
+</tr>
+<tr>
+<td>Broken-deal / re-trade recycler</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>The data is private and held by bankers. No access path.</td>
+</tr>
+<tr>
+<td>EU/UK owner outreach</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>GDPR legitimate-interest balancing and PECR limits on B2B email to sole traders. Adds cost, no advantage.</td>
+</tr>
+<tr>
+<td>Generic "AI SDR for PE" agency</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Saturated (Hypergen, Danish Lead Co, Axia, Inboxsniper, Puzzle Inbox). 3.43% average reply rate. No moat.</td>
+</tr>
+</tbody>
+</table>
+<h3>Lane 02: Trade, shipping and supply-chain intelligence (15 ideas)</h3>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>Lane score</th>
+<th>Verifier verdict and revised score</th>
+<th>Reason it failed or was downgraded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1 Tariff Exposure Brief + Monitor</td>
+<td>7.0</td>
+<td>WEAKENED → 3.5 (verify-1)</td>
+<td>BOLs lack values and HTS, so dollar figures may be 2–5× off. Datamyne, Altana, Flexport and Gaia already sell tariff-exposure tools.</td>
+</tr>
+<tr>
+<td>#2 Duty-Recovery Lead Engine (drawback/first-sale/bond)</td>
+<td>6.4</td>
+<td>WEAKENED → 3.0 (verify-1)</td>
+<td>CBP H276784 and 19 CFR 111.36 block per-lead or outcome-linked fees. Only a flat retainer survives. No evidence drawback firms buy leads.</td>
+</tr>
+<tr>
+<td>#3 Forwarder / customs-broker trigger engine</td>
+<td>5.9</td>
+<td>n.i.v.</td>
+<td>Crowded: ImportGenius ($229–1,999+/mo), Datamyne ($6,995/yr), Ubico, Freight Genie, Revenue Vessel. Lead-tool churn est. 3–6%/mo.</td>
+</tr>
+<tr>
+<td>#4 Regulatory-contagion alerts (FDA/UFLPA/CPSC × BOL)</td>
+<td>5.8</td>
+<td>n.i.v.</td>
+<td>Episodic: UFLPA detentions fell after Jan 2025. Fuzzy matching of Chinese/Indian names; defamation risk. Sayari/Altana own enterprise.</td>
+</tr>
+<tr>
+<td>#5 Competitor Sourcing-Shift Monthly (seed idea)</td>
+<td>5.0</td>
+<td>WEAKENED → 4.0 (verify-5)</td>
+<td>ImportYeti is free (Pro ~$50). Shipment alerts are commoditized. Consignee masking runs 8–35%. CBP feed price unknown.</td>
+</tr>
+<tr>
+<td>#6 Manifest Privacy Check</td>
+<td>4.8</td>
+<td>n.i.v.</td>
+<td>Tiny market (~12K filings/yr). Filing is free and DIY; Customs Data Lock $199/yr. Erodes the BOL data the other ideas need.</td>
+</tr>
+<tr>
+<td>#7 SMB forced-labor / supplier-risk screening</td>
+<td>4.3</td>
+<td>n.i.v.</td>
+<td>List screening is commoditized and bundled free. SMB demand unproven. §301 forced-labor tariffs are country-wide, so no screening avoids them.</td>
+</tr>
+<tr>
+<td>IEEPA refund lead-gen / refund audits</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>$122B of ~$166B certified by 11 Sep 2026. Phase 3 limited to CIT plaintiffs who filed by 30 July. Law firms charge 15–25%.</td>
+</tr>
+<tr>
+<td>Hedge-fund alt-data shipping signals</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Panjiva, ImportGenius and Descartes already supply funds. Needs ticker mapping, MNPI diligence and redistribution rights.</td>
+</tr>
+<tr>
+<td>Raw BOL search (ImportYeti clone)</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>ImportYeti is free with a 2015+ dataset, and a dozen paid incumbents exist.</td>
+</tr>
+<tr>
+<td>Supplier discovery for Amazon/DTC sellers</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>ImportYeti is this audience's default free tool. Very low willingness to pay.</td>
+</tr>
+<tr>
+<td>AIS / port-congestion product</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>AIS consolidated under Kpler (Spire ~$2–8K+/mo). Congestion data is published free. No firm-level edge.</td>
+</tr>
+<tr>
+<td>Industrial real-estate tenant leads from import growth</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>No evidence CRE brokers buy this. Large brokerages have their own research teams.</td>
+</tr>
+<tr>
+<td>Non-US customs data (LatAm, India, Vietnam)</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Volza, ExportGenius and Eximpedia sell it at $1.5–9.6K/yr. Quality and legality vary by country.</td>
+</tr>
+<tr>
+<td>Stand-alone customs-bond lead business</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>A lead is worth only $250–1,000 of premium on a $50K bond. State insurance referral rules apply.</td>
+</tr>
+</tbody>
+</table>
+<h3>Lane 03: Public-records signals and combinations (19 ideas)</h3>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>Lane score</th>
+<th>Verifier verdict and revised score</th>
+<th>Reason it failed or was downgraded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1 Contractor coverage X-date engine</td>
+<td>7.0</td>
+<td>WEAKENED → 4.0 (verify-2)</td>
+<td>WA GL commission ~$107–160/yr is below the meeting fee. The $300–550/meeting source (VA Horizon) isn't credible. WA has no private WC.</td>
+</tr>
+<tr>
+<td>#2 Restaurant violation-to-vendor router</td>
+<td>6.7</td>
+<td>WEAKENED → 3.5 (verify-2)</td>
+<td>NYC requires every restaurant to hold a pest contract. Apify sells the same feed at $5–10/1K (1 MAU). Only 41 hood (10D) citations in Sep.</td>
+</tr>
+<tr>
+<td>#3 Good-standing rescue (dissolved but operating)</td>
+<td>6.6</td>
+<td>n.i.v.</td>
+<td>Category polluted by deceptive mailers (TN, GA, MS SOS warnings). CA B&amp;P §17533.6 disclaimers apply; one AG complaint kills it; ~$150/yr recurring.</td>
+</tr>
+<tr>
+<td>#4 ADA web-suit radar</td>
+<td>6.1</td>
+<td>n.i.v.</td>
+<td>Crowded (accessiBe, UserWay, UsableNet). FTC fined accessiBe $1M. Lane judged it a feature for the website business, not a lane.</td>
+</tr>
+<tr>
+<td>#5 Pre-opening restaurant signals (done-for-you)</td>
+<td>6.0</td>
+<td>n.i.v.</td>
+<td>Data tier crowded: CHD Expert $59–119K/yr, RestaurantData, Recordpipe from $5K, Apify actors at $3–50/1K. Opening dates slip.</td>
+</tr>
+<tr>
+<td>#6 Verified new-business feed</td>
+<td>5.9</td>
+<td>n.i.v.</td>
+<td>Apify sells new filings at $4/1K and Data Axle $0.07–0.30/record. Scam association (TN warning, Sept 2026).</td>
+</tr>
+<tr>
+<td>#7 Construction payment-distress radar</td>
+<td>5.7</td>
+<td>n.i.v.</td>
+<td>Coverage gaps across 3,000+ recorders. NACM, NCS and BICA are incumbents. Per-page image fees erode margin.</td>
+</tr>
+<tr>
+<td>#8 Equipment refresh windows from UCC</td>
+<td>5.3</td>
+<td>n.i.v.</td>
+<td>EDA/Fusable entrenched for decades. AZ bulk UCC costs $24K; NC and GA ban scraping. Collateral is often just "all assets".</td>
+</tr>
+<tr>
+<td>Probate leads → investors</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Dozens of vendors at $69–1,200+/county/mo; per-lead prices down to $0.10.</td>
+</tr>
+<tr>
+<td>Divorce filings → realtors/lenders</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Sold by PropStream. Heavy TCPA/DNC exposure, high reputational risk, no recurring B2B angle.</td>
+</tr>
+<tr>
+<td>Tax liens → tax-resolution firms</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>$0.16–0.40/record across 3,000+ counties, aggregated daily. FTC and AG enforcement against the buyer industry.</td>
+</tr>
+<tr>
+<td>Residential code violations → contractors</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>GetCodeViolations $49/mo across 56+ cities; Apify from $2/1K.</td>
+</tr>
+<tr>
+<td>MCA UCC lead lists → brokers</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>$0.005–0.30/record. Regulatory churn from TX HB 700. Broker TCPA risk.</td>
+</tr>
+<tr>
+<td>MCA stacking/default monitoring</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>DataMerch $695–945/mo, Middesk and Cobalt. Virginia lists only ~115 registered sales-based financing providers.</td>
+</tr>
+<tr>
+<td>Judgments → judgment recovery</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Collection-agency licences and bonds (FL $50K, NY $25K). Unlicensed collection can void judgments.</td>
+</tr>
+<tr>
+<td>New-lawsuit alerts → attorneys</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Trellis $69.95–199.95/mo, UniCourt $59–399/mo. Attorney solicitation rules. Tyler/judyrecords access issues.</td>
+</tr>
+<tr>
+<td>Professional-licence expirations → CE providers</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Boards publish free weekly files (FL DBPR). CE providers can self-serve. Low value per lead.</td>
+</tr>
+<tr>
+<td>Elevator/boiler inspection deadlines → service firms</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Small buyer universe, state-by-state coverage, and a free TX aggregator (elevatordatabase.com).</td>
+</tr>
+<tr>
+<td>Raw new-business lists sold as data</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Commoditized. Lane kept it for internal prospecting only.</td>
+</tr>
+</tbody>
+</table>
+<h3>Lane 04: Regulatory and compliance monitoring (25 ideas)</h3>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>Lane score</th>
+<th>Verifier verdict and revised score</th>
+<th>Reason it failed or was downgraded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1 Prop 65 "Next Defendant" alerts + catalog scan</td>
+<td>7.4</td>
+<td><strong>KILLED</strong> → 3.0 (verify-2)</td>
+<td>Retailers are mostly not liable (27 CCR §25600.2) and can cure in 5 days. Prop65Radar is live at ~$29. An alert could create "actual knowledge".</td>
+</tr>
+<tr>
+<td>#2 Restaurant inspection → pest/hood done-for-you outbound</td>
+<td>6.8</td>
+<td>WEAKENED → 3.5 (verify-2)</td>
+<td>Every restaurant already has a mandated exterminator; same feed sells at $5–10/1K. A $1–2.5K retainer is 18–45% of a $1M firm's marketing budget.</td>
+</tr>
+<tr>
+<td>#3 OSHA SST target predictor</td>
+<td>6.5</td>
+<td><strong>KILLED</strong> → 2.5 (verify-2)</td>
+<td>~390 SST inspections/yr against ~390K filers (0.1%). Cut-offs are confidential. Apify sells DART lead scores at $5/1K.</td>
+</tr>
+<tr>
+<td>#4 CA stormwater citizen-suit risk monitor</td>
+<td>6.4</td>
+<td>WEAKENED → 5.0 (verify-2)</td>
+<td>Mapistry already sells facility-level citizen-suit risk alerts. Only ~1,931 core-SIC targets. Exceedances are visible only after strict-liability violation.</td>
+</tr>
+<tr>
+<td>#5 Small-government Title II PDF/web remediation</td>
+<td>6.0</td>
+<td>n.i.v.</td>
+<td>AI PDF remediation already sells at $0.30–12/page. CivicPlus, Granicus and AudioEye compete. DOJ has already extended the deadline once.</td>
+</tr>
+<tr>
+<td>#6 Supplement/cosmetic claims scanner</td>
+<td>5.8</td>
+<td>n.i.v.</td>
+<td>FDA letters number in the dozens a year, so fear is weak. Dicentra and EAS compete. Founders keep claims that convert.</td>
+</tr>
+<tr>
+<td>#7 OSHA "just cited" kit / consultant feed</td>
+<td>5.5</td>
+<td>n.i.v.</td>
+<td>Apify OSHA citation scrapers and safetyrecord.org exist. About 10 working days to act. Mostly one-off revenue.</td>
+</tr>
+<tr>
+<td>#9 FMCSA insurance-lapse feed for agents</td>
+<td>5.3</td>
+<td>WEAKENED → 3.5 (verify-5, trucking verdict)</td>
+<td>Carrier IQ at $149–249/mo and 8+ other vendors. The Motus cutover (14 May 2026) removed future-dated cancellations from bulk data.</td>
+</tr>
+<tr>
+<td>#8 10DLC website compliance fixer</td>
+<td>4.5</td>
+<td>n.i.v.</td>
+<td>SMS platforms bundle free AI rejection fixers. TCR fees are $4–44. One-off value of $50–200 per SMB.</td>
+</tr>
+<tr>
+<td>ADA/WCAG lawsuit-risk scans</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>AudioEye has ~131K customers at ~$305 ARPU. FTC's $1M accessiBe order. 28% of 2025 suits hit sites with overlays.</td>
+</tr>
+<tr>
+<td>Cookie-consent / state-privacy scans</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Termly $14/mo, CookieYes $8–46/mo. Most SMBs fall below the 100K-consumer thresholds of state laws.</td>
+</tr>
+<tr>
+<td>CIPA pixel/chat wiretap-risk scans</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>SB 690, signed 30 Sep 2026, ends private pen-register claims (about two-thirds of the suits) from 1 Jan 2027.</td>
+</tr>
+<tr>
+<td>BIPA exposure scans</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>The 2024 amendment capped damages; ~107 new class actions in 2025. Illinois only.</td>
+</tr>
+<tr>
+<td>TSCA 8(a)(7) PFAS reporting help</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Window pushed to 31 Jan 2027 or later. EPA proposed exempting article importers. One-time work.</td>
+</tr>
+<tr>
+<td>Minnesota PFAS-in-products reporting</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>One-time $800 report. Deadline (15 Sep 2026, extendable to 14 Dec) largely passed. Enterprise tools own it.</td>
+</tr>
+<tr>
+<td>FMCSA new-authority "DOT compliance" packages</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Scam-saturated; FMCSA issues fraud alerts about impersonators. Reputational poison.</td>
+</tr>
+<tr>
+<td>FDA 483/warning-letter intelligence for SMBs</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>SMBs don't buy intelligence. Redica owns enterprise ($289 per 483). FDA dashboard data is free.</td>
+</tr>
+<tr>
+<td>FDA import-refusal → US-agent services</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Registrar Corp dominates (20K+ clients). Overseas buyers complicate outreach under GDPR and foreign rules.</td>
+</tr>
+<tr>
+<td>CFPB complaint monitoring</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>13.8M complaints dominated by bureaus and big banks. The CFPB itself said volume reduced the data's usefulness (June 2026).</td>
+</tr>
+<tr>
+<td>NHTSA recall outreach for dealers</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Recall Masters already sells a turnkey, OEM-reimbursed recall department with a guaranteed ROI.</td>
+</tr>
+<tr>
+<td>MSHA violation feeds</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Data is free and weekly; MshaScan exists. Small mine universe with entrenched trainers.</td>
+</tr>
+<tr>
+<td>State AG action monitoring</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Unstructured press releases mostly target large companies. No repeatable SMB trigger.</td>
+</tr>
+<tr>
+<td>Generic EPA ECHO violator lists</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Already resold by Apify actors.</td>
+</tr>
+<tr>
+<td>CSLB licence/bond/WC lapse leads</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>The free CSVs are already scraped on Apify, and bond and insurance agents already mine them.</td>
+</tr>
+<tr>
+<td>ADA "just sued" alerts to defendants</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Defendants need lawyers, not scans. 46% of federal cases are against repeat defendants.</td>
+</tr>
+</tbody>
+</table>
+<h3>Lane 05: Real estate, construction and property (22 ideas)</h3>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>Lane score</th>
+<th>Verifier verdict and revised score</th>
+<th>Reason it failed or was downgraded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1 FL Condo Capital-Event Feed</td>
+<td>7.0</td>
+<td>WEAKENED → 4.5 (verify-3)</td>
+<td>HOA Contact Lists (200K+ FL contacts), PropFusion and CAMbrands exist. SIRS deadline passed. Engineers gatekeep restoration. Realistic $0.1–0.4M ARR.</td>
+</tr>
+<tr>
+<td>#2 Association switch-signal for CAM firms</td>
+<td>6.3</td>
+<td>WEAKENED → 3.0 (verify-3)</td>
+<td>The condo CSV's "managing entity" is the association (5,818 of 5,821 rows); the CAM firm appears only as a C/O line in 50.2% of rows.</td>
+</tr>
+<tr>
+<td>#4 Conveyance Intel for independent elevator companies</td>
+<td>5.8</td>
+<td><strong>KILLED</strong> → 2.0 (verify-3)</td>
+<td>Otis, KONE, TKE and Schindler maintain 65.5%; only 80 independents hold 50+ units. Convex sells renewal windows. No contract-expiry field.</td>
+</tr>
+<tr>
+<td>#3 Agent-run benchmarking filing</td>
+<td>5.8</td>
+<td>n.i.v.</td>
+<td>Crowded: Envigilance, Beacon ($95/mo), Elevate ($800/building). Cities run free help desks. Paper utility forms add labor.</td>
+</tr>
+<tr>
+<td>#5 FL municipal lien / open-permit search</td>
+<td>5.0</td>
+<td>n.i.v.</td>
+<td>PropLogix and many small firms charge $100–125. Much of the municipal-request work stays human. E&amp;O liability for missed liens.</td>
+</tr>
+<tr>
+<td>#6 Solar-orphan service leads</td>
+<td>4.8</td>
+<td>n.i.v.</td>
+<td>Under the dealer model the permit contractor isn't the bankrupt brand. SunStrong absorbs customers. Ohm gives installer data away free.</td>
+</tr>
+<tr>
+<td>#7 Tax-consultant evidence packets</td>
+<td>4.5</td>
+<td>n.i.v.</td>
+<td>Saturated: O'Connor, Ryan, Ownwell, TaxNetUSA QuickAppeal. Seasonal; TX notices go out April–May, so 6+ months to first dollar.</td>
+</tr>
+<tr>
+<td>#8 Pre-bid specialty-sub lead engine</td>
+<td>4.0</td>
+<td>n.i.v.</td>
+<td>cityminutes.ai, GatherGov, Dodge, ConstructConnect, PlanHub and free BuildingConnected. Price pressure toward $39/mo.</td>
+</tr>
+<tr>
+<td>Lender/insurer property-risk feed</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Verisk/BuildFax (10M+ roofs), Moody's/CAPE and ZestyAI hold regulatory model approvals. Long enterprise sales cycles.</td>
+</tr>
+<tr>
+<td>LL97/BPS fine-avoidance retrofit outreach</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>First-year LL97 penalties were ~$270K citywide; 93% filed. Compliance needs a PE's attestation.</td>
+</tr>
+<tr>
+<td>Short-term-rental compliance service</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Granicus and Deckard own the city side. Host permit fees are only $64–308.</td>
+</tr>
+<tr>
+<td>Rental-registry enforcement</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Low per-unit fees; Deckard already markets registry enforcement; landlords resist paying.</td>
+</tr>
+<tr>
+<td>Pre-foreclosure / deed / mortgage lists</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>PropStream $99/mo, BatchLeads $119/mo, ATTOM API from ~$95/mo.</td>
+</tr>
+<tr>
+<td>CRE maturity-wall refinance leads</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Trepp, CompStak, Reonomy and MSCI already map maturities. Recorder data lacks maturity dates.</td>
+</tr>
+<tr>
+<td>Utility interconnection-queue intelligence</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Enverus bought Pearl Street; Paces raised $11M; Interconnection.fyi sells feeds; LBNL publishes free.</td>
+</tr>
+<tr>
+<td>Tax-sale/foreclosure surplus recovery</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Florida caps assignee compensation at 12%. Consumer-facing, with a predatory reputation and "course" competitors.</td>
+</tr>
+<tr>
+<td>Texas BPP rendition-as-a-service</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>HB 9 raised the exemption to $125K from tax year 2026.</td>
+</tr>
+<tr>
+<td>NYC violation/compliance monitoring</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>ViolationWatch $9/building/mo, DOBGuard ~$50/mo. The price floor has collapsed.</td>
+</tr>
+<tr>
+<td>Fire-inspection deficiency leads</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Brycer's Compliance Engine already sits between AHJs and contractors. The data isn't public in bulk.</td>
+</tr>
+<tr>
+<td>NYC elevator/boiler raw lead lists</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Already on Apify at $2.50/1K, with 2 users.</td>
+</tr>
+<tr>
+<td>Residential property-tax appeal</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Ownwell ($74M raised, 1M+ appeals) plus AI clones. Texas protests are already 81% agent-filed.</td>
+</tr>
+<tr>
+<td>Certificate-of-occupancy "new tenant" leads</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Shovels and BuildZoom already expose COs. Vendors (cleaning, security) have low willingness to pay for leads.</td>
+</tr>
+</tbody>
+</table>
+<h3>Lane 06: Healthcare data (20 ideas)</h3>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>Lane score</th>
+<th>Verifier verdict and revised score</th>
+<th>Reason it failed or was downgraded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1 Rate Gap Report (TiC × Part B)</td>
+<td>6.4</td>
+<td>WEAKENED → 3.5 (verify-4)</td>
+<td>MGMA Rates, PayerPrice, Turquoise's free tier and Rivet ($6K/yr) already serve small practices. CMS-9882-P would commoditize the ghost-rate filter.</td>
+</tr>
+<tr>
+<td>#2 Medicare Enrollment Guard</td>
+<td>6.3</td>
+<td>WEAKENED → 3.5 (verify-4)</td>
+<td>Public files have no addresses, so the mismatch check is impossible. MACs send 2 letters + 2 emails. Shared PECOS logins prohibited.</td>
+</tr>
+<tr>
+<td>#3 Practice-acquisition screener for LMM roll-ups</td>
+<td>6.2</td>
+<td>WEAKENED → 3.0 (verify-1)</td>
+<td>No CMS practice-ownership file exists. Medicare is ~16% of optometry billings. Alpha Sophia and Provyx ($750/1K records) compete.</td>
+</tr>
+<tr>
+<td>#4 Nursing-home survey-window lead feed</td>
+<td>5.6</td>
+<td>n.i.v.</td>
+<td>Buyers are fragmented 1–5-person consultancies. AHCA Trend Tracker is free to members. The federal staffing rule was repealed Dec 2025.</td>
+</tr>
+<tr>
+<td>#5 IDR prep for small out-of-network providers</td>
+<td>5.4</td>
+<td>n.i.v.</td>
+<td>Payer RICO suits (Anthem alleges 55% of HaloMD filings ineligible). PHI/BAA burden and heavy working capital.</td>
+</tr>
+<tr>
+<td>#6 Employer network-rate benchmark via brokers</td>
+<td>5.0</td>
+<td>n.i.v.</td>
+<td>Serif launched this exact product for brokers on 16 July 2026. Payerset and Turquoise also compete. Brokers are conflicted.</td>
+</tr>
+<tr>
+<td>#7 Exclusion/licence monitoring</td>
+<td>4.6</td>
+<td>n.i.v.</td>
+<td>Commodity price of $30–40/mo (ExclusionScreening). Bundled free in HR and credentialing suites.</td>
+</tr>
+<tr>
+<td>#8 340B rebate-pilot reconciliation</td>
+<td>3.6</td>
+<td>n.i.v.</td>
+<td>Pilot already enjoined once. Beacon and TPAs own the data pipes. Needs EHR and pharmacy integration plus PHI.</td>
+</tr>
+<tr>
+<td>New-NPI "new practice" lead lists</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Apify at $0.50–10/1K; PostcardMania $0.21–0.30/record. Most new Type 1 NPIs are residents or non-billing staff.</td>
+</tr>
+<tr>
+<td>Hospital price-transparency compliance monitoring</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>CMS publishes a free validator; free compliance trackers exist. Only 28 CMPs in about 4 years.</td>
+</tr>
+<tr>
+<td>Standalone credentialing service</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Labor-heavy; CAQH is free. Offshore services charge $99–300/application. Medallion and Verifiable have raised $100M+.</td>
+</tr>
+<tr>
+<td>MA/Part D Star-ratings consulting</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Few buyers (small MA plans), entrenched actuarial consultancies, no data advantage.</td>
+</tr>
+<tr>
+<td>Open Payments KOL / pharma targeting</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>IQVIA, H1 and Komodo serve enterprise buyers at $50K–200K+.</td>
+</tr>
+<tr>
+<td>Nursing-home deficiency leads for plaintiff attorneys</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Attorneys use free CMS and ProPublica data. Consumer lead-gen (~$625/lead) is regulated attorney solicitation.</td>
+</tr>
+<tr>
+<td>Medicaid fee-schedule aggregator</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>States must publish their own Medicare comparisons. Buyers are few, with unclear willingness to pay.</td>
+</tr>
+<tr>
+<td>HCPCS / code-change alerting</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Free from CMS quarterly; AAPC and EHR vendors already push it.</td>
+</tr>
+<tr>
+<td>T-MSIS-based Medicaid analytics</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>PHI under a research-only DUA at ~$25K per seat. Commercial use not permitted.</td>
+</tr>
+<tr>
+<td>Hospice/HHA licence brokerage during the moratorium</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>The moratorium also freezes ownership changes. Fraud-heavy segment (~800 LA providers suspended).</td>
+</tr>
+<tr>
+<td>Plan-side (TPA) IDR exposure analytics</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Buyers are a few large TPAs and carriers with in-house analytics; long sales cycles.</td>
+</tr>
+<tr>
+<td>Revalidation lists sold as leads</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Already on Apify; selling the list is a race to zero.</td>
+</tr>
+</tbody>
+</table>
+<h3>Lane 07: Government contracting, procurement and grants (22 ideas)</h3>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>Lane score</th>
+<th>Verifier verdict and revised score</th>
+<th>Reason it failed or was downgraded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. Single-audit Finding Fixer</td>
+<td>7.1</td>
+<td>WEAKENED → 3.0 (verify-3)</td>
+<td>CAP already filed (2 CFR 200.511(c)). Only 8,187 of 46,650 audits have findings. Templates free or $72–100. Single Audit Intelligence exists.</td>
+</tr>
+<tr>
+<td>B. Water Pipeline Radar (SRF IUPs + SDWIS/PFAS/LCRI)</td>
+<td>6.9</td>
+<td>WEAKENED → 3.0 (verify-3, merged with 11-#1)</td>
+<td>EPIC normalizes SRF lists free and Bluefield sells them. BIL ended FY26; FY27 request $305M. Engineers are hired before listing.</td>
+</tr>
+<tr>
+<td>C. Town Grant Desk (flat retainer)</td>
+<td>6.6</td>
+<td>WEAKENED → 4.0 (verify-3)</td>
+<td>Syncurrent free/$49/mo; MA GrantWell free. California Consulting's $1.5K per-grant fee undercuts Starter. Grass Valley extended only 6 months.</td>
+</tr>
+<tr>
+<td>D. Grant-Funded Pipeline for public-sector vendors</td>
+<td>6.3</td>
+<td>n.i.v.</td>
+<td>2 CFR 200.319(b) can exclude vendors that draft applications. Lexipol GrantFinder dominates attention. Grant programs at risk of cuts.</td>
+</tr>
+<tr>
+<td>E. Trade bid concierge + price-to-win</td>
+<td>5.6</td>
+<td>n.i.v.</td>
+<td>Discovery commoditized (Bidscope $45/mo, CLEATUS $39/mo, Euna/Bonfire free to bidders). Thin janitorial margins cap value.</td>
+</tr>
+<tr>
+<td>G. Subcontracting-plan partner matcher</td>
+<td>5.0</td>
+<td>n.i.v.</td>
+<td>Bundled in GovWin, HigherGov and GovTribe; SBA SubNet free. SDB goal cut. Primes choose subs by relationship.</td>
+</tr>
+<tr>
+<td>F. SAM registration renewal desk</td>
+<td>4.9 (lane: effectively reject)</td>
+<td>n.i.v.</td>
+<td>GSA/BBB warn about fake SAM renewal notices built from expiration data. SAM terms bar marketing use. Registration is free.</td>
+</tr>
+<tr>
+<td>H. Statutory incentive recovery (referral)</td>
+<td>4.3</td>
+<td>n.i.v.</td>
+<td>174A retroactive window closed 2026-07-06. Circular 230 contingent-fee limits. Ryan, the Big 4 and Strike (20%) own it.</td>
+</tr>
+<tr>
+<td>Generic SLED bid aggregator for a niche</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Starbridge ($52M) and Bidscope (claims 50K sites); $39–45/mo price floors; Euna/Bonfire free for bidders.</td>
+</tr>
+<tr>
+<td>Bid matching + AI proposal subscription</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>GovDash ($30M), CLEATUS, Sweetspot and HigherGov AI tools.</td>
+</tr>
+<tr>
+<td>Federal recompete / expiring-contract finder</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Free API, Apify actors and the BidSparq index.</td>
+</tr>
+<tr>
+<td>ERC recovery</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>OBBBA bars late Q3/Q4 2021 claims. 20% penalty; $1,000 promoter penalty per due-diligence failure.</td>
+</tr>
+<tr>
+<td>WOTC screening service</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Lapsed 2025-12-31 and not reauthorized; payroll providers (ADP) dominate.</td>
+</tr>
+<tr>
+<td>IRA credit-transfer marketplace</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>$42B market run by Crux, banks and brokers. FEOC diligence. Wind/solar construction cutoff 2026-07-04.</td>
+</tr>
+<tr>
+<td>179D designer-allocation hunting</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Deduction ended for construction begun after 2026-06-30. KBKG and ETS are incumbents.</td>
+</tr>
+<tr>
+<td>Farm grant writing (USDA REAP) on success fee</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>REAP grant notice rescinded 2026-04-15. Success fees violate GPA ethics.</td>
+</tr>
+<tr>
+<td>Grant writing on contingency for nonprofits</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>GPA Code item 19 bans percentage compensation; many funders forbid it.</td>
+</tr>
+<tr>
+<td>SBIR proposal writing on success fee</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Crowded ($4–17K plus 3–5% success fee). A recent 5.5-month lapse shows policy risk.</td>
+</tr>
+<tr>
+<td>DBE recertification narrative writing</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>One-time window; $79 AI tools; final rule published 2026-09-25. The narrative must be the owner's own.</td>
+</tr>
+<tr>
+<td>E-Rate Form 470 vendor alerts</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>FRNHQ, ERateSignal and Apify. FCC is building a bidding portal (FY2028).</td>
+</tr>
+<tr>
+<td>CA DIR public-works registration renewal</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Same scam-adjacent dynamics as SAM. Manual export only. Low value per firm.</td>
+</tr>
+<tr>
+<td>Certified payroll for prevailing-wage subs</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>LCPcertified from $145/mo; QuickBooks add-ons $50–200/mo. Payroll processing, not data interpretation.</td>
+</tr>
+</tbody>
+</table>
+<h3>Lane 08: Legal, litigation and IP (21 ideas)</h3>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>Lane score</th>
+<th>Verifier verdict and revised score</th>
+<th>Reason it failed or was downgraded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1 Pro-se trademark office-action feed for attorneys</td>
+<td>6.6</td>
+<td>WEAKENED → 4.5 (verify-4)</td>
+<td>Scam-poisoned channel. ~30 Apify USPTO actors from $2.79/1K. Responses from $89 (L4SB). 5% of attorneys file 79% of applications.</td>
+</tr>
+<tr>
+<td>#2 B2B found-money sweep via CPA firms</td>
+<td>6.2</td>
+<td>WEAKENED → 4.0 (verify-4)</td>
+<td>50/50 split barred by FL §717.1322, CA B&amp;P 5061 and AICPA attest rules. Median claim $100. NY list has no dollar values.</td>
+</tr>
+<tr>
+<td>#3 ADA lawsuit signals → site rebuild</td>
+<td>6.0</td>
+<td>n.i.v.</td>
+<td>AudioEye ARPU ~$305/yr. Overlays anchor pricing at $25–100/mo. Defense lawyers' vendors reach sued businesses first.</td>
+</tr>
+<tr>
+<td>#4 Trade-claim sourcing engine for claims buyers</td>
+<td>5.8</td>
+<td>n.i.v.</td>
+<td>Only 30–60 relationship-driven buyers who treat sourcing as their edge. Creditors are already swamped with offers.</td>
+</tr>
+<tr>
+<td>#5 Creditor-side bankruptcy action briefs</td>
+<td>5.5</td>
+<td>n.i.v.</td>
+<td>Epiq AACER, Creditsafe, CreditRiskMonitor and NACM bundle alerts. Value is episodic; ERP integration friction.</td>
+</tr>
+<tr>
+<td>#6 Settlement-eligibility radar and filing for SMBs</td>
+<td>5.2</td>
+<td>n.i.v.</td>
+<td>Per-restaurant payouts likely hundreds of dollars, paid 1–2 years later. Courts police filers (EDNY Dkt. 7260).</td>
+</tr>
+<tr>
+<td>#7 Name-conflict watch for local businesses</td>
+<td>4.8</td>
+<td>n.i.v.</td>
+<td>SMBs won't pay to watch an unfamiliar risk. "Someone filed your name" reads like USPTO scam mailers.</td>
+</tr>
+<tr>
+<td>Visa/MC interchange claims filing</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Deadline passed 4 Feb 2025. Court-mandated disclosures for filers.</td>
+</tr>
+<tr>
+<td>Securities class-action claims filing</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Chicago Clearing (2,900+ clients), Broadridge and ISS SCAS. Custodians such as Schwab bundle it.</td>
+</tr>
+<tr>
+<td>Mass-tort signal intelligence</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Crowded by AI-native players: Darrow, TortIntel, LexGenius, TortSignal, Velocity Justice.</td>
+</tr>
+<tr>
+<td>White-label trademark docketing and renewal monitoring</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Alt Legal from $60/mo; Corsearch and CompuMark own watch services.</td>
+</tr>
+<tr>
+<td>Direct-to-owner Section 8/9 renewals</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>37 CFR 11.14 bars non-attorneys. Matches the convicted renewal scam (4+ years prison, $4.5M restitution).</td>
+</tr>
+<tr>
+<td>Brand-protection monitoring subscription</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Red Points $15–70K/yr; Brand Protector $199/mo; Amazon Brand Registry is free.</td>
+</tr>
+<tr>
+<td>DMCA takedown for creators</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Rulta, BranditScan and 18+ others. Adult-creator concentration adds platform risk.</td>
+</tr>
+<tr>
+<td>Copyright-infringement recovery (Pixsy-style)</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Pixsy and Copytrack take 45–50%. Troll backlash; only 35 of 1,222 CCB claims reached final determination.</td>
+</tr>
+<tr>
+<td>UCC-filing lead lists (MCA)</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Commoditized at $0.005–0.75 per lead; MCA is heavily scrutinized.</td>
+</tr>
+<tr>
+<td>Bankruptcy claims brokering as broker of record</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>0.5–1% commissions. Relationship-driven, with securities-law ambiguity.</td>
+</tr>
+<tr>
+<td>Preference-suit defendant feed</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Narrow and episodic; waves arrive ~2 years after the petition from a few dozen trusts.</td>
+</tr>
+<tr>
+<td>Construction lien-deadline tool</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Procore bought Levelset for $500M.</td>
+</tr>
+<tr>
+<td>Judgment-recovery origination</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>State data is fragmented and costly (UniCourt/Trellis APIs by quote). FDCPA and collection-law exposure.</td>
+</tr>
+<tr>
+<td>Generic "you've been sued" alerts</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Defense firms already monitor. Selling legal outcomes to defendants edges toward UPL.</td>
+</tr>
+</tbody>
+</table>
+<h3>Lane 09: Adjacent plays on the local-SMB website pipeline (21 ideas)</h3>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>Lane score</th>
+<th>Verifier verdict and revised score</th>
+<th>Reason it failed or was downgraded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1 AI + Maps Visibility Plan</td>
+<td>7.0</td>
+<td>WEAKENED → 5.0 as upsell / 3.5 cold (verify-5)</td>
+<td>BrightLocal includes AI tracking from $31/mo. API answers overlap the consumer UI only 15.5–23.8%, and LLM lists rarely repeat.</td>
+</tr>
+<tr>
+<td>#2 Review engine</td>
+<td>6.6</td>
+<td>WEAKENED → 5.0 as upsell / 3.5 cold (verify-5, bundled with #1)</td>
+<td>Very crowded: Podium $399–599, Birdeye, NiceJob $75 and GHL bundles. Owners often never upload customer lists.</td>
+</tr>
+<tr>
+<td>#4 Trucking insurance renewal intelligence (FMCSA)</td>
+<td>6.4</td>
+<td>WEAKENED → 3.5 (verify-5)</td>
+<td>8+ vendors (Carrier IQ $149–249, PollyAI, TruckingSignal). Motus removed future cancellations. The renewal anniversary is a guess.</td>
+</tr>
+<tr>
+<td>#3 Restaurant commission-leak site + ordering</td>
+<td>6.0</td>
+<td><strong>KILLED</strong> → 2.5 (verify-5)</td>
+<td>DoorDash Starter includes a free branded site and commission-free ordering. Menufy now costs $149–179/mo; GloriaFood shuts 30 Apr 2027.</td>
+</tr>
+<tr>
+<td>#7 Self-storage vertical</td>
+<td>5.9</td>
+<td>n.i.v.</td>
+<td>~15–25K independent facilities caps it at ~$5M ARR. Storable bundles websites with storEDGE/SiteLink.</td>
+</tr>
+<tr>
+<td>#6 Free valuation lead feed into M&amp;A</td>
+<td>5.6</td>
+<td>n.i.v.</td>
+<td>Most owners won't sell within 12 months. Wrong numbers insult owners. Brokers are cheap; not recurring.</td>
+</tr>
+<tr>
+<td>#8 Small-401(k) Form 5500-SF benchmarking</td>
+<td>5.5</td>
+<td>n.i.v.</td>
+<td>Judy Diamond $795–3,900/yr, BenefitFlow ~$14.5K/yr. SF filings show aggregate fees only. Adviser compliance friction.</td>
+</tr>
+<tr>
+<td>#5 Merchant-processing bolt-on</td>
+<td>4.9</td>
+<td>n.i.v.</td>
+<td>No public proof of effective rate. ~$30/mo residual; 24.6%/yr attrition. Toast and Clover lock merchants in.</td>
+</tr>
+<tr>
+<td>AI phone receptionist / missed-call text-back</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Most saturated category; prices falling to $49 (Rosie). Not provable without test calls (TCPA, recording consent).</td>
+</tr>
+<tr>
+<td>Standalone GBP optimization</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Paige $99 and every GHL agency bundle it. The GBP API forbids lead generation.</td>
+</tr>
+<tr>
+<td>Standalone local SEO audits</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>The oldest agency lead magnet; delivery is labor-heavy.</td>
+</tr>
+<tr>
+<td>Google/Meta ads audits</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Meta's Ad Library API covers US political ads only; Google's transparency data covers only the EEA and Turkey.</td>
+</tr>
+<tr>
+<td>Website ADA compliance (standalone)</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>A scan isn't proof of compliance. accessiBe FTC case. AudioEye took years to reach $40M.</td>
+</tr>
+<tr>
+<td>Broken/missing booking flows</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Jobber affiliate pays $50–300 one-off; Housecall Pro up to $180–320; Square pays nothing.</td>
+</tr>
+<tr>
+<td>Restaurant price/menu monitoring</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Buyers are chains and CPG brands (Datassential, Technomic). DoorDash/Uber terms ban scraping.</td>
+</tr>
+<tr>
+<td>Utility bill audits / energy brokerage</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Needs bill upload (UtilityAPI $15/meter). Brokerage pays ~$220–370/yr per account; only ~18 choice states.</td>
+</tr>
+<tr>
+<td>Telecom and SaaS spend audits</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>SMB spend is ~$300–1,500/mo. Expense Reduction Analysts franchises average ~$165K sales per licence.</td>
+</tr>
+<tr>
+<td>Payroll / PEO / health-benefit audits</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Small insured health plans don't file Form 5500. Needs uploads and a life-and-health licence.</td>
+</tr>
+<tr>
+<td>Insurance benchmarking for micro-SMB BOPs</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>~$100–400/yr commission. Next, CoverWallet and Huckleberry compete. CA/NY WC lookups block automation.</td>
+</tr>
+<tr>
+<td>Health-inspection data + reviews</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>The fix isn't automatable, and "you failed inspection" is an adversarial opener.</td>
+</tr>
+<tr>
+<td>Expired SSL/domain, hours mismatch</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Trivial to detect. Good timing triggers for the core pitch, not products.</td>
+</tr>
+</tbody>
+</table>
+<h3>Lane 10: B2B intent and trigger signals (24 ideas)</h3>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>Lane score</th>
+<th>Verifier verdict and revised score</th>
+<th>Reason it failed or was downgraded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1 New Practice Radar (NPPES + SOS)</td>
+<td>6.5</td>
+<td>WEAKENED → 3.0 (verify-4)</td>
+<td>Actable sells a "Practice Radar" at $39/mo. 72% of billing firms grow by referral. 44% of new practices are solo behavioral LLCs.</td>
+</tr>
+<tr>
+<td>#4 FTC Safeguards gap-brief engine for MSPs</td>
+<td>6.0</td>
+<td>n.i.v.</td>
+<td>Outside-in reports are free (Coalition, Guardz, EasyDMARC, ThreatMate). Preparers buy $749–999 WISP templates instead.</td>
+</tr>
+<tr>
+<td>#2 Multi-state Pre-Opening Radar</td>
+<td>5.5</td>
+<td>n.i.v.</td>
+<td>Per-buyer willingness to pay is $29–199/mo (Restaurant Activity Report $99, Liquor License Leads $29). Reps churn.</td>
+</tr>
+<tr>
+<td>#3 Event-layered 401(k)/benefits benchmark</td>
+<td>5.5</td>
+<td>n.i.v.</td>
+<td>FiduciarySignal $90/mo, 401kHunter $100, Form5500Search $49; RiXtrema drafts emails. FINRA 2210 compliance approval friction.</td>
+</tr>
+<tr>
+<td>#5 Defense-industrial-base CUI readiness radar</td>
+<td>4.5</td>
+<td>n.i.v.</td>
+<td>DoD suspended CMMC Phase 2 on 13 July 2026. GCC High detection is a weak proxy. Only 387 RPOs.</td>
+</tr>
+<tr>
+<td>#6 Trucking insurance renewal/lapse radar</td>
+<td>4.0</td>
+<td>WEAKENED → 3.5 (verify-5)</td>
+<td>TruckingSignal, PollyAI and TruckerDB ($49) already do it. The Motus cutover froze legacy feeds on 14 May 2026.</td>
+</tr>
+<tr>
+<td>#7 Operating-company Form D feed for fractional CFOs</td>
+<td>3.5</td>
+<td>n.i.v.</td>
+<td>Funding is the most commoditized signal (Fundz from $49). The Apify Form D actor has 2 users. Fewer than 10K real leads a year.</td>
+</tr>
+<tr>
+<td>WARN notices → outplacement/staffing</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Outplacement is chosen before the layoff. ~3–4.5K notices/yr. API at $9/mo. State Rapid Response is free.</td>
+</tr>
+<tr>
+<td>State AG breach notices → cyber MSPs</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Under 2K notices/yr in structured states. Breached firms already have counsel and incident response.</td>
+</tr>
+<tr>
+<td>Generic outside-in cyber risk reports</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Free from Coalition, UpGuard, SecurityScorecard and EasyDMARC.</td>
+</tr>
+<tr>
+<td>CRE tenant-rep from hiring growth</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Lease expiry is proprietary (CompStak, CoStar). Scayled at $59–119/mo already exists.</td>
+</tr>
+<tr>
+<td>Building permits → contractors/solar</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Prices compressed to $19–39/mo. A pulled permit usually means a contractor is already hired.</td>
+</tr>
+<tr>
+<td>New business formation lists</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Fractions of a cent per record; most filings are holding LLCs.</td>
+</tr>
+<tr>
+<td>OSHA citations → safety consultants/P&amp;C agents</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>OSHAlert $49–399/mo plus 6+ Apify actors; 30–60 day lag.</td>
+</tr>
+<tr>
+<td>RIA / Form ADV triggers</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>AdvizorPro ($5–15K/yr), FINTRX ($10–20K) and Discovery Data already sell these alerts.</td>
+</tr>
+<tr>
+<td>8-K exec changes / Form 4 liquidity</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>sec-api.io extracts Item 5.02 at $49–199/mo. Public companies only.</td>
+</tr>
+<tr>
+<td>Earnings-call transcript mentions</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Seeking Alpha terms ban redistribution. AlphaSense ~$18K/seat.</td>
+</tr>
+<tr>
+<td>Podcast/YouTube transcript signals</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Third-party captions not downloadable; 30-day storage cap. Podscan sells alerts at $100–2,500/mo.</td>
+</tr>
+<tr>
+<td>Conference exhibitor lists</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>$0.25–4/1K on Apify. A list, not a trigger.</td>
+</tr>
+<tr>
+<td>Job-posting tech-stack intelligence</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Sumble ($38.5M raised, free/$99), TheirStack, PredictLeads, Coresignal.</td>
+</tr>
+<tr>
+<td>ClinicalTrials.gov → CROs</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Registration is due up to 21 days after first enrollment, after CROs are chosen. Citeline dominates.</td>
+</tr>
+<tr>
+<td>DNS/SSL/app-store change feed</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>An MX move means a partner is already chosen. crt.sh is unreliable under load.</td>
+</tr>
+<tr>
+<td>Generic signal-as-a-service newsletter</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>No revenue disclosures found. Any raw feed can be replicated by an Apify actor in a weekend.</td>
+</tr>
+<tr>
+<td>Pure Form 5500 data product</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Six or more vendors at $25–199/mo with fee grades and switch prediction.</td>
+</tr>
+</tbody>
+</table>
+<h3>Lane 11: Wildcards (39 ideas)</h3>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>Lane score</th>
+<th>Verifier verdict and revised score</th>
+<th>Reason it failed or was downgraded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1 Trade-specific agenda-to-pipeline</td>
+<td>6.7</td>
+<td>WEAKENED → 3.0 (verify-3, merged with 07-B)</td>
+<td>Civic IQ $299/mo plus a $2K/mo done-for-you service; Curate from $295/user/mo; Starbridge $53.8M; Hamlet free tier.</td>
+</tr>
+<tr>
+<td>#3 Aircraft-owner outreach for avionics/MRO</td>
+<td>6.4</td>
+<td>WEAKENED → 4.0 (verify-5)</td>
+<td>Owner lists cost $0.14/name (Datamasters). ADs are handled at annual inspections. Shops are backlogged. ~$0.4–1.2M ARR ceiling.</td>
+</tr>
+<tr>
+<td>#8 Construction-coming-to-your-county</td>
+<td>6.3</td>
+<td>n.i.v.</td>
+<td>No proven willingness to pay. BEAD winner lists are free. EPCs buy nationally. Lane called it "a puddle".</td>
+</tr>
+<tr>
+<td>#7 Private land-use approval triggers</td>
+<td>6.0</td>
+<td>n.i.v.</td>
+<td>Opening Alerts $49–99/mo; DineTracer $0.50/lead; CurateBUILD covers construction. Applicant LLCs are hard to contact.</td>
+</tr>
+<tr>
+<td>#2 Property-tax appeal evidence engine</td>
+<td>5.9</td>
+<td>WEAKENED → 3.0 (verify-3)</td>
+<td>AppealDesk sells $49 packets. TX Occ. Code 1152 covers paid assistants. ~49% TX ARB success; ~$130 expected per signed client.</td>
+</tr>
+<tr>
+<td>#4 Franchise trigger engine</td>
+<td>5.9</td>
+<td>n.i.v.</td>
+<td>Blueprint GTM sells a Claude-built 142,579-operator dataset at $50/mo. Agencies crowded. FTC Franchise Rule earnings-claim risk.</td>
+</tr>
+<tr>
+<td>#6 Duty-drawback discovery (broker partnered)</td>
+<td>5.3</td>
+<td><strong>KILLED</strong> → 1.5 (verify-1)</td>
+<td>A contingency split from a licensed broker to an unlicensed party is prohibited by 19 CFR 111.36(b) and CBP H276784.</td>
+</tr>
+<tr>
+<td>#5 Amazon trademark gap → filing</td>
+<td>5.3</td>
+<td>n.i.v.</td>
+<td>Unsolicited trademark outreach is the scam pattern the USPTO warns about. Amazon IP Accelerator exists. Rule 5.4 bars fee-splitting.</td>
+</tr>
+<tr>
+<td>SERFF insurance rate-filing intel</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>SFA terms prohibit automated download. S&amp;P, Akur8/Matrisk and Insuraviews are already in the market.</td>
+</tr>
+<tr>
+<td>PUC rate-case/docket tracking</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Halcyon ($32M raised, all 50 PUCs), HData and S&amp;P RRA.</td>
+</tr>
+<tr>
+<td>Utility tariff data</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Arcadia/Genability own the installer market. The OpenEI gap is real but small.</td>
+</tr>
+<tr>
+<td>Interconnection queues → landowner leads</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Landowners don't pay (LandGate is free to them). Paces, Transect and Apify ($6/1K) serve developers.</td>
+</tr>
+<tr>
+<td>Data-center/renewable moratorium trackers</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Free trackers (SAVRN with 1,118 moratoria, Sabin, NLC). Heatmap Pro and Paces serve enterprise.</td>
+</tr>
+<tr>
+<td>BEAD winner lists</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Free (Telecompetitor, beadtracker.com, state portals).</td>
+</tr>
+<tr>
+<td>USDA FSA payments → ag dealers</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>DTN/Farm Market iD covers 2.4–2.8M operators; EWG is free. Data lags a year.</td>
+</tr>
+<tr>
+<td>EU CBAM for US exporters</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>US exposure is only ~$1.4B. The obligation sits with the EU importer. EU software from €79/mo.</td>
+</tr>
+<tr>
+<td>CA SB 253 supplier Scope 3</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Scope 3 not due until 2027; SB 261 enjoined; spend-based estimates allowed.</td>
+</tr>
+<tr>
+<td>EPA TRI/GHGRP standalone</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Useful only as an input to the SB 253 idea.</td>
+</tr>
+<tr>
+<td>Generic SMB RFP writer</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>GovDash ($30M B), Vultron ($22M), AutoRFP, plus $0–199/mo tools.</td>
+</tr>
+<tr>
+<td>Horizontal SLED intelligence</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Starbridge, Pursuit, Curate, GovSpend, GovWin, Quorum.</td>
+</tr>
+<tr>
+<td>990 funder matching / grant prospecting</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Instrumentl ($55M), Candid, Granted AI ($18/mo), Grantable (free). Schedule B donors redacted.</td>
+</tr>
+<tr>
+<td>Church data</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Churches don't file 990s. List brokers sell 118K contacts for $699.</td>
+</tr>
+<tr>
+<td>Liquor and cannabis licence leads</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Opening Alerts $49–99/mo, DineTracer $0.50/lead, Cannabiz $3.6K+/yr, 5+ Apify actors.</td>
+</tr>
+<tr>
+<td>FMCSA new-authority leads</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>6+ Apify actors at $3.50–20/1K. New carriers are swamped with calls. Motus broke the feed.</td>
+</tr>
+<tr>
+<td>UCC filings → equipment and MCA leads</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Access from free (CO) to $24K (AZ); GA/NC ban scraping. EDA owns equipment; MCA outreach is toxic.</td>
+</tr>
+<tr>
+<td>Boat and vessel registrations</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>No free bulk USCG download found. State registrations are privacy-restricted.</td>
+</tr>
+<tr>
+<td>Probate leads</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>$69–799/mo per county. Targets grieving families; rejected on ethics.</td>
+</tr>
+<tr>
+<td>Shopify store detection</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Store Leads, BuiltWith, StoreCensus ($49), StoreIndex ($29), Apify.</td>
+</tr>
+<tr>
+<td>App-store review mining</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>AppFollow, Appbot ($39), Sensor Tower. LLM summaries are now a standard feature.</td>
+</tr>
+<tr>
+<td>Amazon suspended-seller reinstatement</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>No public list of suspended sellers. Referral-driven and crowded.</td>
+</tr>
+<tr>
+<td>COI tracking</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>BCS free to 25 vendors then ~$0.95/vendor/mo; Jones ($38M). No public data hook.</td>
+</tr>
+<tr>
+<td>Lien waivers and notices</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Procore/Levelset ($500M); LienWaiver.pro $49/mo. UPL rulings on lien filing (NC).</td>
+</tr>
+<tr>
+<td>Parcel late-delivery refunds</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>FedEx suspended Ground/Home/2Day guarantees; UPS Ground isn't guaranteed. The refund pool has shrunk.</td>
+</tr>
+<tr>
+<td>IEEPA tariff refund recovery</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>~$134.7B already in CAPE by Sept 2026. One-time, crowded, needs a broker or attorney.</td>
+</tr>
+<tr>
+<td>Chargebacks</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Chargeflow ($49M, 25% fee) and Justt (~$100M). No public hook.</td>
+</tr>
+<tr>
+<td>Sales-tax nexus</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Kintsugi (free monitoring), Numeral, free nexus studies (Galvix).</td>
+</tr>
+<tr>
+<td>1099/W-9 compliance</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>$0.63–3.10 per form. OBBBA raised the 1099-NEC threshold to $2,000.</td>
+</tr>
+<tr>
+<td>Unclaimed property finder</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>10–20% fee caps, 24–36-month finder bans, median claim ~$100. Treasurers advertise "never a cost".</td>
+</tr>
+<tr>
+<td>Vet-clinic data play</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Ownership already mapped (privateequityvet.org). Better as a vertical for the website business.</td>
+</tr>
+</tbody>
+</table>
+<h3>Lane 12: Deadline-driven back office, done for you (round 2; 20 ideas)</h3>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>Lane score (post self-check)</th>
+<th>Verifier verdict and revised score</th>
+<th>Reason it failed or was downgraded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#5 Contractor Back-Office Bundle (upsell)</td>
+<td>4.5</td>
+<td>n.i.v.</td>
+<td>Works only if the brothers' customers are commercial or public-works trades; otherwise it shrinks to ~$20/mo reminders. Offshore VAs cost $8/hr.</td>
+</tr>
+<tr>
+<td>#2 Prequal Desk (ISNetworld/Avetta/Veriforce)</td>
+<td>4.0</td>
+<td>n.i.v. (lane self-check: competition cut 4→2)</td>
+<td>Avetta sells its own done-for-you Vetify; EHS Inc Bronze $1,950/yr. ISN may terminate users linked to other subscribers.</td>
+</tr>
+<tr>
+<td>#1 Prevailing-Wage Desk (CA)</td>
+<td>3.5</td>
+<td>n.i.v. (lane self-check: 4.5→3.5)</td>
+<td>Wellstanding already sells CA done-for-you certified payroll at $995 setup + $249/mo. QBO Premium now produces WH-347.</td>
+</tr>
+<tr>
+<td>#4 Get-Paid Desk (prelims, NOI, retainage)</td>
+<td>3.0</td>
+<td>n.i.v.</td>
+<td>The barrier is behavioral (fear of the GC). Levelset $59/recipient. Collection licensing; CA SB 1286 Rosenthal rules.</td>
+</tr>
+<tr>
+<td>#3 Audit-Ready Desk (FL WC premium audits)</td>
+<td>2.5 (rejected)</td>
+<td>n.i.v. (lane self-check)</td>
+<td>FL runs a free Construction Policy Tracking Database. FS 624.10/626.015 make fee-based audit review a licensing risk.</td>
+</tr>
+<tr>
+<td>#6 Small-fleet compliance desk</td>
+<td>2.5 (rejected)</td>
+<td>n.i.v.</td>
+<td>ExpressIFTA $24.95/qtr; MCS-150 free to file. FMCSA warns of lookalike $149 mailers, which poison cold outreach.</td>
+</tr>
+<tr>
+<td>Lien-deadline SaaS / notice service</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Levelset $59/recipient; FL NTO services $25–65; Handle, NCS, NACM, CNS.</td>
+</tr>
+<tr>
+<td>COI collection and tracking</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>BCS ≈$0.95/vendor/mo with licensed reviewers; CertFocus $13–29/vendor/yr; TrackMyVendor $39/mo unlimited.</td>
+</tr>
+<tr>
+<td>Property-manager vendor compliance</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Same COI vendors plus AI property-manager startups (Brickwise, CentralComs).</td>
+</tr>
+<tr>
+<td>Sales-tax filing for micro-sellers</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Numeral and Kintsugi $75/filing; Zamp managed; heavily funded.</td>
+</tr>
+<tr>
+<td>Annual reports / registered agent</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Northwest $125/yr; RAI $200/yr including annual reports; some from $49.</td>
+</tr>
+<tr>
+<td>Permit expediting / packages</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>GreenLancer from $199; Permitio.ai HVAC agent (Mar 2026); PermitFlow; expediters $35–70/hr.</td>
+</tr>
+<tr>
+<td>Prior authorizations for small practices</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>$4–15/auth outsourced; offshore staff $399/week. Physicians are a guarded buyer.</td>
+</tr>
+<tr>
+<td>IRS/state notice response, penalty abatement</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>IRS moving first-time abatement to automatic from 2026. Representation needs a CPA, EA or attorney (Circular 230).</td>
+</tr>
+<tr>
+<td>Contractor licence renewal and CE tracking</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>CA CSLB renewal is a form plus a fee; CE is coursework the licensee must take.</td>
+</tr>
+<tr>
+<td>DBE/MBE certification applications</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Application is free by federal rule; consultant prep is $300–1,000 one-time.</td>
+</tr>
+<tr>
+<td>Provider credentialing / CAQH re-attestation</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Dense credentialing-services market; guarded healthcare buyers; PECOS login-sharing prohibitions.</td>
+</tr>
+<tr>
+<td>AR collections for consumer-facing trades</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>FDCPA and state collection licensing. AR outsourcing from $350/mo; LedgerUp and other AI tools.</td>
+</tr>
+<tr>
+<td>WC premium-audit dispute on contingency</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Possible insurance-consultant licensing. Thin market (cutcomp ~$30M lifetime).</td>
+</tr>
+<tr>
+<td>TX/FL business-personal-property renditions</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Low stakes (10% late penalty on small bills). Paid TX consulting likely needs TDLR registration.</td>
+</tr>
+</tbody>
+</table>
+<h3>Lane 13: Contingency "found money" recovery (round 2; 23 ideas)</h3>
+<p><em>RateLift (idea #1) takes two rows because the lane scored its narrowed and non-narrowed versions separately.</em></p>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>Lane score (post self-check)</th>
+<th>Verifier verdict and revised score</th>
+<th>Reason it failed or was downgraded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#2 Co-op claim desk + co-op-funded marketing</td>
+<td>4.5 (5.0 as upsell; ~3 cold)</td>
+<td>n.i.v. (lane self-check: WEAKENED)</td>
+<td>Pre-approval and 30–60-day windows make retroactive recovery "mostly fiction". OEM approved-agency gating (Yamaha, Lennox). Dealer Spike, CoopReclaim compete.</td>
+</tr>
+<tr>
+<td>#1 RateLift narrowed to RV and heavy-truck dealers</td>
+<td>4.0</td>
+<td>n.i.v. (lane self-check: WEAKENED)</td>
+<td>100-RO submission rights exist only under auto franchise acts, where Armatus, Wooden and Withum ($7,500 flat) already operate.</td>
+</tr>
+<tr>
+<td>#1 RateLift for equipment, OPE, marine, powersports</td>
+<td>3.0</td>
+<td>n.i.v. (lane self-check: WEAKENED, near-killed)</td>
+<td>Equipment statutes need only a rate notice; parts fixed at net +15%. Garmin pays posted rates up to $190/hr. Per-store pools ~$3–10K.</td>
+</tr>
+<tr>
+<td>#3 Vendor-side sales-tax overcharge recovery</td>
+<td>4.0</td>
+<td>n.i.v. (lane self-check: WEAKENED)</td>
+<td>Vendor credits are voluntary; in CA only the retailer can claim. NY/OH UPL rules for appeals. Arthiva AI tool exists.</td>
+</tr>
+<tr>
+<td>#4 §45B FICA tip credit for salons</td>
+<td>3.5</td>
+<td>n.i.v. (lane self-check: WEAKENED)</td>
+<td>2025 is the first eligible year, so no lookback refunds; nonrefundable. 80% of barbers self-employed. CA B&amp;P 5061 bans CPA referral fees.</td>
+</tr>
+<tr>
+<td>#5 Workers'-comp premium-audit recovery</td>
+<td>3.0</td>
+<td>n.i.v. (not separately self-checked)</td>
+<td>8+ firms at ~50% of recovery (CompRecover, WC Audit Recovery). Fee-based insurance advice is licensed in some states.</td>
+</tr>
+<tr>
+<td>#6 Restaurant Settlement Desk</td>
+<td>2.5</td>
+<td>n.i.v.</td>
+<td>Payouts of $100–2,500. 685 third-party filers in Payment Card. Courts police filers; class members can file free.</td>
+</tr>
+<tr>
+<td>Tax-deed/foreclosure surplus recovery</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>TX bars non-attorney fees; FL 12% cap; CA $2,500/5%. Post-<em>Tyler</em> reforms push counties to pay owners directly.</td>
+</tr>
+<tr>
+<td>Parcel audit (GSR, DIM)</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Dozens of 50%-contingency incumbents (Refund Retriever). FedEx Ground GSR mostly suspended.</td>
+</tr>
+<tr>
+<td>LTL freight audit and damage claims</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Cass, CTSI, Loop crowd audit. 50–60% claim denial rate. Labor-heavy.</td>
+</tr>
+<tr>
+<td>Telecom/SaaS/waste/merchant expense reduction</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Schooley Mitchell franchise (50/50 across 14 categories); IMG Audit, Cost Analysts, Dyrt.</td>
+</tr>
+<tr>
+<td>Utility rate-class and tax-exemption audits</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Many contingency firms. Predominant-use studies need on-site inventories; TX restaurants excluded.</td>
+</tr>
+<tr>
+<td>CAM/lease audits</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Leases often ban contingency auditors. CAMAudit sells $29–49 AI audits.</td>
+</tr>
+<tr>
+<td>IEEPA tariff refunds</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Filing is customs business for the IOR or a broker. Carriers refund informal entries automatically. Fees down to 1.5%.</td>
+</tr>
+<tr>
+<td>Amazon/Walmart FBA reimbursements, chargebacks</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>25% incumbents (GETIDA). Amazon auto-reimburses at manufacturing cost within a 60-day window.</td>
+</tr>
+<tr>
+<td>Restaurant delivery-app disputes</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Voosh, Loop and DisputeDog (20%).</td>
+</tr>
+<tr>
+<td>SMB property-claim underpayment</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Public-adjuster licence and fee caps (TX 10%, FL 20%/10%); referral bans.</td>
+</tr>
+<tr>
+<td>Healthcare credit balances and payer underpayments</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Conduent, Optum and Trend Health dominate. HIPAA; guarded buyers.</td>
+</tr>
+<tr>
+<td>Federal R&amp;D credit</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Crowded; IRS Tier-1 issue; contingency under Circular 230 scrutiny.</td>
+</tr>
+<tr>
+<td>IRA energy credits (179D/45L/45W)</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>OBBBA terminated 45W (30 Sep 2025), 179D and 45L (30 Jun 2026).</td>
+</tr>
+<tr>
+<td>Utility prescriptive rebates</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Captured by contractors at sale. CLEAResult and Encentiv dominate.</td>
+</tr>
+<tr>
+<td>Texas BPP "ghost asset" renditions</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Crowded TX consultant market; the round-1 property-tax kill applies.</td>
+</tr>
+<tr>
+<td>SUTA rate and benefit-charge audits</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Bundled by payroll providers; small dollars per SMB.</td>
+</tr>
+<tr>
+<td>Merchant-processing overcharge refunds</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Mostly prospective savings, not refunds. Dozens of ISOs offer free statement analysis.</td>
+</tr>
+</tbody>
+</table>
+<h3>Lane 14: Data that can be obtained but isn't on the open web (round 2; 26 ideas)</h3>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>Lane score (post self-check)</th>
+<th>Verifier verdict and revised score</th>
+<th>Reason it failed or was downgraded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1 Overdue Feed (fire ITM overdue lists via records requests)</td>
+<td>4.0</td>
+<td>n.i.v. (lane self-check, Verifier A: 4/10)</td>
+<td>Brycer began marketing TCE as "inbound demand" (May 2026). Notices name the incumbent contractor. FL §119.071 exempts the data; Fort Worth withheld under TX 418.181.</td>
+</tr>
+<tr>
+<td>#2 ITM Book Index (roll-up origination)</td>
+<td>3.0</td>
+<td>n.i.v. (lane self-check, Verifier B: 3/10)</td>
+<td>Grata published a fire-safety playbook covering 118K targets (Aug 2026). Shovels sells contractor market share. DealSeam is buyer-paid.</td>
+</tr>
+<tr>
+<td>#3 Linen and waste co-op (upsell only)</td>
+<td>3.0</td>
+<td>n.i.v. (lane self-check: 3/10 upsell, 2/10 standalone)</td>
+<td>Cintas uses a 60-month auto-renewal with a 50% early-termination fee. AuditMyWaste is free; SaveOnServices $247 audit.</td>
+</tr>
+<tr>
+<td>#4 Due-list feeds (backflow, FOG, hood)</td>
+<td>2.0</td>
+<td>n.i.v. (lane self-check: 2/10)</td>
+<td>Backflow tests cost $75–200. Utilities send due notices with approved-tester lists. BackflowRates $39.99/mo.</td>
+</tr>
+<tr>
+<td>#5 Shop Panel (AI web-form mystery shops)</td>
+<td>2.0</td>
+<td>n.i.v. (lane self-check: 2/10)</td>
+<td>CDD firms (Woozle, Baker Tilly) run shops themselves. Speed-to-lead audits are free. Nevada requires a PI licence for mystery shoppers.</td>
+</tr>
+<tr>
+<td>#6 Collections-contract map (EMS billing etc.)</td>
+<td>1.0</td>
+<td>n.i.v. (lane self-check: 1/10, killed)</td>
+<td>Starbridge already FOIAs full contracts with pricing and expirations. Civic IQ sells done-for-you pipeline at $2K/mo.</td>
+</tr>
+<tr>
+<td>General SLED contract-expiration FOIA database</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>GovSpend (96M contracts), Starbridge ($52M), Civic IQ ($2K/mo), HigherGov ($50/FOIA).</td>
+</tr>
+<tr>
+<td>School-district vendor contracts</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Starbridge, DistrictIQ and Burbio cover K-12.</td>
+</tr>
+<tr>
+<td>Police and fire equipment inventories</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Sold through territory-exclusive dealers who already know their departments. AFG grant data is public.</td>
+</tr>
+<tr>
+<td>Alarm-permit and false-alarm lists</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Statutorily confidential in many states (NC, FL, Providence RI).</td>
+</tr>
+<tr>
+<td>Utility account data</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Customer-confidential; not obtainable.</td>
+</tr>
+<tr>
+<td>Pre-opening restaurant leads from plan reviews</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>RestaurantData.com, Restaurant Activity Report and RestaurantPOSLeads already sell them.</td>
+</tr>
+<tr>
+<td>Dental supply price co-op</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>ZenOne $49/mo, Alara free, Method.</td>
+</tr>
+<tr>
+<td>Small-space commercial lease comps</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>CompStak's give-to-get exchange has 40K+ members.</td>
+</tr>
+<tr>
+<td>HVAC equipment price benchmark</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Pricing is account-specific and contractors won't share invoices. Cold start.</td>
+</tr>
+<tr>
+<td>Restaurant food-cost price co-op</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>GPOs, MarginEdge, xtraCHEF and many invoice tools.</td>
+</tr>
+<tr>
+<td>Merchant-processing statement benchmark</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Swipesum, Rombis and PayBlox give it away free.</td>
+</tr>
+<tr>
+<td>SMB insurance-premium benchmark co-op</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Monetization runs into producer licensing and referral-fee limits. Cold start.</td>
+</tr>
+<tr>
+<td>Website-quality index for lenders/insurers</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Middesk <code>web_presence_quality</code>, Carpe Data (45M profiles), Enigma, PredictLeads ($40/mo+).</td>
+</tr>
+<tr>
+<td>Selling reply-derived owner intent</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Destroys trust with the brothers' own prospects; privacy issues; M&amp;A origination already crowded.</td>
+</tr>
+<tr>
+<td>Multifamily AI mystery shopping</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Rev Leasing and EliseAI sell AI shops; Funnel replaces shops with 100% call scoring.</td>
+</tr>
+<tr>
+<td>Insurance quote-shopping by AI</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Requires misrepresenting risk details to carriers; producer licensing applies.</td>
+</tr>
+<tr>
+<td>Funeral price panel by phone</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Weak WTP; Parting.com and Funeralocity exist; AI-voice and CIPA risk.</td>
+</tr>
+<tr>
+<td>Child-care market-rate surveys for states</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Surveys already get 70%+ response. Only 56 buyers, on slow RFP cycles.</td>
+</tr>
+<tr>
+<td>Public-meeting and hearing transcription</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>GovSpend (2.3M transcripts), Hamlet, CitizenPortal ($15/mo), Starbridge, Curate.</td>
+</tr>
+<tr>
+<td>Court hearing audio / earnings / webinars</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Court audio rarely public. Trellis/UniCourt cover dockets; AlphaSense, Tegus, Quartr cover earnings.</td>
+</tr>
+</tbody>
+</table>
+<h3>Lane 15: Agent-run brokerage and commission models (round 2; 20 ideas)</h3>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>Lane score (post self-check)</th>
+<th>Verifier verdict and revised score</th>
+<th>Reason it failed or was downgraded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#6 SMB technology-advisor residual book (upsell)</td>
+<td>5.0 upsell / 3.0 cold</td>
+<td>n.i.v. (lane self-check: holds at 5 as upsell)</td>
+<td>Comcast/Spectrum pay one-time bounties, not residuals. ~6-month chargeback windows. ~$60–100/mo per switched customer. Lightyear ($31M) is free.</td>
+</tr>
+<tr>
+<td>#1 Quota liquor-licence brokerage (FL first)</td>
+<td>3.5</td>
+<td>n.i.v. (lane self-check: competition 4→3)</td>
+<td>FL's 2023 SFS change (2,000 sq ft / 120 seats) lets small restaurants use a 2COP. Dozens of FL brokers; PLCB auctions. One-off.</td>
+</tr>
+<tr>
+<td>#2 Restaurant exit desk</td>
+<td>3.0</td>
+<td>n.i.v. (lane self-check: 4→3)</td>
+<td>BizBuySell recorded 9,586 closed deals across all categories in 2025. Restaurant resales −11.7% YoY. We Sell Restaurants has 1,375 listings.</td>
+</tr>
+<tr>
+<td>#3 Insurance micro-book brokerage</td>
+<td>3.0</td>
+<td>n.i.v. (lane self-check: 4→3)</td>
+<td>Milly 3%, Insurance Agency Trader 2%, Oak Street exchange free. State Farm agents don't own their books.</td>
+</tr>
+<tr>
+<td>#5 Franchise resale/conversion placement</td>
+<td>3.0</td>
+<td>n.i.v. (lane self-check)</td>
+<td>Franzy ($2.2M seed) is a resale marketplace. Some conversion programs waive the fee. CA SB 919 broker registration from July 2027.</td>
+</tr>
+<tr>
+<td>#4 Independent pharmacy exit / file brokerage</td>
+<td>2.0</td>
+<td>n.i.v. (lane self-check: 3.5→2)</td>
+<td>McKesson RxOwnership is free (7,400+ owners helped); Cardinal also free. Chains buy files directly.</td>
+</tr>
+<tr>
+<td>#7 SMB tenant representation</td>
+<td>2.0</td>
+<td>n.i.v. (lane self-check: 3→2)</td>
+<td>Small deals go direct with owners. $3.6–5.4K per deal. Lease expirations aren't observable. SquareFoot and TenantBase compete.</td>
+</tr>
+<tr>
+<td>Main Street micro-brokerage</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Baton 6% + $1K/mo; Rejigg free to sellers; OffDeal, Tupelo, Smobi. 17-state real-estate licence burden.</td>
+</tr>
+<tr>
+<td>Used restaurant equipment</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Dealer buyouts recover 10–30%; auctions take 10–20%. Rigging and removal can't be automated.</td>
+</tr>
+<tr>
+<td>Heavy, construction and lab equipment</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>RB Global/IronPlanet takes 8–14%; EquipNet, BioSurplus, LabX. Capital and logistics heavy.</td>
+</tr>
+<tr>
+<td>Dental equipment</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>10–20% brokers, zero-commission auctions, ABC Dentalworks buyouts.</td>
+</tr>
+<tr>
+<td>Freight capacity matching</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Needs a $75K BMC-84 bond. Margins under 15%. AI-agent vendors (Vooma, HappyRobot) already sell to brokers.</td>
+</tr>
+<tr>
+<td>Website and domain brokerage</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Flippa 5–10%, Empire Flippers 15%, Motion Invest 7–20%. AI search is eroding content-site values.</td>
+</tr>
+<tr>
+<td>Dental and vet practice brokerage</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Established brokers at 6–12%; DSO in-house teams; guarded professionals.</td>
+</tr>
+<tr>
+<td>Solar and roofing appointments</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Commodity at $72–300 per appointment. Residential solar forecast to fall 33% in 2026.</td>
+</tr>
+<tr>
+<td>Solar land origination</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>OBBBA construction cliff (4 July 2026). LandGate and SolarLandLease sell landowner leads.</td>
+</tr>
+<tr>
+<td>Commercial energy brokerage</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>~$400/yr per small account; state registration in most deregulated states.</td>
+</tr>
+<tr>
+<td>Excess-inventory liquidation and government surplus</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>B-Stock and Liquidity Services/GovDeals ($4B+ sales) own both sides. Arbitrage needs capital.</td>
+</tr>
+<tr>
+<td>Home-services lead marketplace</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Angi $15–120/lead, Thumbtack $10–80. Contractors hate shared leads. Saturated.</td>
+</tr>
+<tr>
+<td>Janitorial account brokering</td>
+<td>—</td>
+<td>rejected by lane</td>
+<td>Jani-King/Coverall model with misclassification litigation history. Pay-per-appointment vendors at ~$135.</td>
+</tr>
+</tbody>
+</table></section>
+<section class="appx"><h1>Appendix B: One-pager briefs for the top and seed ideas</h1>
+<p class="note">Each brief is followed by its final verification update where verify-6 or verify-7 changed the verdict.</p><p><em>Built only from lane reports 01–15 and verifier reports verify-1 to verify-5 (all dated 2026-10-01). Where a verifier contradicted a lane, the verifier's figure is used. Ideas B, C, D and I had no external verifier, so their status comes from the lane's own adversarial sub-agent pass. </em><em>(est.)</em><em> means the lane's or verifier's own arithmetic. "Not established" means the files contain no figure for it.</em></p>
+<hr />
+<h3>A. AI + Maps visibility / reviews retainer, as an upsell to existing website customers</h3>
+<p><strong>Pitch.</strong> Sell a done-for-you "Reviews + GBP + Citations" plan to the brothers' own site customers, with AI visibility shown in the monthly report as the hook rather than sold as the product (verify-5).</p>
+<p><strong>Problem / who pays today</strong></p>
+<ul>
+<li>SMBs already pay for reviews: Podium $399–$599/mo (<a href="https://www.socialpilot.co/reviews/blogs/podium-pricing">socialpilot</a>), Birdeye about $299–449/location (<a href="https://costbench.com/software/review-management/birdeye/">costbench</a>), NiceJob $75/$125 (<a href="https://get.nicejob.com/pricing">NiceJob</a>).</li>
+<li>45% of consumers have used AI for local recommendations, but ChatGPT named only about 1.2% of 350K local locations, against 35.9% for Google's 3-pack (<a href="https://www.brightlocal.com/research/lcrs-ai-trust/">BrightLocal</a>, <a href="https://www.marketingcode.com/chatgpt-recommends-1-percent-local-businesses-contractors/">MarketingCode</a>). Most clients will see "0% visibility".</li>
+<li>SMB willingness to pay for AI-visibility <em>monitoring</em> specifically is still unproven (verify-5).</li>
+</ul>
+<p><strong>Data / inputs &amp; access</strong></p>
+<ul>
+<li>Places API: $17–$32 per 1K calls (<a href="https://developers.google.com/maps/billing-and-pricing/pricing">Google</a>). The review gap is deterministic, so use it as the cold-outreach proof.</li>
+<li><strong>Verifier correction:</strong> answers from the LLM API overlap only <strong>15.5–23.8%</strong> with what the consumer UI shows (<a href="https://surferseo.com/blog/llm-scraped-ai-answers-vs-api-results">Surfer</a>). Fewer than 1 in 100 runs return the same brand list (<a href="https://searchengineland.com/ai-recommendation-lists-rarely-repeat-study-468076">SEL</a>). Report a mention rate across at least 10 samples per prompt, never a "rank".</li>
+<li>GBP API: no lead generation; edits need consent (<a href="https://developers.google.com/my-business/content/policies">policies</a>).</li>
+</ul>
+<p><strong>Buyer + market size</strong></p>
+<ul>
+<li>The buyer is the brothers' existing website customers. Their count is <strong>not established</strong>.</li>
+<li>Lane-wide universe: about 2.0M employer establishments in the target verticals (lane 09, CBP 2023).</li>
+</ul>
+<p><strong>Pricing &amp; recurring model.</strong> $79–$129/mo, month to month (verify-5). This replaces the lane's $149.</p>
+<p><strong>Agent pipeline</strong></p>
+<ul>
+<li><strong>Find:</strong> tag existing customers by vertical.</li>
+<li><strong>Build deliverable:</strong> review gap against the map pack, plus mention rate (cost about $0.30–0.75 per snapshot).</li>
+<li><strong>Personalized outreach:</strong> in-account email.</li>
+<li><strong>Handle replies:</strong> agent answers and sends a checkout link.</li>
+<li><strong>Deliver/renew:</strong> GBP posts, review requests, citations, monthly report.</li>
+<li><strong>Automatable:</strong> about 90% for snapshots and reports, 80% overall (verify-5).</li>
+<li><strong>Human touchpoints:</strong> GBP suspensions and reinstatements, onboarding the review feed, "my phone shows something different" disputes.</li>
+</ul>
+<p><strong>First 90 days.</strong> Offer the plan to every existing site customer. Build it on wholesale tools instead of a custom sampler. Keep the 60-day take-rate gate below.</p>
+<p><strong>Unit economics</strong></p>
+<ul>
+<li>CAC is about $0 for existing customers.</li>
+<li>Cost: wholesale BrightLocal $31 or Merchynt about $20/profile, plus the lane's estimated $15–25/mo COGS.</li>
+<li>Churn: SMB SaaS runs 3–7%/mo. Yext customers under $50K ARR keep 69% of dollars per year (<a href="https://investors.yext.com/news-events/press-releases/detail/391/yext-announces-second-quarter-fiscal-2027-results">Yext</a>).</li>
+<li>Cold outbound, if attempted: model 0.2–0.5% close, which gives a CAC of about $150–300.</li>
+</ul>
+<p><strong>Competitors (with prices)</strong></p>
+<ul>
+<li>BrightLocal AI tracker from <strong>$31/mo</strong>, included as standard (<a href="https://www.brightlocal.com/local-seo-tools/local-ai-visibility/">official</a>).</li>
+<li>Local Falcon $24.99–$199.99.</li>
+<li>Merchynt Paige $99/location.</li>
+<li>Profound $99/$399.</li>
+<li>Peec €85–€425.</li>
+<li>Localo $39–49.</li>
+<li>LLMrefs $79.</li>
+<li>Rankscale €20.</li>
+</ul>
+<p><strong>Legal / licensing</strong></p>
+<ul>
+<li>No licence needed.</li>
+<li>FTC substantiation: word results as "in N of M sampled API answers" (<a href="https://www.ftc.gov/news-events/news/press-releases/2025/01/ftc-order-requires-online-marketer-pay-1-million-deceptive-claims-its-ai-product-could-make-websites">accessiBe order</a>).</li>
+<li>FTC fake-review rule, up to $51,744 per violation (<a href="https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials">FTC</a>). Google bans review gating.</li>
+<li>CAN-SPAM applies. Contact owners by email only, because texting brings in the TCPA.</li>
+</ul>
+<p><strong>Top risks</strong></p>
+<ul>
+<li>A client checks ChatGPT on their own phone, sees a different answer and cancels.</li>
+<li>An agency gives away the same report inside a $31 BrightLocal seat.</li>
+<li>The lane's "12–18-month window" claim is wrong: <strong>the window has already closed</strong>.</li>
+</ul>
+<p><strong>Cheapest validation test + kill criteria</strong></p>
+<ul>
+<li>Offer the plan to all existing site customers.</li>
+<li><strong>Kill if</strong> fewer than 10% take it within 60 days (verify-5).</li>
+</ul>
+<p><strong>Verification status.</strong> WEAKENED. <strong>5.0</strong> as an upsell, 3.5 as cold outbound, medium-high confidence (verify-5). The CAC is near zero and the work is real done-for-you work, but the AI report alone is a $31 commodity.</p>
+<p><strong>Final check (verify-6):</strong> CONFIRMED at <strong>5.0</strong>. This is the best single upsell. It works best when built into the acquisition offer (site plus Local Presence Plan from day one).</p>
+<hr />
+<h3>B. Manufacturer co-op advertising claim desk, as an upsell</h3>
+<p><strong>Pitch.</strong> Pay for dealers' and contractors' sites and ads partly out of manufacturer co-op funds: the agents handle pre-approvals and claims, and the co-op covers 40–70% of the brothers' retainer.</p>
+<p><strong>Problem / who pays today</strong></p>
+<ul>
+<li>Carrier's 2026 policy pays 50% against a 1.5–2% accrual. Websites need pre-approval, claims are due within 60 days, and there is a hard 15 Dec cutoff (<a href="https://resource.carrierenterprise.com/is/content/Watscocom/ce_ca_carrier-program-benefits_pdf_20260304_2026_Co-Op_AdvertisingPolicy_Carrier-Janpdf">Carrier Enterprise</a>).</li>
+<li>Yamaha pays 70% instead of 40% only when the dealer uses an approved agency (<a href="https://www.motorcyclepowersportsnews.com/breakdown-oem-co-op-changes-2026/">MPN</a>).</li>
+<li><strong>Verifier correction:</strong> "$14–35B unclaimed" is a 2016 trade-group estimate and should be treated as marketing. Retroactive recovery is "mostly fiction". Only unspent current-period accrual can be recovered.</li>
+</ul>
+<p><strong>Data / inputs &amp; access</strong></p>
+<ul>
+<li>Program guides are often public PDFs.</li>
+<li>Accrual balances need dealer-portal access; use delegated seats rather than shared logins.</li>
+<li>Proof of performance comes from the brothers' own ad and site logs.</li>
+</ul>
+<p><strong>Buyer + market size</strong></p>
+<ul>
+<li>Owners of HVAC contractors and of powersports, marine, outdoor power equipment (OPE) and appliance dealers carrying national brands.</li>
+<li>About 84k brand-affiliated HVAC/plumbing contractors (unverified), plus 15–20k non-auto dealers.</li>
+<li>Unclaimed co-op per dealer is about $3k–$20k/yr (est.).</li>
+<li>The serviceable base is the brothers' existing customers, whose count is <strong>not established</strong>.</li>
+</ul>
+<p><strong>Pricing &amp; recurring model.</strong> Either 15–20% of recovered co-op or, preferably, a monthly retainer of $500–$1,500 with co-op funding 40–70% of it. Both are recurring.</p>
+<p><strong>Agent pipeline</strong></p>
+<ul>
+<li><strong>Find:</strong> match dealer locators against the brands each dealer carries (95% automatable).</li>
+<li><strong>Build deliverable:</strong> a digest of the program rules plus an estimated balance (70%).</li>
+<li><strong>Personalized outreach:</strong> 90%.</li>
+<li><strong>Handle replies:</strong> 80%.</li>
+<li><strong>Deliver/renew:</strong> pre-approvals and claim packets (70%); renewal (90%).</li>
+<li><strong>Human touchpoints:</strong> portal logins, OEM pre-approval nuances, applications for approved-agency status.</li>
+</ul>
+<p><strong>First 90 days</strong></p>
+<ul>
+<li>Pick HVAC, where brand mix is visible on websites.</li>
+<li>Pitch existing site customers first.</li>
+<li>Then cold-email with a brand-specific estimate.</li>
+<li>Apply for OEM approved-agency status (Yamaha, Honda).</li>
+</ul>
+<p><strong>Unit economics.</strong> A $900/mo retainer with about $450 funded by co-op (est.). Agent cost is about $40/mo and human time about 1 hr/mo. Expected churn is lower when co-op covers part of the bill.</p>
+<p><strong>Competitors (with prices)</strong></p>
+<ul>
+<li>CoopReclaim: $99/mo is planned; it is currently in free early access (<a href="https://coopreclaim.com/guide.html">site</a>).</li>
+<li>Dealer Spike: about $495–$2,000+/mo.</li>
+<li>Ansira/BrandMuscle: from about $4,500/mo, sold to OEMs.</li>
+<li>RevLocal, MPW and TM Rally.</li>
+<li>In auto, Strong Automotive bundles co-op free with full service.</li>
+</ul>
+<p><strong>Legal / licensing.</strong> No licence is needed. Program terms are the constraint: pre-approval, approved-agency lists and trademark rules.</p>
+<p><strong>Top risks</strong></p>
+<ul>
+<li>OEM approved-agency lock-in: Yamaha, Honda, Kawasaki and Lennox's Preferred Vendor Program.</li>
+<li>Portal-access friction.</li>
+<li>Incumbents bundle claims for free.</li>
+</ul>
+<p><strong>Cheapest validation test + kill criteria</strong></p>
+<ul>
+<li>Audit the brand programs of 20 existing customers that carry national brands.</li>
+<li><strong>Kill if</strong> fewer than 5 have at least $2k/yr of unspent accrual, or fewer than 2 convert to a retainer.</li>
+</ul>
+<p><strong>Verification status.</strong> WEAKENED. <strong>4.5</strong> overall: <strong>5.0</strong> as an upsell, about 3 as standalone cold outbound, medium confidence (lane 13 self-verification). It works as a close-rate and retention add-on, not as a found-money business.</p>
+<p><strong>Final check (verify-6):</strong> WEAKENED. <strong>4.0</strong> overall, rising to 5.0 only where 10% or more of the base are national-brand dealers. A standalone claim desk is effectively KILLED (2.5). The co-op-funded marketing retainer for dealers survives.</p>
+<hr />
+<h3>C. SMB technology-advisor residual book + bill audit, as an upsell</h3>
+<p><strong>Pitch.</strong> Agents audit existing customers' internet, phone, POS and processing bills and switch them where that saves money. The vendors then pay a residual for the life of the contract.</p>
+<p><strong>Problem / who pays today</strong></p>
+<ul>
+<li>Carriers and SaaS vendors pay advisors <strong>10–22% of monthly recurring charges (MRC)</strong> for the life of the contract (<a href="https://www.telecom.directory/resources/agent-commissions">telecom.directory</a>).</li>
+<li>Merchant agents earn 50–70% of the processing markup (<a href="https://www.unisonpayment.com/blog/merchant-services-agent-program-residual-income">Unison</a>).</li>
+<li>The technology services distributor (TSD) channel billed <strong>$16.6B in 2024</strong> (<a href="https://omdia.tech.informa.com/blogs/2026/jan/key-insights-from-the-16point6bn-dollars-technology-services-distribution-tsd-market">Omdia</a>).</li>
+<li><strong>Verifier correction:</strong> Comcast and Spectrum pay <em>one-time</em> bounties (up to $1,500 or $5,000), not residuals (<a href="https://business.comcast.com/partner/authorized-connector-program">Comcast</a>).</li>
+</ul>
+<p><strong>Data / inputs &amp; access.</strong> The customer uploads bills, which agents OCR. Payouts flow through TSD or ISO agreements.</p>
+<p><strong>Buyer + market size</strong></p>
+<ul>
+<li>The buyer is the brothers' existing site customers. Their count is <strong>not established</strong>.</li>
+<li>Lane example: 200 customers × 30% conversion × $75 ≈ $4.5k/mo (est.).</li>
+</ul>
+<p><strong>Pricing &amp; recurring model</strong></p>
+<ul>
+<li>Free to the customer; the vendor pays.</li>
+<li>About <strong>$60–100/mo per fully switched customer</strong>, starting 60–150 days after signing (est.).</li>
+<li>Optional second line: a savings-share fee. Comparables are BillCutterz 50%, Billshark 40%, Trim 33% and Dip $15/mo (<a href="https://www.cnbc.com/select/best-bill-negotiation-services/">CNBC</a>).</li>
+</ul>
+<p><strong>Agent pipeline</strong></p>
+<ul>
+<li><strong>Find:</strong> existing customers.</li>
+<li><strong>Build deliverable:</strong> a "bill audit" comparison from OCR (85% automatable).</li>
+<li><strong>Personalized outreach:</strong> to own customers (90%).</li>
+<li><strong>Handle replies:</strong> agent.</li>
+<li><strong>Deliver/renew:</strong> order provisioning and porting through carrier portals (40%).</li>
+<li><strong>Overall:</strong> about 65%. Humans handle provisioning and porting.</li>
+</ul>
+<p><strong>First 90 days.</strong> Offer a free bill audit to 100 existing customers and switch those who save. The 60-day gate is below.</p>
+<p><strong>Unit economics</strong></p>
+<ul>
+<li>Example residuals: internet at $150 MRC × 15% = $22; 5-seat UCaaS = $30; processing = $45.</li>
+<li>Payment risks: chargeback windows of about 6 months, and some ISOs vest residuals only after 12–24 months.</li>
+</ul>
+<p><strong>Competitors (with prices)</strong></p>
+<ul>
+<li>Telarus, Intelisys, Avant, AppDirect, Sandler and BridgePointe pay advisors about 80% of supplier commission; the top six hold 72.3% of the channel.</li>
+<li>Lightyear ($31M raised) is free to the buyer.</li>
+<li>Merchant ISOs pay 50–70% splits.</li>
+<li>MSPs bundle connectivity.</li>
+</ul>
+<p><strong>Legal / licensing</strong></p>
+<ul>
+<li>No licence is needed for telecom or SaaS agency work.</li>
+<li>Merchant services needs a sponsor-bank or ISO agreement.</li>
+<li>Exclude energy, which requires state registration in TX, PA, IL, OH, NY and others.</li>
+<li>Disclose vendor compensation to the customer.</li>
+</ul>
+<p><strong>Top risks</strong></p>
+<ul>
+<li>Small dollars per account.</li>
+<li>Carrier-dependent payouts.</li>
+<li>Chargebacks on early churn.</li>
+<li>A 2–5 month lag before the first check.</li>
+</ul>
+<p><strong>Cheapest validation test + kill criteria</strong></p>
+<ul>
+<li>Run the free bill audit with 100 existing customers.</li>
+<li><strong>Kill if</strong> fewer than 15 upload bills, or fewer than 5 switch within 60 days.</li>
+<li>Expected reply rate: 15–30% from existing customers (est.), against 1–3% cold.</li>
+</ul>
+<p><strong>Verification status.</strong> Holds at <strong>5.0</strong> as an upsell, 3.0 cold, medium confidence (lane 15 Verifier B). It is the only recurring, unlicensed, warm-channel model in the lane, but the dollars are modest.</p>
+<p><strong>Final check (verify-6):</strong> WEAKENED to <strong>3.5</strong> for telecom and merchant referral only. <strong>Energy brokerage is KILLED (1.5)</strong> without per-state licensing. Treat it as an opportunistic referral line, not a product.</p>
+<hr />
+<h3>D. Contractor back-office bundle (prevailing wage / prequal / lien notices), as an upsell</h3>
+<p><strong>Pitch.</strong> "Your website's live. For $199/mo we also handle your paperwork deadlines": licence and insurance tracking, COIs, sub W-9s and COIs, WC-audit document collection, 1099s, prelims, and certified payroll when the customer wins a public job.</p>
+<p><strong>Problem / who pays today</strong></p>
+<ul>
+<li>Contractors pay VAs for this: $8/hr offshore (<a href="https://virtualnexgen.com/blog/construction-virtual-assistant-guide-2026">VirtualNexGen</a>) or $1,999–$5,400/mo for a US managed VA (<a href="https://vamasters.com/virtual-assistant-services-that-drive-results/">VA Masters</a>).</li>
+<li>California penalties are real: $100 per worker per day for late certified payroll records (CPRs) (<a href="https://www.miter.com/resources/certified-payroll-california/">Miter</a>).</li>
+<li>Only 11% of subs send a prelim on every job (<a href="https://www.levelset.com/blog/why-subcontractors-dont-send-prelims-and-why-theyre-wrong/">Levelset</a>).</li>
+</ul>
+<p><strong>Data / inputs &amp; access</strong></p>
+<ul>
+<li>The customer's own documents and payroll exports.</li>
+<li>The DIR eCPR portal allows linked users, but the contractor signs each upload (<a href="https://www.dir.ca.gov/public-works/PWCR-Guide-External-6.2023.pdf">PWCR guide</a>).</li>
+<li>ISN allows independent-contractor users (<a href="https://www.isnetworld.com/en/user-agreements/contractor-supplier">ISN</a>).</li>
+</ul>
+<p><strong>Buyer + market size</strong></p>
+<ul>
+<li>The buyer is the brothers' existing trade customers.</li>
+<li>If N=500 and 10–15% attach at $199, that is about $120–180k ARR (est.).</li>
+<li>The true N and the share doing commercial or public work are <strong>not established</strong>.</li>
+</ul>
+<p><strong>Pricing &amp; recurring model.</strong> $199/mo founding price. Add prevailing-wage and prequal modules only if attach is at least 3%.</p>
+<p><strong>Agent pipeline</strong></p>
+<ul>
+<li><strong>Find:</strong> tag customers by licence class and by website keywords ("commercial", "public works", "ISNetworld").</li>
+<li><strong>Build deliverable:</strong> a 1-page offer.</li>
+<li><strong>Personalized outreach:</strong> in-product.</li>
+<li><strong>Handle replies:</strong> agent.</li>
+<li><strong>Deliver/renew:</strong> calendar-driven filings.</li>
+<li><strong>Automatable:</strong> about 70%.</li>
+<li><strong>Human touchpoints:</strong> the owner signs eCPR certifications; classification judgment calls; safety-professional review of prequal programs; edge cases.</li>
+</ul>
+<p><strong>First 90 days</strong></p>
+<ol>
+<li>Count the commercial and public-works share of the customer base. If it is under 20%, drop the idea.</li>
+<li>Run a 30-day attach test.</li>
+<li>Build modules only if attach is at least 3%.</li>
+</ol>
+<p><strong>Unit economics</strong></p>
+<ul>
+<li>CAC is about $0 because the buyers are existing customers.</li>
+<li>The kill line is human time above 2 hrs/client/month.</li>
+<li>Bundle gross margin is <strong>not established</strong>. For comparison, the standalone payroll desk ran about 75% at 1.5 hrs of review per month.</li>
+</ul>
+<p><strong>Competitors (with prices)</strong></p>
+<ul>
+<li>Wellstanding certified-payroll desk: <strong>$995 setup + $249/mo</strong> (<a href="https://wellstanding.com/">site</a>).</li>
+<li>EHS Inc Bronze: $1,950/yr (about $163/mo).</li>
+<li>Avetta's own done-for-you "Vetify" tier.</li>
+<li>Levelset: $59 per recipient.</li>
+<li>FL notice-to-owner (NTO) services: $25–$65.</li>
+<li>CertifiedPayrollPro: $49–$99/mo + $3/report.</li>
+<li>LCPcertified: $12/report.</li>
+<li>TrackMyVendor: $39/mo.</li>
+<li>QuickBooks Online Premium/Elite now produces WH-347.</li>
+</ul>
+<p><strong>Legal / licensing</strong></p>
+<ul>
+<li>No class-code review or insurance advice: FL FS 624.10(5)(d) and 626.015 (<a href="https://www.flsenate.gov/Laws/Statutes/2025/624.10">statute</a>).</li>
+<li>No collections: CA SB 1286 extends Rosenthal conduct rules to commercial debt of $500k or less.</li>
+<li>Never touch payroll funds.</li>
+<li>Carry E&amp;O, at an unverified ~$10/client/mo.</li>
+</ul>
+<p><strong>Top risks</strong></p>
+<ul>
+<li>Customers may skew toward consumer-facing micro trades, which shrinks the value to reminders worth about $20/mo.</li>
+<li>Scope creep turns it into a low-margin VA business.</li>
+<li>ISN may terminate users who are affiliated with other subscribers.</li>
+</ul>
+<p><strong>Cheapest validation test + kill criteria</strong></p>
+<ul>
+<li>30-day offer with a landing page, at about $0 cost.</li>
+<li><strong>Kill if</strong> attach is under 3% of active trade customers, or human time exceeds 2 hrs per client per month.</li>
+</ul>
+<p><strong>Verification status.</strong> <strong>4.5</strong>, low confidence (lane 12 self-verification). The standalone modules were cut to 3.5–4.0 because Wellstanding and Avetta Vetify already fill the done-for-you gap, so only the bundle sold to the existing base survives.</p>
+<p><strong>Final check (verify-6):</strong> WEAKENED to <strong>3.0</strong> for typical residential-trades customers, and 4.0 only for a commercial-subcontractor segment.</p>
+<hr />
+<h3>E. Trades M&amp;A origination: per-meeting / flat-fee, with a website-staleness + licence-tenure succession score (seed idea a)</h3>
+<p><strong>Pitch.</strong> Book owner meetings for trades acquirers, sent in the buyer's name, with targets ranked by website staleness (the brothers' crawler) and licence tenure in states that publish issue dates.</p>
+<p><strong>Problem / who pays today</strong></p>
+<ul>
+<li>CAPTARGET charges <strong>$2,000/mo</strong>, with no success fee and <strong>no guaranteed meetings</strong>. Verifier override: the "4–8 meetings, avg $2.5K" figure is unsourced (<a href="https://www.captarget.com/insights/deal-origination-cost-comparison">CAPTARGET</a>).</li>
+<li>SourceCo: $4–8K/mo plus a success fee.</li>
+<li>Axia: from <strong>$350/meeting</strong> with a money-back guarantee (<a href="https://axiagrowth.com/">Axia</a>).</li>
+<li>Hypergen: $6,500/mo with a 6-month minimum.</li>
+<li>Danish Lead Co: from $3,500/mo.</li>
+</ul>
+<p><strong>Data / inputs &amp; access</strong></p>
+<ul>
+<li><strong>Verifier correction:</strong> the TX TDLR file has <strong>no issue date</strong> and no plumbing (<a href="https://data.texas.gov/api/views/7358-krk7.json">metadata</a>).</li>
+<li>Use CA CSLB <code>ORIGINAL-ISSUE-DT</code> and FL DBPR "Original Licensure Date" instead (<a href="https://cslb.ca.gov/Resources/FormsAndApplications/License_Master_Record_Layout_LBL780J1.pdf">CSLB</a>).</li>
+<li>PPP data is frozen at 2020–21. The SBA 7(a) file is current to 2026-06-30 but sparse.</li>
+<li>Website staleness is the one input competitors lack.</li>
+</ul>
+<p><strong>Buyer + market size</strong></p>
+<ul>
+<li>22 HVAC consolidators (<a href="https://dealseam.com/hvac-pe-rollup-tracker-2026">DealSeam</a>). Capstone counts 38 PE add-on HVAC deals and 9 new platforms YTD 2026.</li>
+<li>Target the roughly 50 most acquisitive trades platforms (verify-5), or long-tail buyers: 1,200–1,500+ independent sponsors and search funders.</li>
+<li><strong>The lane's $15–70M SAM is overstated</strong>: there are tens of buyers per vertical, not hundreds.</li>
+</ul>
+<p><strong>Pricing &amp; recurring model</strong></p>
+<ul>
+<li>Per held meeting. Verify-1 says <strong>at or below $350 with money-back</strong>; verify-5 says <strong>$400–600 with a minimum</strong>.</li>
+<li>Optional long-tail data tier: $300–800/mo self-serve.</li>
+</ul>
+<p><strong>Agent pipeline</strong></p>
+<ul>
+<li><strong>Find:</strong> platforms from add-on announcements.</li>
+<li><strong>Build deliverable:</strong> a free list of 25 targets in the buyer's radius.</li>
+<li><strong>Personalized outreach:</strong> owner emails citing tenure and service area, sent from client-branded domains.</li>
+<li><strong>Handle replies:</strong> triage into interested / not now / suppress, then book meetings on the buyer's calendar.</li>
+<li><strong>Deliver/renew:</strong> monthly pipeline report.</li>
+<li><strong>Automatable:</strong> about 65–75%.</li>
+<li><strong>Human touchpoints:</strong> thesis calibration, owner phone calls, deliverability firefighting.</li>
+</ul>
+<p><strong>First 90 days</strong></p>
+<ul>
+<li>Back-test first (see validation).</li>
+<li>Then pitch the most acquisitive platforms with free samples.</li>
+<li>Lane gate: 2 paid pilots by day 90.</li>
+</ul>
+<p><strong>Unit economics</strong></p>
+<ul>
+<li>Lane at $4K/mo: CAC $2–5K, gross margin 65–75%, LTV about $20–30K.</li>
+<li>Delivery cost at per-meeting pricing is <strong>not established</strong>.</li>
+<li><strong>Owner reply rate is 0.57%</strong> (verifier), not 1–3% (<a href="https://www.cleanlist.ai/blog/2026-02-18-cold-email-response-rate-statistics">Cleanlist</a>).</li>
+</ul>
+<p><strong>Competitors (with prices)</strong></p>
+<ul>
+<li>DealSource Systems already scores state contractor files by founder age and tenure for a <strong>flat $4,000/mo</strong> (<a href="https://dealsourcesystems.com/blog/hvac-company-acquisitions-sourcing/">site</a>).</li>
+<li>Inven offers a "Nearing Retirement" filter.</li>
+<li>TradeBridge offers "founder age 55+" targeting.</li>
+<li>Q2Q (YC W26) had the identical pitch and is now <strong>Inactive</strong>.</li>
+</ul>
+<p><strong>Legal / licensing</strong></p>
+<ul>
+<li>Exchange Act §15(b)(13) does not pre-empt the states; only about 23 states have an exemption (<a href="https://www.ibba.org/articles/the-state-line-trap/">IBBA</a>).</li>
+<li>Contracts can be void under §29(b).</li>
+<li>About 17 states require a real-estate licence for business brokerage, and unlicensed brokerage is a felony in FL.</li>
+<li>What triggers broker status is conduct, not fee form (<em>Anka</em>). Do outreach only: no valuation or negotiation.</li>
+<li>Budget for counsel review (est. $3–10K).</li>
+</ul>
+<p><strong>Top risks</strong></p>
+<ul>
+<li>Owners are saturated and hostile: Nexstar expelled its PE-backed members (<a href="https://www.forbes.com/sites/brandonkochkodin/2025/09/16/a-group-for-small-building-trade-businesses-tells-private-equity-to-get-lost/">Forbes</a>).</li>
+<li>The score may not beat a random list.</li>
+<li>Gmail/Yahoo enforce a 0.3% complaint limit, and Outlook enforcement started in 2026.</li>
+</ul>
+<p><strong>Cheapest validation test + kill criteria</strong></p>
+<ul>
+<li>A 3–4-week, under-$1K back-test in CA: CSLB issue dates plus staleness, scored against the roughly 800 trades firms acquired since 2022.</li>
+<li><strong>Kill if</strong> there is no clear lift over tenure alone, or fewer than 2 paid pilots by day 90.</li>
+</ul>
+<p><strong>Verification status.</strong> WEAKENED. Verify-1 scores it <strong>3.0</strong> (flat-fee) and 3.5 (data); verify-5 scores it <strong>4.5</strong> (per-meeting) and 4.0 (data). Willingness to pay is proven, but the succession score is already sold and TX has no issue dates.</p>
+<p><strong>Final check (verify-7):</strong> <strong>3.5</strong>, AS THOUGHT (slightly worse). New competitors are CT Acquisitions and Collar AI (YC F26). No evidence yet that website staleness predicts a sale, so back-test before selling anything.</p>
+<hr />
+<h3>F. Shipping-data competitor reports (seed idea b), best surviving variant: broker white-label tariff/sourcing alert engine</h3>
+<p><strong>Pitch.</strong> Sell customs brokers a white-label client-alert engine. It reports <em>exposure categories</em>, not dollar figures ("you import HS 9403 from Vietnam; the §301 action applies at 12.5%; ask your broker"), and uses the Sourcing-Shift report as a free hook.</p>
+<p><strong>Problem / who pays today</strong></p>
+<ul>
+<li>Tariff churn is extreme: IEEPA was struck down, then came §122, then §301 at 10–12.5% on 60 economies (<a href="https://globaltradealert.org/blog/forced-labour-section-301-final-action">GTA</a>).</li>
+<li>Small importers pay $2,500–$7,500 per tariff assessment (<a href="https://importivity.com/blog/tariff-consulting-turns-customs-complexity/">Importivity</a>).</li>
+<li><strong>Verifier correction:</strong> I found no evidence that SMBs pay $199–499/mo for monitoring based on bills of lading (BOL). Brokers and Flexport give alerts away free.</li>
+</ul>
+<p><strong>Data / inputs &amp; access</strong></p>
+<ul>
+<li>The CBP AMS feed is priced at "production cost", with <strong>no published price</strong>, and a 2023 FOIA request for it was refused (<a href="https://www.data-liberation-project.org/requests/cbp-bills-of-lading/">Data Liberation Project</a>).</li>
+<li>Manifests carry no value and no HTS code. Values are missing on 64.6–68.3% of records, and consignees on <strong>8.0–35.1%</strong> (<a href="https://www.federalreserve.gov/econres/feds/files/2021066pap.pdf">Fed</a>).</li>
+<li>Ocean freight is about 50% of import value.</li>
+<li>ImportYeti's terms allow only personal, internal use (<a href="https://www.importyeti.com/policies/terms">ToS</a>).</li>
+</ul>
+<p><strong>Buyer + market size</strong></p>
+<ul>
+<li>About 11,000–11,400 broker licences and about 2,500 brokerage firms (<a href="https://customsbrokerindex.com/blog/customs-broker-list-how-to-find/">customsbrokerindex</a>), plus 9,078 FMC-licensed ocean transportation intermediaries (OTIs).</li>
+<li>Penetration and revenue are <strong>not established</strong>.</li>
+</ul>
+<p><strong>Pricing &amp; recurring model.</strong> A flat monthly subscription only, never priced per lead (see Legal). The price is <strong>not established</strong>. Anchors: ImportGenius $229/$449/mo; the forwarder trigger idea at $300–1,000/mo.</p>
+<p><strong>Agent pipeline</strong></p>
+<ul>
+<li><strong>Find:</strong> brokers via the licence and FMC lists.</li>
+<li><strong>Build deliverable:</strong> sample alerts on the broker's own clients' lanes.</li>
+<li><strong>Personalized outreach:</strong> to the broker.</li>
+<li><strong>Handle replies:</strong> agent demo.</li>
+<li><strong>Deliver/renew:</strong> cron re-runs on each Federal Register or CSMS tariff notice.</li>
+<li><strong>Automatable:</strong> about 85% (lane).</li>
+<li><strong>Human touchpoints:</strong> HS-imputation QA, an annual rate-logic review by a licensed broker, sales calls.</li>
+</ul>
+<p><strong>First 90 days</strong></p>
+<ol>
+<li>Get a CBP feed quote by phone <strong>before writing code</strong>.</li>
+<li>Hand-build 50 briefs and have 2 licensed brokers check them.</li>
+<li>Send 500.</li>
+</ol>
+<p><strong>Unit economics.</strong> The lane's numbers are importer-side: LLM under $0.20 per brief, data $500–3,000/mo. Broker-side CAC and churn are <strong>not established</strong>.</p>
+<p><strong>Competitors (with prices)</strong></p>
+<ul>
+<li>Descartes Datamyne Tariff Insights (USA Import $6,995/yr).</li>
+<li>Altana.</li>
+<li>ImportGenius lead-gen tier.</li>
+<li>Flexport free simulator.</li>
+<li>Gaia: $0–$1,399/mo, about 800 accounts.</li>
+<li>Tarifflo.</li>
+<li>ImportYeti: free; Enterprise $1,000/mo.</li>
+</ul>
+<p><strong>Legal / licensing</strong></p>
+<ul>
+<li>An estimate is outside "customs business". Protests, CAPE filings and classifications for others are inside it (<a href="https://www.law.cornell.edu/uscode/text/19/1641">19 USC 1641</a>).</li>
+<li>Per-lead or per-client fees from brokers are grey to prohibited (<a href="https://rulings.cbp.gov/ruling/H276784">H276784</a>). Use a flat fee only, and consider a free binding ruling under 19 CFR 177.</li>
+</ul>
+<p><strong>Top risks</strong></p>
+<ul>
+<li>Any importer told "we can see your shipments" can mask itself in about 24 hours.</li>
+<li>The tariffs themselves are being litigated.</li>
+<li>There is no data moat.</li>
+<li>The sourcing report usually says "nothing changed this month".</li>
+</ul>
+<p><strong>Cheapest validation test + kill criteria</strong></p>
+<ul>
+<li>Get the CBP phone quote first; then 50 broker-checked briefs and 500 sends.</li>
+<li><strong>Kill if</strong> trial conversion is below 1% (lane threshold), or the brokers judge the briefs inaccurate.</li>
+</ul>
+<p><strong>Verification status.</strong> WEAKENED. The seed Sourcing-Shift report scores <strong>4.0</strong> (verify-5) and is useful only as a hook. The tariff brief scores <strong>3.5</strong> when re-scoped to brokers (verify-1). Alerts are a commodity, masking runs up to 35%, and the feed price is unknown.</p>
+<hr />
+<h3>G. California stormwater citizen-suit risk monitor</h3>
+<p><strong>Pitch.</strong> Replicate the plaintiffs' screen (exceedances, unsampled rain days) on public data, then sell a fixed-fee "pre-notice audit" and monitoring through QISP firms and defense counsel.</p>
+<p><strong>Problem / who pays today</strong></p>
+<ul>
+<li>Example settlements: $624k, $312k and $325k (<a href="https://natlawreview.com/article/cottage-industry-economics-cwa-citizen-suit-enforcement">NatLawReview</a>). <strong>The verifier calls these cherry-picked high-end cases.</strong> There have been 150+ consent judgments since 2010.</li>
+<li>The IGP annual fee is about $1,800.</li>
+<li>A statewide count of citizen-suit notices is <strong>not published</strong>; the estimate is low hundreds a year.</li>
+</ul>
+<p><strong>Data / inputs &amp; access</strong></p>
+<ul>
+<li><strong>Better than the lane claimed:</strong> data.ca.gov has a SQL API with <strong>2,312,303 monitoring rows</strong>, plus facility, inspection, violation and enforcement tables, refreshed 2026-09-28 (<a href="https://data.ca.gov/dataset/stormwater-regulatory-including-enforcement-actions-information-and-water-quality-results">data.ca.gov</a>).</li>
+<li>Level 1/2 status and annual reports are not in the open data.</li>
+<li>Add NOAA rainfall.</li>
+</ul>
+<p><strong>Buyer + market size</strong></p>
+<ul>
+<li><strong>20,429 active facilities</strong>, of which <strong>1,931 are core targets</strong>: SIC 5015 = 676, 5093 = 791, 4212 = 464.</li>
+<li>Channels: QISP firms, defense counsel, environmental-liability insurers.</li>
+<li>The lane's $11–22M ARR rested on the unverified assumption that 30% of facilities are at risk. The verifier calls the universe small.</li>
+</ul>
+<p><strong>Pricing &amp; recurring model</strong></p>
+<ul>
+<li>Lane: $199/mo monitoring, plus a 15–20% referral share on QISP work averaging $5–15k.</li>
+<li>Verifier: a fixed-fee pre-notice audit priced against the roughly $300k settlement benchmark. Its exact price is <strong>not established</strong>.</li>
+</ul>
+<p><strong>Agent pipeline</strong></p>
+<ul>
+<li><strong>Find:</strong> SQL pull of exceedances and missing samples.</li>
+<li><strong>Build deliverable:</strong> a facility exposure report.</li>
+<li><strong>Personalized outreach:</strong> to QISP and counsel partners, plus postal letters.</li>
+<li><strong>Handle replies:</strong> agent books the QISP.</li>
+<li><strong>Deliver/renew:</strong> monthly monitoring.</li>
+<li><strong>Automatable:</strong> about 65%.</li>
+<li><strong>Human touchpoints:</strong> the QISP signs ERA reports and SWPPP amendments; BMPs are physical.</li>
+</ul>
+<p><strong>First 90 days.</strong> Sign 2–3 QISP partners. Target LA County and the Central Valley. Mail letters, because the owners are not email-first.</p>
+<p><strong>Unit economics.</strong> CAC $400–800 (letters plus calls), and about 80% gross margin on software (lane est.).</p>
+<p><strong>Competitors (with prices)</strong></p>
+<ul>
+<li><strong>Mapistry</strong> already runs facility-level citizen-suit risk alerts (<a href="https://www.mapistry.com/blog/citizen-lawsuits-and-stormwater-compliance-a-primer">blog</a>).</li>
+<li>CloudCompli, CDMS, GSI Environmental, californiastormwater.com.</li>
+<li>Prices <strong>not established</strong>.</li>
+</ul>
+<p><strong>Legal / licensing</strong></p>
+<ul>
+<li>QISP certification is required for some deliverables.</li>
+<li>No legal advice on pending 60-day notices.</li>
+<li>Never sell the ranked list to plaintiffs (dual use).</li>
+<li>CAN-SPAM applies.</li>
+</ul>
+<p><strong>Top risks</strong></p>
+<ul>
+<li>Strict liability means the violation is already on record by the time it is visible.</li>
+<li>Facilities buy only after a notice arrives, and then they buy lawyers.</li>
+<li>Mapistry and the incumbent QISPs own the relationship.</li>
+</ul>
+<p><strong>Cheapest validation test + kill criteria</strong></p>
+<ul>
+<li>Back-test the features against historical notices from PACER or EPA notice copies.</li>
+<li><strong>Kill if</strong> the features don't separate noticed from non-noticed facilities. A numeric threshold is <strong>not established</strong>.</li>
+</ul>
+<p><strong>Verification status.</strong> WEAKENED. <strong>5.0</strong>, medium confidence (verify-2). This is the best data in its batch and the highest pain per incident, but the buyer pool is small and a direct competitor exists, so it is viable only as a QISP/counsel channel.</p>
+<p><strong>Final check (verify-7):</strong> BETTER THAN THOUGHT, <strong>5.5</strong>. Live query: 20,429 active facilities, and 99.7% publish a contact email. 3,436 owner-operated sites use Gmail-type domains. Mapistry prices at about $11–27k per site per year, so single-site yards are open. This is the highest-scoring standalone idea in the study.</p>
+<hr />
+<h3>H. Pro-se trademark office-action workbench for attorneys</h3>
+<p><strong>Pitch.</strong> An attorney-side workbench that decodes each office action (OA), drafts a response skeleton, quote and engagement letter, and optionally sends exclusive-territory postal outreach to unrepresented applicants.</p>
+<p><strong>Problem / who pays today</strong></p>
+<ul>
+<li>Attorneys charge $500–$3,500 per OA response, but the floor is <strong>$89</strong> (L4SB) and Trademark Engine charges $599 (<a href="https://www.l4sb.com/services/trademark-office-action-response/">L4SB</a>).</li>
+<li>Small firms pay $60–$295/mo for trademark tooling (<a href="https://www.altlegal.com/pricing/">Alt Legal</a>).</li>
+</ul>
+<p><strong>Data / inputs &amp; access</strong></p>
+<ul>
+<li>Pro-se emails are public on TSDR: all 42 pro-se records in a 200-record sample had one.</li>
+<li><strong>Verifier correction:</strong> the daily XML has <strong>no email element</strong>, so email needs one TSDR call per serial.</li>
+<li>Rate limits: 60/min (status) and 4/min (documents), or 120 and 12 per minute off-peak (<a href="https://www.uspto.gov/sites/default/files/documents/tm-enterprise-api-user-guide-v2.pdf">USPTO</a>).</li>
+</ul>
+<p><strong>Buyer + market size</strong></p>
+<ul>
+<li>50–150 mid-volume solo attorneys.</li>
+<li>More than 824,000 application classes in FY2025. Pro se is about 30% (28.5% per USPTO FY17; 26% per <a href="https://www.inta.org/wp-content/uploads/public-files/resources/the-trademark-reporter/TMR-Vol-112-No-06_Gerhardt-Lee.pdf">Gerhardt &amp; Lee</a>).</li>
+<li>An estimated 90–130k pro-se OAs a year.</li>
+<li>Attorneys with 100+ filings (5% of attorneys) handle <strong>79%</strong> of filings. The lane's 3,000–6,000 small-firm buyers is unverifiable.</li>
+</ul>
+<p><strong>Pricing &amp; recurring model</strong></p>
+<ul>
+<li>Flat subscription, never a percentage of fees (Rule 5.4).</li>
+<li>Lane pricing: $299 or $799/mo, or $15–40 per lead.</li>
+<li>Verifier: at a ~$600 fee a lead is worth $6–12 to the attorney, so even $7.50 is barely break-even.</li>
+</ul>
+<p><strong>Agent pipeline</strong></p>
+<ul>
+<li><strong>Find:</strong> rank attorneys by XML filings.</li>
+<li><strong>Build deliverable:</strong> 5 decoded sample OAs.</li>
+<li><strong>Personalized outreach:</strong> email to attorneys.</li>
+<li><strong>Handle replies:</strong> agent plus a human for the first deals.</li>
+<li><strong>Deliver/renew:</strong> nightly ingest, drafts, and a retained-matter report built from TSDR appearances.</li>
+<li><strong>Automatable:</strong> about 85%.</li>
+<li><strong>Human touchpoints:</strong> the first sales calls, per-state template compliance review, classifier QA.</li>
+</ul>
+<p><strong>First 90 days</strong></p>
+<ul>
+<li>Back-test on six months of OAs.</li>
+<li>Filter out filing-mill correspondents and non-US "pro se" records.</li>
+<li>Ship TX/FL compliance packs.</li>
+<li>Run a 60-day pilot with 3 firms.</li>
+</ul>
+<p><strong>Unit economics.</strong> Lane estimates: blended ARPA about $500/mo, compute $0.05–0.15 per OA, gross margin over 90%, CAC $300–800.</p>
+<p><strong>Competitors (with prices)</strong></p>
+<ul>
+<li>About 30 Apify USPTO actors, from <strong>$2.79 per 1k</strong> records; effective crowding about 7/10.</li>
+<li>LegalZoom, Trademark Engine and Trademarkia upsell their own pro-se customers.</li>
+</ul>
+<p><strong>Legal / licensing</strong></p>
+<ul>
+<li>Only attorneys represent applicants (37 CFR 11.14).</li>
+<li>11.703 bans live contact only.</li>
+<li>TX: "ADVERTISEMENT" in the subject line and filing within 10 days. FL: filing at least 20 days ahead, $150 per ad.</li>
+<li>Under ABA Op. 501, the subscribing lawyer answers for the vendor's contact methods.</li>
+</ul>
+<p><strong>Top risks</strong></p>
+<ul>
+<li>The channel is poisoned by scams: USPTO-impersonation and the 2026 "Mandatory Verification Appointment" scheme.</li>
+<li><strong>Correction:</strong> 46% of pro-se applicants <em>succeed</em>, so about 54% fail.</li>
+<li>A 3-month extension for $125 softens the deadline hook.</li>
+</ul>
+<p><strong>Cheapest validation test + kill criteria</strong></p>
+<ul>
+<li>60-day pilot with 3 firms.</li>
+<li><strong>Kill if</strong> retained matters come in under about 1% of contacts.</li>
+</ul>
+<p><strong>Verification status.</strong> WEAKENED. <strong>4.5</strong>, medium confidence (verify-4). The data is real, but raw records cost about $3 per 1k, the channel is scam-poisoned, and the buyer base is concentrated.</p>
+<p><strong>Final check (verify-7):</strong> WORSE, <strong>3.5</strong>. The USPTO scam page now names "letters offering to represent you after an Office Action" as a scam pattern. The workbench pivot is crowded (ActionResponder, Questel Qthena). Deprioritised.</p>
+<hr />
+<h3>I. RV / heavy-truck dealer warranty retail-rate uplift (RateLift)</h3>
+<p><strong>Pitch.</strong> File the statutory retail-rate warranty submission (100 sequential repair orders) for RV and heavy-truck dealers in states whose franchise act covers them, then re-file every year.</p>
+<p><strong>Problem / who pays today</strong></p>
+<ul>
+<li>Auto dealers pay en masse. Armatus has 7,400+ dealers, with average gains of $97,488 (parts) plus $73,116 (labor) per store per year (<a href="https://www.dealeruplift.com/about-us/">Armatus</a>).</li>
+<li>Withum charges $7,500 flat per submission, or $10,500 for parts plus labor (<a href="https://www.withum.com/industries/dealerships/warranty-reimbursement/">Withum</a>).</li>
+<li>Thor paid $85.7M in warranty claims in one quarter (<a href="https://www.warrantyweek.com/archive/ww20231207.html">Warranty Week</a>).</li>
+</ul>
+<p><strong>Data / inputs &amp; access</strong></p>
+<ul>
+<li>Public statutes: FL 320.696 ties RV warranty pay to retail charges (<a href="https://www.flsenate.gov/Laws/Statutes/2024/320.696">FL</a>). SD amended its truck statute in 2021 to require retail rates.</li>
+<li>Dealer lists come from OEM locators.</li>
+<li>Repair-order exports need the dealer's cooperation, which is the main friction.</li>
+</ul>
+<p><strong>Buyer + market size</strong></p>
+<ul>
+<li>About 2,980 RV dealerships (<a href="https://verticaliq.com/product/rv-dealers/">VerticalIQ</a>). The heavy-truck count is <strong>not established</strong>.</li>
+<li>Uplift per RV or truck store is <strong>not established</strong>.</li>
+<li><strong>Verifier correction:</strong> the equipment, OPE, marine and powersports segments are cut. Their statutes mostly require only a rate notice, parts are fixed at net +15%, and per-store uplift is about $3–10k.</li>
+</ul>
+<p><strong>Pricing &amp; recurring model.</strong> 30% of the first 12 months of uplift, or $2,500–5,000 flat. Recurring revenue comes from annual re-filing and from monitoring OEM credits.</p>
+<p><strong>Agent pipeline</strong></p>
+<ul>
+<li><strong>Find:</strong> 95% automatable.</li>
+<li><strong>Build deliverable:</strong> estimate from posted labor rates (70%).</li>
+<li><strong>Personalized outreach:</strong> 90%.</li>
+<li><strong>Handle replies:</strong> 80%.</li>
+<li><strong>Deliver:</strong> 60%; renew 85%.</li>
+<li><strong>Overall:</strong> about 75%.</li>
+<li><strong>Human touchpoints:</strong> sales call, obtaining the repair-order export, dealer signature, OEM objections (dealer counsel).</li>
+</ul>
+<p><strong>First 90 days</strong></p>
+<ol>
+<li>10-state RV statute check, starting with FL 320.696.</li>
+<li>200 personalised emails.</li>
+<li>Test whether an association endorsement is reachable.</li>
+</ol>
+<p><strong>Unit economics</strong></p>
+<ul>
+<li>Lane estimates, not RV-specific: about $6k first-year fee and $1.5k renewal per dealer; CAC $500–1,500; about $300 compute plus 3 hours of review; about 80% gross margin.</li>
+<li>Cash arrives 2–6 months after filing.</li>
+<li>Manufacturing reply benchmarks run about 2–4% (verify-1).</li>
+</ul>
+<p><strong>Competitors (with prices)</strong></p>
+<ul>
+<li>Armatus: contingent, percentage undisclosed.</li>
+<li>Withum: $7,500.</li>
+<li>Wooden/Warranty Part: pricing contradictory.</li>
+<li>Bellavia Cohen and QB Business Solutions.</li>
+<li>Aclaro and Chameleon WarrantyAi: software.</li>
+<li><strong>Note:</strong> for RV and truck, the 100-RO mechanism exists only under the auto franchise acts, which is exactly where these firms already operate.</li>
+</ul>
+<p><strong>Legal / licensing</strong></p>
+<ul>
+<li>No licence was found for the submission itself.</li>
+<li>Demand letters and motor-vehicle-board protests go to dealer counsel.</li>
+<li><em>AEM v. Burgum</em> (2019) limits new statutes in the 8th Circuit.</li>
+</ul>
+<p><strong>Top risks</strong></p>
+<ul>
+<li>Incumbent auto filers extend into RV and truck.</li>
+<li>Dealers refuse to send repair-order exports to an unknown vendor.</li>
+<li>OEMs audit or charge back.</li>
+</ul>
+<p><strong>Cheapest validation test + kill criteria</strong></p>
+<ul>
+<li>The 10-state check plus 200 emails.</li>
+<li><strong>Kill if</strong> fewer than 3 dealers agree to send a repair-order export, or fewer than 5 states have retail-rate plus submission mechanics for RVs.</li>
+</ul>
+<p><strong>Verification status.</strong> WEAKENED. <strong>4.0</strong> for RV/truck (3.0 for equipment and marine), low-to-medium confidence (lane 13 self-verification). The per-store pools outside auto are small, and RV/truck sits inside the incumbents' auto-act turf.</p>
+<p><strong>Final check (verify-7):</strong> <strong>KILLED for RV, WEAKENED for truck: 2.0.</strong> RV statutes guarantee only the lowest reasonable retail rate plus a fixed parts markup, with no 100-RO mechanism, and truck OEMs already run their own labour-rate process.</p>
+<hr />
+<h3>J. Florida condo capital-event feed</h3>
+<p><strong>Pitch.</strong> Repositioned as competitive intelligence: show engineering and reserve-study firms who performed each SIRS and at what cost, by county, and show restoration contractors which engineer controls which building.</p>
+<p><strong>Problem / who pays today</strong></p>
+<ul>
+<li>A SIRS costs $3.3k–$22k+ (<a href="https://fpat.com/reserve-study-cost-florida/">FPAT</a>). Fannie Mae listed 1,438 FL buildings as unavailable for mortgages (<a href="https://www.mpamag.com/us/news/general/fannie-maes-secret-blacklist-prevents-florida-condo-sales-mortgages/531270">MPA</a>).</li>
+<li>There is still <strong>no evidence</strong> that engineering firms buy lead feeds. Engineers write the bid packages, and CAMs gatekeep vendors: FirstService charges vendors $90/yr for credentialing.</li>
+</ul>
+<p><strong>Data / inputs &amp; access</strong></p>
+<ul>
+<li>Five <em>regional</em> condo CSVs cover <strong>27,972 projects</strong> (<a href="https://www2.myfloridalicense.com/condos-timeshares-mobile-homes/public-records/">DBPR</a>).</li>
+<li><strong>Verifier correction:</strong> "Managing Entity" is the association itself. A CAM firm appears only as a C/O line, in 50.2% of rows.</li>
+<li>The SIRS database consists of Qlik dashboards with <strong>no export</strong>. It does capture who performed each SIRS and its cost.</li>
+<li>The lane's ~7,836 SIRS figure is unverified; the latest primary figure is 4,096.</li>
+<li>The HB 913 online-account dataset requires a Ch. 119 request.</li>
+</ul>
+<p><strong>Buyer + market size</strong></p>
+<ul>
+<li>About 5,600 engineering businesses statewide, with the condo share <strong>not established</strong>.</li>
+<li>2,040 CAM firms, mostly micro.</li>
+<li><strong>$0.1M–$0.4M ARR</strong> (verifier), not the lane's $0.4–2.7M.</li>
+</ul>
+<p><strong>Pricing &amp; recurring model.</strong> Lane tiers: $600/mo per county, $1,500/mo per region, $4k/mo statewide, plus about $300 per booked meeting. Pricing for the repositioned product is <strong>not established</strong>.</p>
+<p><strong>Agent pipeline</strong></p>
+<ul>
+<li><strong>Find:</strong> engineering-firm (PE board) and CILB licensee lists.</li>
+<li><strong>Build deliverable:</strong> provider-share and pricing report by county; "3+ stories, no SIRS on file"; "SIRS done → repair-phase candidates".</li>
+<li><strong>Personalized outreach:</strong> a free county sample.</li>
+<li><strong>Handle replies:</strong> agent.</li>
+<li><strong>Deliver/renew:</strong> weekly feed.</li>
+<li><strong>Automatable:</strong> about 80%.</li>
+<li><strong>Human touchpoints:</strong> Ch. 119 requests, entity-match QA, regional-tier calls, data disputes.</li>
+</ul>
+<p><strong>First 90 days</strong></p>
+<ul>
+<li>File the Ch. 119 request.</li>
+<li>Send the provider-share report to about 50 engineering firms.</li>
+<li>Lane target: 300 samples, 15 calls, 5 paid pilots at $300/mo.</li>
+</ul>
+<p><strong>Unit economics.</strong> Lane estimates: ARPA about $800/mo, CAC $400–900, gross margin 85–90%, data cost $50–500 per county in records fees.</p>
+<p><strong>Competitors (with prices)</strong></p>
+<ul>
+<li>HOA Contact Lists: 200k+ FL board contacts.</li>
+<li>HOA-USA: 44k subscribers.</li>
+<li>PropFusion: free reserve-study marketplace.</li>
+<li>CAMbrands: RFP marketplace.</li>
+<li>Dodge and ConstructConnect.</li>
+<li>Prices <strong>not established</strong>.</li>
+</ul>
+<p><strong>Legal / licensing</strong></p>
+<ul>
+<li>FL §668.606: $500 per email, with subject-line class actions since April 2026 (<a href="https://www.ballardspahr.com/insights/alerts-and-articles/2026/04/trouble-in-paradise-subject-line-class-actions-come-to-florida">Ballard Spahr</a>).</li>
+<li>FTSA: no autodialing.</li>
+<li>No FL data-broker registration.</li>
+<li>Phrase findings as "not found in DBPR as of <date>".</li>
+</ul>
+<p><strong>Top risks</strong></p>
+<ul>
+<li>The SIRS wave is past its deadline, and <strong>2026 brought no new condo law</strong>.</li>
+<li>Buyers can fetch the same free files.</li>
+<li>Engineers and boards control the decisions.</li>
+</ul>
+<p><strong>Cheapest validation test + kill criteria</strong></p>
+<ul>
+<li>One Ch. 119 request plus the report to about 50 firms.</li>
+<li><strong>Kill if</strong> there are fewer than 5 paid pilots (lane gate).</li>
+<li>The CAM-switch product is not viable if the Ch. 119 request is refused.</li>
+</ul>
+<p><strong>Verification status.</strong> WEAKENED. <strong>4.5</strong> for this product, with the spine at 4/10, medium-high confidence (verify-3). The data is verified, but the buyer pools are tiny and gatekept, so the ceiling is about $0.1–0.4M ARR.</p></section>
+<section class="appx"><h1>Appendix C: Key sources</h1><p><em>Curated from the URLs cited in lane reports 01–15 and verifier reports verify-1 to verify-5 (research date 2026-10-01). No new sources were added. Each note says what the source was used to establish. Where a verifier disputed or corrected a source, the note says so.</em></p>
+<h3>1. Legal and regulatory</h3>
+<h4>Securities, brokerage and licensing</h4>
+<ul>
+<li>https://www.ibba.org/articles/the-state-line-trap/ — Only ~23 states have an M&amp;A broker exemption, and the federal exemption doesn't pre-empt them. About 17 states require a real-estate licence for business brokerage.</li>
+<li>https://www.law.cornell.edu/uscode/text/15/78o — Exchange Act §15(b)(13) M&amp;A broker exemption text (&lt;$25M EBITDA / &lt;$250M revenue). It places no restriction on the form of fee.</li>
+<li>https://www.law.cornell.edu/uscode/text/15/78cc — §29(b): contracts made in violation of the Act are void, so an unregistered finder's fee can be clawed back.</li>
+<li>https://www.flsenate.gov/Laws/Statutes/2025/Chapter475/All — Florida real-estate licence required to broker business opportunities. No commission sharing with unlicensed referrers (business, liquor-licence and restaurant brokerage).</li>
+</ul>
+<h4>Customs and trade</h4>
+<ul>
+<li>https://www.law.cornell.edu/cfr/text/19/111.36 — Customs brokers may not let fees for customs business, including drawback, "inure to the benefit of" unlicensed persons.</li>
+<li>https://rulings.cbp.gov/ruling/H276784 — CBP refused a broker's plan to pay referral fees tied to signed clients. This killed the drawback contingency split (verify-1).</li>
+<li>https://www.law.cornell.edu/cfr/text/19/103.31 — Vessel manifests are public, CBP sells AMS data "at production cost" (no published price), and importers can request free 2-year confidentiality.</li>
+</ul>
+<h4>Email, calls and deceptive marketing</h4>
+<ul>
+<li>https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business — CAN-SPAM has no B2B exemption. Penalties run up to $53,088 per non-compliant email.</li>
+<li>https://docs.fcc.gov/public/attachments/DOC-400393A1.pdf — FCC Feb 2024 ruling that AI-generated voices are "artificial" under the TCPA, so consent is required. This ruled out AI cold-calling everywhere.</li>
+<li>https://www.ftc.gov/legal-library/browse/cases-proceedings/2223156-accessibe-inc — FTC's $1M order against accessiBe for claiming "full compliance". The precedent behind every "never promise compliance or AI outcomes" caveat.</li>
+<li>https://codes.findlaw.com/us/title-39-postal-service/39-usc-sect-3001 — Deceptive Mailings Prevention Act: mail that references a federal agency must carry "not a government document" notices (verify-4).</li>
+</ul>
+<h4>Product-specific rules</h4>
+<ul>
+<li>https://www.law.cornell.edu/regulations/california/27-CCR-25600.2 — Prop 65 retailer duty is narrow; the primary duty sits with manufacturers and importers. This killed the retailer-facing Prop 65 idea (verify-2).</li>
+<li>https://www.newsmediaalliance.org/newsom-signs-sb-690-into-law/ — SB 690, signed 30 Sep 2026, ends private CIPA pen-register website suits from 1 Jan 2027.</li>
+<li>https://www.flsenate.gov/Laws/statutes/2025/119.071 — Florida public-records exemption for information revealing the firesafety systems of private property (fire ITM Overdue Feed).</li>
+</ul>
+<h4>Professional practice, fee-splitting and recovery rules</h4>
+<ul>
+<li>https://www.ecfr.gov/current/title-37/chapter-I/subchapter-A/part-11/subpart-B/subject-group-ECFRa9deb1f9b3dd8c7/section-11.14 — Only attorneys may represent others before the USPTO in trademark matters, so direct-to-owner filings are out.</li>
+<li>https://images.law.com/contrib/content/uploads/documents/399/77701/aba-formal-opinion-501.pdf — ABA Formal Op. 501: lawyers are responsible for how their lead generators solicit, so vendor templates become the subscriber's ethics exposure.</li>
+<li>https://www.flsenate.gov/Laws/Statutes/2025/717.1322 — Florida bars anyone but an attorney, FL CPA or PI from taking compensation for helping an unclaimed-property claimant. This blocks the 50/50 CPA split.</li>
+<li>https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&amp;sectionNum=5061 — California B&amp;P 5061 bars CPAs from paying or taking referral fees and commissions (unclaimed property, §45B tip credit).</li>
+<li>https://texas.public.law/statutes/tex._occ._code_section_1152.001 — Texas property-tax consultant registration, which reaches paid "assistants" (verify-3).</li>
+</ul>
+<h3>2. Competitor pricing and incumbents</h3>
+<h4>M&amp;A origination</h4>
+<ul>
+<li>https://www.captarget.com/insights/deal-origination-cost-comparison — CAPTARGET outsourced origination at $2,000/mo with no success fee (verify-1 corrected the lane's $2.5K average).</li>
+<li>https://axiagrowth.com/ — Axia from $350 per qualified appointment, with a money-back guarantee. The per-meeting price anchor.</li>
+<li>https://dealsourcesystems.com/blog/hvac-company-acquisitions-sourcing/ — DealSource already sells state-licence, founder-age-prioritized trades sourcing at a flat $4,000/mo (verify-5).</li>
+<li>https://help.inven.ai/using-the-intent-to-sell — Inven's "Nearing Retirement" intent-to-sell filter. The succession score was already productized (verify-1).</li>
+</ul>
+<h4>Trade and tariffs</h4>
+<ul>
+<li>https://www.importgenius.com/pricing — ImportGenius USA plans at $229/$449/mo; enterprise from $1,999. Anchors BOL data pricing.</li>
+</ul>
+<h4>Compliance, public records and inspections</h4>
+<ul>
+<li>https://prop65radar.com — Live Prop 65 notice-to-catalog alerting for ecommerce sellers at about $29. The lookalike that killed lane 04 #1.</li>
+<li>https://apify.com/scrapemint/restaurant-inspection-leads — Restaurant inspection lead feed for pest and hood vendors at $10/1K rows with ~1 monthly user. Evidence of commodity data and weak demand.</li>
+<li>https://www.mapistry.com/blog/citizen-lawsuits-and-stormwater-compliance-a-primer — Mapistry already runs facility-based stormwater citizen-suit risk alerts.</li>
+</ul>
+<h4>Healthcare</h4>
+<ul>
+<li>https://actablesite.com/npi-leads-for-medical-billing-companies — Actable sells a "Practice Radar" of new NPIs to billing firms at $39/mo.</li>
+<li>https://www.hexiq.com/mgma — MGMA Rates (HexIQ) gives members free negotiated-rate benchmarks. Competes directly with the Rate Gap Report.</li>
+</ul>
+<h4>Local SMB and restaurants</h4>
+<ul>
+<li>https://www.brightlocal.com/local-seo-tools/local-ai-visibility/ — BrightLocal includes local AI-visibility tracking in plans from $31/mo. The window had already closed (verify-5).</li>
+<li>https://merchants.doordash.com/en-us/products/branded-websites — DoorDash builds a free branded site with commission-free ordering. Killed the restaurant commission-leak idea.</li>
+</ul>
+<h4>Trucking and insurance</h4>
+<ul>
+<li>https://carrieriq.io/pricing — Carrier IQ sells trucking renewal and mid-term-cancellation leads at $149–249/mo.</li>
+<li>https://www.truckingsignal.com/ — TruckingSignal already runs automated outreach in the agent's name, with state exclusivity.</li>
+</ul>
+<h4>Contractor back office</h4>
+<ul>
+<li>https://wellstanding.com/ — Wellstanding sells done-for-you CA certified payroll at $995 setup + $249/mo (lane 12 self-check).</li>
+<li>https://www.avetta.com/suppliers-contractors/plans — Avetta sells its own done-for-you "Vetify" compliance support to suppliers.</li>
+</ul>
+<h4>Government and SLED sales</h4>
+<ul>
+<li>https://www.highergov.com/pricing/ — HigherGov Fed + SLED + grants from $500/yr. The collapsed price floor for bid data.</li>
+<li>https://www.vendr.com/marketplace/gov-spend — GovSpend median ~$11.6K/yr across 37 Vendr deals.</li>
+<li>https://civiciq.com/pursuit-alternatives — Civic IQ "Pipeline-as-a-Service" from $2,000/mo, the brothers' model already sold in SLED.</li>
+<li>https://starbridge.ai/features/public-spend-intelligence — Starbridge FOIAs full competitor contracts, including pricing and expiration dates, at national scale.</li>
+</ul>
+<h4>Property, tax appeals and brokerage</h4>
+<ul>
+<li>https://www.convex.com/solutions-elevator-industry — Convex already sells elevator sales intelligence, including contract-renewal windows.</li>
+<li>https://www.appealdesk.com/ — AppealDesk sells $49 property-tax appeal packets in 50 states.</li>
+</ul>
+<h3>3. Data access (what is actually in the files)</h3>
+<h4>Licensing and insurance records</h4>
+<ul>
+<li>https://data.texas.gov/api/views/7358-krk7.json — TX TDLR licence metadata: only an expiration date, no issue date. This broke the SuccessionMap tenure signal (verify-1, verify-5).</li>
+<li>https://www.cslb.ca.gov/onlineservices/dataportal/ContractorList — CA CSLB files include the WC carrier, policy number and dates. No GL data, and emails withheld by law.</li>
+<li>https://data.wa.gov/resource/ciwg-agsx.json — WA L&amp;I contractor insurance: carrier, agency name and expiration, updated 3×/day. GL only; 89% at $1M limits.</li>
+</ul>
+<h4>Trade data</h4>
+<ul>
+<li>https://www.federalreserve.gov/econres/feds/files/2021066pap.pdf — Fed FEDS 2021-066. In BOL data, values are missing on 64–68% of records, HS codes are imputed, and consignee IDs are missing on 8–35%.</li>
+<li>https://www.cbp.gov/trade/automated/electronic-vessel-manifest-confidentiality — CBP's online manifest-confidentiality tool approves requests in about 24 hours, so targeted importers can go dark.</li>
+</ul>
+<h4>Government audits and water</h4>
+<ul>
+<li>https://www.fac.gov/api/dictionary/ — FAC API tables (general, findings, CAPs), including auditee email and phone.</li>
+<li>https://app.fac.gov/dissemination/search/ — FAC search counts: only 8,187 of 46,650 AY2024 audits have any finding (verify-3).</li>
+<li>https://github.com/Environmental-Policy-Innovation-Center/dw-dashboard — EPIC's open-source 50-state SRF/IUP normalization, so SRF lists are already free.</li>
+</ul>
+<h4>Healthcare</h4>
+<ul>
+<li>https://data.cms.gov/provider-characteristics/medicare-provider-supplier-enrollment/revalidation-due-date-list — Revalidation Due Date List: 2.94M rows, ~90% "TBD", and no address fields (verify-4).</li>
+<li>https://download.cms.gov/nppes/NPI_Files.html — NPPES weekly and monthly files: authorized official and phone, but no email.</li>
+<li>https://data.cms.gov/provider-data/dataset/mj5m-pzi6 — Doctors &amp; Clinicians file: graduation year and group size. No ownership or revenue fields.</li>
+<li>https://pmc.ncbi.nlm.nih.gov/articles/PMC12631121/ — Health Affairs Scholar: 91.8% of TiC rates and 95.4% of provider–code pairs are ghost rates.</li>
+</ul>
+<h4>Trucking</h4>
+<ul>
+<li>https://data.transportation.gov/resource/c5y8-a4uz.json — Motus Insur file (post-May 2026) has no cancellation-date column, so future-dated lapses are gone from public bulk data.</li>
+</ul>
+<h4>Florida property</h4>
+<ul>
+<li>https://www2.myfloridalicense.com/condos-timeshares-mobile-homes/public-records/ — FL DBPR condo CSVs. The "managing entity" field is the association; the CAM firm appears only as a C/O line in 50.2% of rows.</li>
+</ul>
+<h4>Inspections and stormwater</h4>
+<ul>
+<li>https://data.cityofnewyork.us/resource/43nn-pn8j.json — NYC restaurant inspections: ~2-day lag and phone numbers, but no email.</li>
+<li>https://data.ca.gov/dataset/stormwater-regulatory-including-enforcement-actions-information-and-water-quality-results — CA SMARTS on data.ca.gov: 2.3M monitoring rows with a SQL API, better than the lane claimed.</li>
+</ul>
+<h4>Trademarks</h4>
+<ul>
+<li>https://www.uspto.gov/subscription-center/2020/owner-email-address-field-now-masked-teas-and-teasi-documents-tsdr — USPTO masks owner email only when the owner has counsel, so pro-se emails stay public.</li>
+</ul>
+<h4>Business records</h4>
+<ul>
+<li>https://quintel.ai/blog/ucc-filing-search-by-state — UCC bulk access by state: from free (CO, VT, CT, WV) to $24K (AZ). NC and GA prohibit scraping.</li>
+</ul>
+<h3>4. Market size and demand</h3>
+<h4>Businesses and buyers</h4>
+<ul>
+<li>https://www.census.gov/foreign-trade/Press-Release/edb/edbrel2024.pdf — 240,535 US importers in 2024, 47,306 with 20–499 employees, and 87,016 that both import and export.</li>
+<li>https://www2.census.gov/programs-surveys/cbp/datasets/2023/cbp23us.zip — Census County Business Patterns 2023: ~2.0M employer establishments across the local verticals in lane 09.</li>
+<li>https://www.census.gov/library/publications/2026/econ/govtorg2225.html — 90,837 local governments, including 39,555 special districts.</li>
+</ul>
+<h4>Deal and transaction volume</h4>
+<ul>
+<li>https://www.bizbuysell.com/news/bizbuysell-2025-fourth-quarter-insight-report/ — Only 9,586 closed small-business deals in 2025, at a $350K median. The "silver tsunami" converts slowly.</li>
+<li>https://dealseam.com/hvac-pe-rollup-tracker-2026 — 22 named HVAC consolidators (21 PE-backed), the buyer pool for SuccessionMap.</li>
+<li>https://www.capstonepartners.com/insights/article-hvac-services-ma-update/ — Only 38 PE add-on HVAC deals and 9 new platforms YTD 2026. Buyers number in the tens, not hundreds (verify-1).</li>
+<li>https://pestakeholder.org/reports/pe-healthcare-deals-2025-in-review/ — 1,029 PE healthcare deals in 2025 across 420 platforms. Only ~80–100 relevant specialty platforms (verify-1).</li>
+</ul>
+<h4>Enforcement and claim volumes</h4>
+<ul>
+<li>https://www.osha.gov/sites/default/files/enforcement/directives/CPL-02-01-067.pdf — OSHA SST directive. It reports 652 SST inspections over ~20 months (~390/yr), a ~0.1% base rate on ~390K filers.</li>
+<li>https://oag.ca.gov/prop65/report/out-of-court-settlements — CA AG Prop 65 settlement reports (2024: 1,082 settlements, $27.08M, 87% attorneys' fees).</li>
+<li>https://www.adatitleiii.com/2026/03/federal-court-website-accessibility-lawsuit-filings-bounce-back-in-2025/ — 3,117 federal website-accessibility suits in 2025, up 27%.</li>
+<li>https://unclaimed.org/fy20-annual-report/ — NAUPA: average unclaimed-property claim $1,610, median $100. Undercuts the found-money economics (verify-4).</li>
+<li>https://www.tariffstool.com/tariff-refund-tracker — IEEPA refund tracker: ~$166B pool, $122B certified and $134.7B in CAPE by Sept 2026, so the window has closed.</li>
+</ul>
+<h4>Funding cycles</h4>
+<ul>
+<li>https://www.waterworld.com/water-utility-management/news/55368873/white-house-proposes-significant-cuts-to-epa-srfs-in-fy-27-budget-proposal — FY27 request cuts the SRFs from ~$2.7B to $305M after BIL ends.</li>
+</ul>
+<h4>Market shifts</h4>
+<ul>
+<li>https://www.prnewswire.com/news-releases/owner-raises-240m-led-by-goldman-sachs-alternatives-to-build-the-ai-native-platform-for-every-local-business-302862420.html — Owner.com raised $240M at a $2.3B valuation, with $100M+ ARR, and is expanding to "every local business".</li>
+</ul>
+<h3>5. Benchmarks: reply rates, churn, deliverability, AI measurement</h3>
+<h4>Cold-email reply rates</h4>
+<ul>
+<li>https://instantly.ai/cold-email-benchmark-report-2026 — 2026 B2B cold-email average reply 3.43%, top quartile 5.5%. The most-cited baseline across lanes.</li>
+<li>https://belkins.io/blog/cold-email-response-rates — Belkins (7.5M emails): 0.45% average reply, healthcare ≈0.56–0.6%. Basis for cutting lane 06's 2% conversion assumption.</li>
+<li>https://www.cleanlist.ai/blog/2026-02-18-cold-email-response-rate-statistics — Owners/founders reply at 0.57%, worse than the 1–3% assumed for M&amp;A owner outreach.</li>
+<li>https://thedigitalbloom.com/learn/cold-outbound-reply-rate-benchmarks/ — Construction/real estate median 5.0% reply, and trigger-led outreach claimed to roughly triple replies (vendor data, optimistic).</li>
+<li>https://www.cleverly.co/blog/cold-email-benchmarks-by-industry — Contrary dataset putting construction at 0.56–0.60%, which shows how wide the spread is.</li>
+<li>https://www.revenueflow.com/blog/manufacturing-cold-email-benchmarks — Manufacturing ~2–4% replies and 0.6–1.5% meetings.</li>
+<li>https://www.tebra.com/theintake/healthcare-reports/billing-companies/getting-paid-how-to-get-medical-billing-clients — 72% of medical billing firms cite referrals as their top source of new business, so they don't run outbound.</li>
+</ul>
+<h4>Churn and retention</h4>
+<ul>
+<li>https://www.kalungi.com/blog/saas-churn-rate-benchmarks — SMB SaaS churn runs 3–7% per month.</li>
+<li>https://focus-digital.co/average-marketing-agency-churn/ — SEO agency clients churn ~3.2% per month (~32-month life).</li>
+<li>https://investors.yext.com/news-events/press-releases/detail/391/yext-announces-second-quarter-fiscal-2027-results — Yext customers under $50K ARR had 69% annual dollar gross retention (July 2026).</li>
+</ul>
+<h4>Deliverability</h4>
+<ul>
+<li>https://redsift.com/resources/blog/gmails-enforcement-ramps-up-what-bulk-senders-need-to-know — Gmail/Yahoo 0.3% spam-complaint ceiling (0.1% target). Gmail began rejecting non-compliant mail in Nov 2025.</li>
+</ul>
+<h4>AI-answer measurement</h4>
+<ul>
+<li>https://surferseo.com/blog/llm-scraped-ai-answers-vs-api-results — LLM API answers overlap the consumer UI only 15.5–23.8%, so "ChatGPT doesn't recommend you" proofs built from the API are unreliable.</li>
+<li>https://searchengineland.com/ai-recommendation-lists-rarely-repeat-study-468076 — Fewer than 1 in 100 AI recommendation runs return the same brand list, so a "rank" is noise.</li>
+</ul></section>
+</body></html>
