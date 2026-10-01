@@ -14,7 +14,7 @@
 | (d) Agent-collected primary data (AI calls, mystery shops) | Real money moves: multifamily phone shops cost $40+ and programs run $800–2,400 per community per year ([Grace Hill](https://gracehill.com/pricing/mystery-shopping/), [Siro](https://www.siro.ai/insights/mystery-shopping-leasing-performance)). But AI-native shops already exist (Rev Leasing, EliseAI, Funnel) ([Funnel](https://funnelleasing.com/apartment-secret-shop-for-multifamily-leasing/)). Home-services firms score 100% of their own calls with Invoca, CallRail or ServiceTitan ([Invoca](https://www.invoca.com/reports/the-invoca-home-services-lead-conversion-benchmarks-report-2026)). TCPA (AI voice = "artificial voice", [FCC](https://docs.fcc.gov/public/attachments/DOC-400393A1.pdf)) and CIPA ($5,000 per violation, [Shouse](https://www.shouselaw.com/ca/defense/laws/california-invasion-of-privacy-act/)) add risk. |
 | (e) Transcribing meetings and hearings | **Dead.** GovSpend has 2.3M transcripts. Hamlet covers 3,000+ governments with a free tier ([PublicCEO](https://www.publicceo.com/2026/02/hamlet-launches-nationwide-public-meeting-coverage-over-3000-local-governments-videos-now-discoverable/)). CitizenPortal.ai is $0–15/mo ([aichief](https://aichief.com/ai-productivity-tools/citizen-portal/)). Starbridge, Curate and Pursuit also play here. |
 
-**Main finding.** One records family looks genuinely proprietary and early: **third-party fire and life-safety inspection compliance data (ITM: inspection, testing and maintenance)**. Fire codes (NFPA 25 and 72) require annual inspections. More than 2,000 jurisdictions make contractors upload every report to The Compliance Engine (Brycer) ([TCE news](https://www.thecomplianceengine.com/post/brycer-continues-to-expand-the-compliance-engine-with-new-2026-services), [San Diego](https://www.sandiego.gov/fire/community-risk-reduction/fire-protection-systems/compliance-engine)). Others use LIV or BuildingReports. That system knows (1) **which properties are overdue or carry unresolved deficiencies** and (2) **which contractor inspects which building**, which measures each contractor's recurring inspection book. Neither is on the web (San Francisco's open "Fire Inspections" set covers city inspections only, not contractor ITM: [data.sf.gov](https://data.sf.gov/Housing-and-Buildings/Fire-Inspections/wb4c-6hwj/data)). Brycer itself does **not** sell leads or data to contractors as of its 2026 product list ([TCE 2026](https://www.thecomplianceengine.com/post/brycer-continues-to-expand-the-compliance-engine-with-new-2026-services), [Premises Portal](https://www.thecomplianceengine.com/post/brycer-launches-premises-portal-to-expand-compliance-visibility)). Ideas 1 and 2 are built on this data. Everything else in the lane scored lower.
+**Main finding.** One records family looks genuinely proprietary and early: **third-party fire and life-safety inspection compliance data (ITM: inspection, testing and maintenance)**. Fire codes (NFPA 25 and 72) require annual inspections. More than 2,000 jurisdictions make contractors upload every report to The Compliance Engine (Brycer) ([TCE news](https://www.thecomplianceengine.com/post/brycer-continues-to-expand-the-compliance-engine-with-new-2026-services), [San Diego](https://www.sandiego.gov/fire/community-risk-reduction/fire-protection-systems/compliance-engine)). Others use LIV or BuildingReports. That system knows (1) **which properties are overdue or carry unresolved deficiencies** and (2) **which contractor inspects which building**, which measures each contractor's recurring inspection book. Neither is on the web (San Francisco's open "Fire Inspections" set covers city inspections only, not contractor ITM: [data.sf.gov](https://data.sf.gov/Housing-and-Buildings/Fire-Inspections/wb4c-6hwj/data)). Brycer does not sell a list product. **However, the verifier found that in May 2026 Brycer began marketing TCE as "a consistent, trackable source of inbound demand for service providers".** It also launched satellite "Virtual Walkthroughs" to find unreported systems ([Digital Journal PR](https://www.digitaljournal.com/pr/news/prodigy-press-wire/compliance-engine-expands-access-compliance-driven-1675648375.html)). Every TCE notice to an owner prints the **contractor of record** with phone and email ([Sedalia plan](https://www.sedalia.com/wp-content/uploads/compliance-implementation-plan.pdf)). So the platform owner holds the data first-hand and is moving into this gap. Ideas 1 and 2 are built on this data. **After self-verification no idea in this lane scores above 4/10** (see sections 4–5).
 
 **Honest caveat up front.** I could not find a single public example of an AHJ releasing a TCE overdue or contractor list in response to a records request. **Obtainability is the #1 unknown, and the cheapest test (section 2, idea 1) is built around it.** Florida's statute explicitly makes information "revealing security or firesafety systems" of privately owned property held by an agency confidential ([Fla. Stat. 119.071(3)(a)](https://www.flsenate.gov/Laws/statutes/2025/119.071)). Other states may take the same view.
 
@@ -101,7 +101,18 @@ I found **no seller of AHJ overdue or deficiency lists** after searching for "ov
 - (4) Owners perceive the outreach as creepy or scammy, and AHJs complain.
 - (5) Contractors are capacity-constrained (technician shortage) and don't want more leads ([ServiceTrade tech-retention survey](https://servicetrade.com/company-news/fire-protection-technicians-are-committed-to-the-work-but-operational-barriers-are-putting-retention-at-risk/)).
 
-**Cheapest validation test ($500, 6 weeks).** File identical minimal-field requests with 40 TCE AHJs in 4 non-Florida states. **Kill if fewer than 12 (30%) return a usable property-level list with status within 45 days, OR if the median list has fewer than 50 overdue commercial properties.** In parallel, email 30 contractors in AHJs with returned data a free 25-property sample. **Kill if fewer than 3 agree to a paid pilot at $500.**
+**Verifier-added problems (see section 4).**
+- TCE notices already route owners to the incumbent.
+- After TCE adoption the overdue pool is about 2–11%, not 10–15% (Buncombe County went from 12–15% to "2% or less").
+- Texas AHJs will likely invoke Gov't Code 418.181, as Fort Worth did for hydrant inspection data ([Fort Worth Report](https://fortworthreport.org/2025/02/09/fort-worth-withholds-fire-hydrant-inspection-records-citing-texas-homeland-security-act/)).
+- AZ (ARS 39-121.03), KY (KRS 61.874) and WA (RCW 42.56.070(8)) restrict commercial use or solicitation, or charge for it.
+- AHJs earn a revenue share on report fees (IROL pays the AHJ $5–10 per report: [Greater Naples](https://greaternaplesfire.org/wp-content/uploads/2024/06/Third-Party-ITM-Reporting.pdf)), so they are the vendor's partners.
+- Fire departments routinely warn businesses about fake inspection notices ([NV AG](https://ag.nv.gov/News/PR/2015/Nevada_Attorney_General_Warns_Consumers_of_Fire_Safety_Inspection_Scams)).
+
+**Cheapest validation test ($500, 6 weeks).** File identical minimal-field requests with 40 TCE AHJs in 4 non-Florida states. **Kill if any of these hold:**
+- fewer than 12 (30%) return a usable property-level list with status within 45 days;
+- the median list has fewer than 50 overdue commercial properties;
+- more than 30% of responses cite a security exemption or "no duty to create a record". In parallel, email 30 contractors in AHJs with returned data a free 25-property sample. **Kill if fewer than 3 agree to a paid pilot at $500.**
 
 ---
 
@@ -316,10 +327,66 @@ I found **no seller of AHJ overdue or deficiency lists** after searching for "ov
 
 ## 4. Self-verification results
 
-*(Filled in after the two adversarial subagents report; see below.)*
+Two general-purpose subagents attacked the draft in parallel, with about 30–35 searches each. One took ideas 1 and 6; the other took ideas 2–5. Where they were right, I accepted their findings and lowered the scores.
+
+### Verifier A: ideas 1 and 6
+
+| Draft claim | Finding | Verdict |
+|---|---|---|
+| TCE is used by 2,000+ jurisdictions | Confirmed: "trusted by over 2,000 AHJs" ([TCE](https://www.thecomplianceengine.com/)). Also LIV covers 350+ AHJs and 4,000+ contractors ([LIV](https://livsafe.com/who-we-serve/authorities-having-jurisdiction)), and IROL is a third vendor. | True; more vendors to request from |
+| Contractor fee is $17–30 per report | The range is about $10–37: Redmond $37, Charleston $15→30, Raleigh $10–12 ([Redmond](https://www.redmond.gov/FAQ.aspx?QID=598), [Charleston](https://www.charleston-sc.gov/2586/Compliance-Reporting)). IROL charges $19.99 and pays the AHJ a **$5–10 per report revenue share** ([Greater Naples](https://greaternaplesfire.org/wp-content/uploads/2024/06/Third-Party-ITM-Reporting.pdf)). | Partly true. AHJs are the vendor's paid partners, which makes them less likely to help a third party. |
+| Brycer has no lead product | **False in spirit.** In May 2026 Brycer started marketing TCE as "a consistent, trackable source of inbound demand for service providers", with satellite "Virtual Walkthroughs" ([PR](https://www.digitaljournal.com/pr/news/prodigy-press-wire/compliance-engine-expands-access-compliance-driven-1675648375.html)). | **Corrected in the text.** This is the biggest strategic risk, and it is already happening. |
+| Owners being chased by the AHJ are open to a new vendor | Every TCE renewal, overdue and deficiency notice prints the **contractor of record** with phone and email. Brycer staff also make follow-up calls ([Sedalia plan](https://www.sedalia.com/wp-content/uploads/compliance-implementation-plan.pdf)). | Weakens the idea. The system is designed so the incumbent gets the work back. |
+| 10–15% of properties are overdue | After TCE adoption it falls to about 2–11%; Buncombe County went from 12–15% to "2% or less" ([TCE](https://www.thecomplianceengine.com/fire)) | **Overstated 2–5×.** What remains is the chronic non-payer tail. |
+| Obtainability is unknown | Still no public release example. **Texas precedent against us:** Fort Worth, a TCE city, withheld its hydrant inspection history under Gov't Code 418.181 ([Fort Worth Report](https://fortworthreport.org/2025/02/09/fort-worth-withholds-fire-hydrant-inspection-records-citing-texas-homeland-security-act/)). Agencies have no duty to create an "overdue" query, so many will offer PDFs instead. | Risk is higher than the draft assumed |
+| Legal | AZ ARS 39-121.03 requires a commercial-purpose statement and names "solicitation". KY KRS 61.874 charges commercial fees. WA RCW 42.56.070(8) bars releasing lists of individuals (sole-proprietor owners) for commercial use. Fire departments and the NV AG warn about fake inspection notices ([NV AG](https://ag.nv.gov/News/PR/2015/Nevada_Attorney_General_Warns_Consumers_of_Fire_Safety_Inspection_Scams)). | New friction, added to the text |
+| Lead price $60–250 and Built Right $1,199–19,999 | These come only from vendor marketing. Built Right's prices were not visible on the fetched page. | Weak evidence of willingness to pay |
+| New competitors | FireProtectNearMe (3,100 companies) and FireInspectionDirectory (3,300) target overdue owners. DOBGuard monitors FDNY violations. For backflow: BackflowRates **$39.99/mo**, FindBackflowTesters and BackflowPath. Utility notices list the last tester and attach certified-tester lists ([Sugar Land](https://www.sugarlandtx.gov/627/Backflow-Testing-Program), [Tampa](https://www.tampa.gov/water/water-quality/backflow-testing)). | No direct seller of AHJ overdue lists exists, but Brycer is moving into that gap |
+
+**Verifier A's scores:** idea 1 **4/10**, idea 6 **2/10**. I accept both.
+
+### Verifier B: ideas 2–5
+
+| Draft claim | Finding | Verdict |
+|---|---|---|
+| DealSeam is paid by buyers; there are 13 consolidators | True. DealSeam tracks 18 consolidators: 13 PE-backed and 5 strategic or family-owned ([DealSeam](https://dealseam.com/fire-life-safety-pe-rollup-tracker-2026)) | Partly true |
+| Buyers lack the data | Pye-Barker has a Chief BD Officer for M&A plus 2 EVPs and an SVP for BD/M&A ([Equilar](https://people.equilar.com/bio/org/pye-barker-fire/6025157)). **Grata published a Fire Safety PE Playbook on 2026-08-27 covering 118,000 private targets**, segmented by inspection and testing ([GlobeNewswire](https://www.globenewswire.com/news-release/2026/08/27/3352141/0/en/fire-safety-sector-draws-investor-interest-as-m-a-activity-nearly-quadruples-since-2017-grata-finds.html)). **Shovels** sells contractor market share by trade, including FIRE_SPRINKLER permits, for deal sourcing at $599–999/mo ([Shovels](https://www.shovels.ai/data/contractors), [pricing](https://www.shovels.ai/pricing)). | False; idea 2 is crowded |
+| A report count approximates the recurring book | An inspection costs $150–750 for a small building and $4–10k+ for a large one, a 20–50× spread. Quarterly and semi-annual filings inflate the counts ([TFP](https://www.tfp1.com/blog/fire-sprinkler-inspection-cost/)). | Weak proxy without weighting by square footage |
+| Idea 3 has a "no PO" gap | **Starbridge Public Spend Intelligence already returns "full, unredacted competitor contracts, including pricing, opt-out clauses, and expiration dates, sourced through automated public records requests at national scale"** ([Starbridge](https://starbridge.ai/features/public-spend-intelligence)) | **Idea 3 killed** |
+| Civic IQ $2k/mo PaaS | True. It uses human SDRs, and annual plans run $12–48k ([Civic IQ](https://civiciq.com/blog/starbridge-vs-civic-iq)). | True |
+| Idea 4 competition and leverage | New competitors: SaveOnServices ($27 DIY guide, $247 audit), AuditMyWaste (free to the client, paid by the vendor, $13.7k average recovery), ConsultingAce, ProfitLine and Waste Consultants Inc. Cintas's standard agreement is a **60-month auto-renewal; early termination costs 50% of the average weekly invoice × the remaining weeks** ([ECWA copy](https://www.ecwa.org/files/pdf/item_4_standard_rental_agreement_with_cintas_corp_.pdf)). | Crowded, and small accounts have little leverage |
+| $45M Cintas settlement; VA auto-renewal law | True. Virginia HB1022 took effect 2026-07-01 and covers firms with fewer than 250 employees or under $10M revenue. | True |
+| Idea 5 buyers | CDD firms (Woozle, Baker Tilly, SATOV) run secret shops themselves, so they are competitors rather than buyers ([Woozle](https://insights.woozleresearch.com/blog/commercial-due-diligence-primary-research-for-private-equity-a-2026-practitioners-guide/)). Nevada requires a PI licence for mystery shoppers ([legalmatter](https://legalmatterblog.com/2013/06/26/demystifying-the-mystery-shopper/)). Maine's chatbot disclosure law adds optics risk. | Weakened further |
+
+**Verifier B's scores:** idea 2 **3/10**, idea 3 **1/10**, idea 4 **3/10** as an upsell (2/10 standalone), idea 5 **2/10**. I accept all of them.
+
+### What I got wrong
+
+1. **I said Brycer does not sell leads.** That was true only of its product list. Its 2026 marketing explicitly targets contractor "inbound demand". This is round-1 failure pattern 1 again: the data holder is the competitor.
+2. **I assumed an overdue pool that is 2–5× too large.** TCE itself shrinks it.
+3. **I missed that TCE notices name the incumbent.** That undercuts the "these owners have no vendor" premise.
+4. **For idea 2, I missed Grata's August 2026 fire-safety coverage and Shovels' contractor market-share product.**
+5. **For idea 3, I treated "no PO" as a gap.** Starbridge FOIAs the contracts directly.
 
 ---
 
-## 5. Ranked shortlist
+## 5. Ranked shortlist (post-verification)
 
-*(Final scores after self-verification; see below.)*
+Scores are 1–10; competition 10 = blue ocean.
+
+| Rank | Idea | Market | WTP | Data access | Automation | Competition | Recurring | Time to $ | **Overall** | Confidence |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | **Overdue Feed** (fire ITM overdue lists via records requests + done-for-you outreach) | 4 | 5 | 3 | 7 | 4 | 7 | 3 | **4.0** | Low–medium |
+| 2 | **ITM Book Index** (contractor inspection density → roll-up origination) | 3 | 5 | 3 | 6 | 3 | 5 | 3 | **3.0** | Medium |
+| 3 | **Linen and waste co-op** (upsell to existing SMB customers only) | 4 | 4 | 6 | 6 | 2 | 3 | 5 | **3.0** | Medium |
+| 4 | **Due-list feeds** for backflow, FOG and hood (as a field added to idea 1's requests) | 3 | 2 | 3 | 8 | 3 | 5 | 3 | **2.0** | Medium |
+| 5 | **Shop Panel** (AI web-form mystery shops for diligence) | 2 | 3 | 8 | 9 | 2 | 2 | 4 | **2.0** | Medium-high |
+| 6 | **Collections-contract map** (EMS billing and similar) | 2 | 3 | 5 | 8 | 1 | 5 | 4 | **1.0** | High |
+
+**No idea reaches 7, or even 5.** Every one fails on either willingness-to-pay evidence or competition, which a 7+ requires.
+
+**Bottom line for the brothers.**
+- **"Proprietary data" is mostly an illusion when a vendor already holds the records first-hand.** Brycer holds the fire ITM data; GovSpend and Starbridge hold contracts; Carpe and Middesk hold SMB web signals. Each is already turning it into a product.
+- **Agents filing FOIAs at scale is no longer a moat either:** Starbridge, GovSpend and HigherGov already do it.
+- **The only thing worth spending money on is idea 1's $500, 40-request records test.** Run it with idea 2's contractor field and idea 6's backflow field bundled in, because one cheap experiment answers three questions. Apply the kill rules in section 2. If yields come back above 30% with no security-exemption pushback, revisit ideas 1 and 2 at about 5/10. Otherwise close this lane.
+- **Idea 4 is a reasonable no-cost upsell email to the existing website customer base**, but it is not a business.
